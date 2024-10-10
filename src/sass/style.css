@@ -13,6 +13,7 @@ header nav {
 
 .Home {
   background-color: #120D16;
+  min-height: 2000px;
 }
 
 .PopupPC {
@@ -26,7 +27,7 @@ header nav {
   margin-right: 10px;
   padding: 10px;
   border-radius: 10px 10px 0 0;
-  animation: Popup 1s ease-in-out forwards;
+  animation: PopupOpenPC 1s ease-in-out forwards;
 }
 .PopupPC div {
   display: flex;
@@ -38,8 +39,11 @@ header nav {
 .PopupPC div p {
   width: 100%;
 }
+.PopupPC.close-animation-pc {
+  animation: PopupClosePC 1s ease-in-out forwards;
+}
 
-@keyframes Popup {
+@keyframes PopupOpenPC {
   0% {
     transform: translateY(100%);
   }
@@ -47,6 +51,26 @@ header nav {
     transform: translateY(0%);
   }
 }
+@keyframes PopupClosePC {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.PopupTel {
+  position: sticky;
+  top: 10px;
+  position: -webkit-sticky;
+  width: 100%;
+}
+.PopupTel div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
