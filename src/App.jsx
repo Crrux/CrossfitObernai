@@ -6,6 +6,7 @@ import Error from "./pages/error/error";
 import Contact from "./pages/contact/contact";
 import Events from "./pages/events/events";
 import Class from "./pages/class/class";
+import PopupPC from "./components/popup_pc/popup_pc";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="events" element={<Events />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <PopupPC />
       </BrowserRouter>
     </>
   );

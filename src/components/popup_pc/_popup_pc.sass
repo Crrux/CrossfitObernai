@@ -1,0 +1,26 @@
+.PopupPC
+    position: fixed
+    bottom: 0
+    right: 0
+    width: 300px
+    height: 200px
+    background-color: #fff
+    color: black
+    margin-right: 10px
+    padding: 10px
+    border-radius: 10px 10px 0 0
+    animation: Popup 1s ease-in-out forwards
+    div
+        display: flex
+        flex-wrap: wrap
+        button
+            margin-left: auto
+
+        p
+            width: 100%
+
+@keyframes Popup
+    0%
+        transform: translateY(100%)
+    100%
+        transform: translateY(0%)

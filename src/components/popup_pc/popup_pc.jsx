@@ -1,10 +1,25 @@
+import { useState } from "react";
+
 function PopupPC() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClosePopup = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <aside>
-      <div>
-        <p>popup pc</p>
-      </div>
-    </aside>
+    <>
+      {isOpen && (
+        <aside className="PopupPC">
+          <div>
+            <button className="close-button" onClick={handleClosePopup}>
+              X
+            </button>
+            <p>popup reservation PC</p>
+          </div>
+        </aside>
+      )}
+    </>
   );
 }
 
