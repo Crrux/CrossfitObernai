@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function PopupTel() {
   const [isOpen, setIsOpen] = useState(true);
@@ -21,7 +22,10 @@ function PopupTel() {
           className={`PopupTel`} /* ${isButtonClicked ? "close-animation-tel" : ""} */
         >
           <div>
-            <p>popup reservation tel</p>
+            <Link to={"/contact"} onClick={handleClosePopup}>
+              <p>popup reservation tel</p>
+            </Link>
+
             <button className={`close-button`} onClick={handleClosePopup}>
               X
             </button>
