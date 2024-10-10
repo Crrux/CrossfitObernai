@@ -1,10 +1,18 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
 header nav {
   display: flex;
   gap: 10px;
 }
-header nav a {
-  text-decoration: none;
-  color: white;
+
+.Home {
+  background-color: #120D16;
 }
 
 :root {
