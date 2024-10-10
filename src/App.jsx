@@ -7,11 +7,13 @@ import Contact from "./pages/contact/contact";
 import Events from "./pages/events/events";
 import Class from "./pages/class/class";
 import PopupPC from "./components/popup_pc/popup_pc";
+import PopupTel from "./components/popup_tel/popup_tel";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <PopupTel />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
