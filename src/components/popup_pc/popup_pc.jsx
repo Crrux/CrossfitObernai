@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function PopupPC() {
   const [isOpen, setIsOpen] = useState(true);
@@ -21,10 +22,17 @@ function PopupPC() {
           className={`PopupPC ${isButtonClicked ? "close-animation-pc" : ""}`}
         >
           <div>
-            <button className={`close-button`} onClick={handleClosePopup}>
-              X
-            </button>
-            <p>popup reservation PC</p>
+            <header>
+              <button className={`close-button`} onClick={handleClosePopup}>
+                X
+              </button>
+            </header>
+            <main>
+              <Link to={"contact"} onClick={handleClosePopup}>
+                Lien contact
+              </Link>
+              <p>popup reservation PC</p>
+            </main>
           </div>
         </aside>
       )}
