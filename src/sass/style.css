@@ -62,7 +62,6 @@ header nav {
 .PopupTel {
   position: sticky;
   top: 10px;
-  position: -webkit-sticky;
   width: 100%;
 }
 .PopupTel div {
