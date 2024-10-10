@@ -18,7 +18,7 @@ function PopupTel() {
     <>
       {isOpen && isTabletorAbove && (
         <aside
-          className={`PopupTel ${isButtonClicked ? "close-animation" : ""}`}
+          className={`PopupTel ${isButtonClicked ? "close-animation-tel" : ""}`}
         >
           <div>
             <p>popup reservation tel</p>
