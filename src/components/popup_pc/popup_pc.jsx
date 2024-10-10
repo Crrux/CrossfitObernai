@@ -5,7 +5,7 @@ function PopupPC() {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
-  if (width > 768) {
+  if (width >= 768) {
     isTabletorAbove = true;
   }
 

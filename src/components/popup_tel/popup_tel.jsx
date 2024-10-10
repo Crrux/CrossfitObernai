@@ -5,7 +5,7 @@ function PopupTel() {
   // const [isButtonClicked, setIsButtonClicked] = useState(false);
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
-  if (width < 767.97) {
+  if (width <= 767.97) {
     isTabletorAbove = true;
   }
 
