@@ -9,7 +9,8 @@
     margin-right: 10px
     padding: 10px
     border-radius: 10px 10px 0 0
-    animation: Popup 1s ease-in-out forwards
+    animation: PopupOpenPC 1s ease-in-out forwards
+
     div
         display: flex
         flex-wrap: wrap
@@ -19,8 +20,17 @@
         p
             width: 100%
 
-@keyframes Popup
+    &.close-animation-pc
+        animation: PopupClosePC 1s ease-in-out forwards
+
+@keyframes PopupOpenPC
     0%
         transform: translateY(100%)
     100%
         transform: translateY(0%)
+
+@keyframes PopupClosePC
+    0%
+        transform: translateY(0%)
+    100%
+        transform: translateY(100%)
