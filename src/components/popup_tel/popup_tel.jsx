@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function PopupTel() {
   const [isOpen, setIsOpen] = useState(true);
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  // const [isButtonClicked, setIsButtonClicked] = useState(false);
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
   if (width < 767.97) {
@@ -10,15 +10,15 @@ function PopupTel() {
   }
 
   const handleClosePopup = () => {
-    setIsButtonClicked(true);
-    setTimeout(() => setIsOpen(false), 1000);
+    // setIsButtonClicked(true);
+    setTimeout(() => setIsOpen(false), 0);
   };
 
   return (
     <>
       {isOpen && isTabletorAbove && (
         <aside
-          className={`PopupTel ${isButtonClicked ? "close-animation-tel" : ""}`}
+          className={`PopupTel`} /* ${isButtonClicked ? "close-animation-tel" : ""} */
         >
           <div>
             <p>popup reservation tel</p>
