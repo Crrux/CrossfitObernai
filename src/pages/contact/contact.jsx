@@ -3,9 +3,9 @@ function Contact() {
     <>
       <p>contact form</p>
       <form
-        action={`${import.meta.env.VITE_REACT_APP_API_URL}/test`}
+        action={`${import.meta.env.VITE_REACT_APP_API_URL}/contact`}
         method="POST"
-        encType="multipart/form-data"
+        // encType="multipart/form-data"
         target="_blank"
       >
         <label htmlFor="name">
