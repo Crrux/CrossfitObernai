@@ -5,6 +5,8 @@ function Contact() {
       <form
         action={`${import.meta.env.VITE_REACT_APP_API_URL}/test`}
         method="POST"
+        encType="multipart/form-data"
+        target="_blank"
       >
         <label htmlFor="name">
           <p>Nom</p>
@@ -12,7 +14,7 @@ function Contact() {
         </label>
         <label htmlFor="forname">
           <p>Prenom</p>
-          <input type="text" id="forname" name="forname" required />
+          <input type="text" id="firstname" name="firstname" required />
         </label>
         <label htmlFor="email">
           <p>Email</p>
