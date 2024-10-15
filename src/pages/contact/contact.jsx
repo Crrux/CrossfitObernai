@@ -2,7 +2,10 @@ function Contact() {
   return (
     <>
       <p>contact form</p>
-      <form action={import.meta.env.VITE_REACT_APP_API_URL} method="POST">
+      <form
+        action={`${import.meta.env.VITE_REACT_APP_API_URL}/test`}
+        method="POST"
+      >
         <label htmlFor="name">
           <p>Nom</p>
           <input type="text" id="name" name="name" required />
