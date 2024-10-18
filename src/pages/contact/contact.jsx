@@ -45,7 +45,6 @@ function Contact() {
       fieldValidationErrors.telError = telValid ? "" : " is invalid";
       setErrors(fieldValidationErrors);
     };
-    console.log(contact);
     validateField();
     console.log(errors);
   }, [contact, errors]);
