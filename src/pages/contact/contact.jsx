@@ -18,33 +18,6 @@ function Contact() {
       ...prevState,
       [name]: value,
     }));
-    // console.log(contact.tel);
-    // console.log(value);
-    console.log(contact);
-    validateField(name);
-  };
-
-  const validateField = (fieldName) => {
-    let fieldValidationErrors = errors;
-    let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
-      contact.email
-    );
-    let telValid =
-      /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/.test(
-        contact.tel
-      );
-
-    switch (fieldName) {
-      case "email":
-        fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
-        break;
-      case "tel":
-        fieldValidationErrors.telError = telValid ? "" : " is invalid";
-        break;
-      default:
-        break;
-    }
-    setErrors(fieldValidationErrors);
   };
 
   function handleSubmit(e) {
@@ -61,8 +34,23 @@ function Contact() {
   }
 
   useEffect(() => {
+    const validateField = () => {
+      let fieldValidationErrors = errors;
+      let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
+        contact.email
+      );
+      let telValid =
+        /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/.test(
+          contact.tel
+        );
+
+      fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
+      fieldValidationErrors.telError = telValid ? "" : " is invalid";
+      setErrors(fieldValidationErrors);
+    };
     console.log(contact);
-    // console.log(errors);
+    validateField();
+    console.log(errors);
   }, [contact, errors]);
 
   return (
@@ -75,6 +63,7 @@ function Contact() {
             type="text"
             id="name"
             name="name"
+            value={contact.name}
             required
             onChange={handleChange}
           />
@@ -85,6 +74,7 @@ function Contact() {
             type="text"
             id="firstname"
             name="firstname"
+            value={contact.firstname}
             required
             onChange={handleChange}
           />
@@ -95,6 +85,7 @@ function Contact() {
             type="email"
             id="email"
             name="email"
+            value={contact.email}
             required
             onChange={handleChange}
           />
@@ -105,6 +96,7 @@ function Contact() {
             type="tel"
             id="tel"
             name="tel"
+            value={contact.tel}
             required
             onChange={handleChange}
           />
