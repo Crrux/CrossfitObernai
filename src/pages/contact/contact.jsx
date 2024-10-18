@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Contact() {
+  // Initialize state for contact form data
   const [contact, setContact] = useState({
     name: "",
     firstname: "",
@@ -10,8 +11,10 @@ function Contact() {
     message: "",
   });
 
+  // Initialize state for form validation errors
   const [errors, setErrors] = useState({});
 
+  // Handle changes in form input fields
   const handleChange = (event) => {
     const { name, value } = event.target;
     setContact((prevState) => ({
@@ -20,8 +23,10 @@ function Contact() {
     }));
   };
 
+  // Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
+    // If there are no validation errors, submit the form data
     if (!errors.emailError && !errors.telError) {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
@@ -29,16 +34,20 @@ function Contact() {
           console.log(res.data);
         });
     } else {
+      // If there are validation errors, log them to the console
       console.log(errors);
     }
   }
 
+  // Validate form fields on every change
   useEffect(() => {
     const validateField = () => {
       let fieldValidationErrors = errors;
+      // Validate email field
       let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
         contact.email
       );
+      // Validate telephone field
       let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
 
       fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
