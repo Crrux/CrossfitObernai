@@ -39,10 +39,7 @@ function Contact() {
       let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
         contact.email
       );
-      let telValid =
-        /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/.test(
-          contact.tel
-        );
+      let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
 
       fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
       fieldValidationErrors.telError = telValid ? "" : " is invalid";
