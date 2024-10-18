@@ -14,6 +14,9 @@ function Contact() {
   // Initialize state for form validation errors
   const [errors, setErrors] = useState({});
 
+  // Initialize state for form submission status
+  const [submitted, setSubmitted] = useState(false);
+
   // Handle changes in form input fields
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -26,6 +29,8 @@ function Contact() {
   // Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
+    setSubmitted(true);
+
     // If there are no validation errors, submit the form data
     if (!errors.emailError && !errors.telError) {
       axios
@@ -43,20 +48,41 @@ function Contact() {
   useEffect(() => {
     const validateField = () => {
       let fieldValidationErrors = errors;
+
+      // Validate name field
+      let nameValid = contact.name.length >= 2;
+      fieldValidationErrors.nameError = nameValid
+        ? ""
+        : " must be at least 2 characters long";
+
+      // Validate firstname field
+      let firstnameValid = contact.firstname.length >= 2;
+      fieldValidationErrors.firstnameError = firstnameValid
+        ? ""
+        : " must be at least 2 characters long";
+
       // Validate email field
       let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
         contact.email
       );
+      fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
+
       // Validate telephone field
       let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
-
-      fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
       fieldValidationErrors.telError = telValid ? "" : " is invalid";
+
+      // Validate message field
+      let messageValid =
+        contact.message.length >= 2 || contact.message.length === 0;
+      fieldValidationErrors.messageError = messageValid
+        ? ""
+        : " must be at least 2 characters long if there is any input";
+
       setErrors(fieldValidationErrors);
     };
     validateField();
     console.log(errors);
-  }, [contact, errors]);
+  }, [submitted, contact, errors]);
 
   return (
     <>
