@@ -54,11 +54,13 @@ function Contact() {
       fieldValidationErrors.nameError = nameValid
         ? ""
         : " must contain only letters and 2 caractere minimum";
+
       // Validate firstname field
       let firstnameValid = /^[A-Za-z]{2,}$/.test(contact.firstname);
       fieldValidationErrors.firstnameError = firstnameValid
         ? ""
         : " must contain only letters and 2 caractere minimum";
+
       // Validate email field
       let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
         contact.email
