@@ -12,6 +12,19 @@ function Contact() {
 
   const [errors, setErrors] = useState({});
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setContact((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    console.log(event.target.value);
+    console.log(contact.tel);
+    // console.log(value);
+    // console.log(contact);
+    validateField(name);
+  };
+
   const validateField = (fieldName) => {
     let fieldValidationErrors = errors;
     let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
@@ -35,15 +48,6 @@ function Contact() {
     setErrors(fieldValidationErrors);
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setContact((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    validateField(name);
-  };
-
   function handleSubmit(e) {
     e.preventDefault();
     if (!errors.emailError && !errors.telError) {
@@ -57,10 +61,10 @@ function Contact() {
     }
   }
 
-  useEffect(() => {
-    console.log(contact);
-    console.log(errors);
-  }, [contact, errors]);
+  // useEffect(() => {
+  //   console.log(contact);
+  //   console.log(errors);
+  // }, [contact, errors]);
 
   return (
     <>
