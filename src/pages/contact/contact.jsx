@@ -18,10 +18,9 @@ function Contact() {
       ...prevState,
       [name]: value,
     }));
-    console.log(event.target.value);
-    console.log(contact.tel);
+    // console.log(contact.tel);
     // console.log(value);
-    // console.log(contact);
+    console.log(contact);
     validateField(name);
   };
 
@@ -61,22 +60,15 @@ function Contact() {
     }
   }
 
-  // useEffect(() => {
-  //   console.log(contact);
-  //   console.log(errors);
-  // }, [contact, errors]);
+  useEffect(() => {
+    console.log(contact);
+    // console.log(errors);
+  }, [contact, errors]);
 
   return (
     <>
       <p>contact form</p>
-      <form
-        onSubmit={handleSubmit}
-        noValidate
-        // action={`${import.meta.env.VITE_REACT_APP_API_URL}/contact`}
-        // method="POST"
-        // encType="multipart/form-data"
-        // target="_blank"
-      >
+      <form onSubmit={handleSubmit} noValidate>
         <label htmlFor="name">
           <p>Nom</p>
           <input
