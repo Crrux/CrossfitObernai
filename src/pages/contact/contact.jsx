@@ -73,7 +73,7 @@ function Contact() {
 
       // Validate message field
       let messageValid =
-        contact.message.length >= 2 || contact.message.length === 0;
+        contact.message.length > 2 || contact.message.length === 0;
       fieldValidationErrors.messageError = messageValid
         ? ""
         : " must be at least 2 characters long if there is any input";
