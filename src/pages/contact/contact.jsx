@@ -10,33 +10,64 @@ function Contact() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validateField = (fieldName) => {
+    let fieldValidationErrors = errors;
+    let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
+      contact.email
+    );
+    let telValid =
+      /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/.test(
+        contact.tel
+      );
+
+    switch (fieldName) {
+      case "email":
+        fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
+        break;
+      case "tel":
+        fieldValidationErrors.telError = telValid ? "" : " is invalid";
+        break;
+      default:
+        break;
+    }
+    setErrors(fieldValidationErrors);
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setContact((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+    validateField(name);
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(contact);
-    axios
-      .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
-      .then((res) => {
-        console.log(res.data);
-      });
+    if (!errors.emailError && !errors.telError) {
+      axios
+        .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
+        .then((res) => {
+          console.log(res.data);
+        });
+    } else {
+      console.log(errors);
+    }
   }
 
   useEffect(() => {
     console.log(contact);
-  }, [contact]);
+    console.log(errors);
+  }, [contact, errors]);
 
   return (
     <>
       <p>contact form</p>
       <form
         onSubmit={handleSubmit}
+        noValidate
         // action={`${import.meta.env.VITE_REACT_APP_API_URL}/contact`}
         // method="POST"
         // encType="multipart/form-data"
