@@ -79,7 +79,7 @@ function Contact() {
         contact.message.length > 2 || contact.message.length === 0;
       fieldValidationErrors.messageError = messageValid
         ? ""
-        : " must be at least 2 characters long if there is any input";
+        : " must be at least 3 characters long if there is any input";
 
       setErrors(fieldValidationErrors);
     };
@@ -151,12 +151,12 @@ function Contact() {
           <textarea
             id="message"
             name="message"
-            minLength="3"
+            rows={5}
             onChange={handleChange}
           />
           {errors.messageError && <span>{errors.messageError}</span>}
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" disabled={hasErrors} />
       </form>
     </>
   );
