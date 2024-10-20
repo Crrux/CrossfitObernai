@@ -95,30 +95,33 @@ function Contact() {
     <>
       <p>contact form</p>
       <form onSubmit={handleSubmit} noValidate id="form_contact">
-        <label htmlFor="name">
-          <p>Nom</p>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={contact.name}
-            required
-            onChange={handleChange}
-          />
-          {errors.nameError && <span>{errors.nameError}</span>}
-        </label>
-        <label htmlFor="firstname">
-          <p>Prenom</p>
-          <input
-            type="text"
-            id="firstname"
-            name="firstname"
-            value={contact.firstname}
-            required
-            onChange={handleChange}
-          />
-          {errors.firstnameError && <span>{errors.firstnameError}</span>}
-        </label>
+        <div id="form_contact_divname">
+          <label htmlFor="name">
+            <p>Nom</p>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={contact.name}
+              required
+              onChange={handleChange}
+            />
+            {errors.nameError && <span>{errors.nameError}</span>}
+          </label>
+          <label htmlFor="firstname">
+            <p>Prenom</p>
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              value={contact.firstname}
+              required
+              onChange={handleChange}
+            />
+            {errors.firstnameError && <span>{errors.firstnameError}</span>}
+          </label>
+        </div>
+
         <label htmlFor="email">
           <p>Email</p>
           <input

@@ -1,6 +1,44 @@
+$dark-bg: #222
+$light-text: #ddd
+$error-text: #ff6347
+
 #form_contact
     display: flex
     flex-direction: column
-    input[type="submit"]
-        margin-top: 20px
-        width: fit-content
+    background-color: $dark-bg
+    color: $light-text
+    padding: 20px
+    border-radius: 5px
+    &_divname
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        column-gap: 10px
+
+label
+    display: block
+    margin-bottom: 15px
+    p
+        margin-bottom: 5px
+
+    input, textarea
+        // width: 100%
+        padding: 10px
+        border: none
+        border-radius: 5px
+        background-color: lighten($dark-bg, 5%)
+        color: $light-text
+
+    span
+        color: $error-text
+        font-size: 0.8em
+
+input[type="submit"]
+    background-color: rgb(255, 255,255,0.1 )
+    color: $light-text
+    cursor: pointer
+    transition: background-color 0.3s ease
+    width: fit-content
+    border-radius: 5px
+    &:hover
+        background-color: darken($error-text, 10%)
