@@ -152,7 +152,7 @@ function Contact() {
             <textarea
               id="message"
               name="message"
-              rows={5}
+              rows={10}
               onChange={handleChange}
             />
             {errors.messageError && <span>{errors.messageError}</span>}
