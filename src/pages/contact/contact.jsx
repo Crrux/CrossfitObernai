@@ -15,7 +15,7 @@ function Contact() {
   const [errors, setErrors] = useState({});
 
   // Initialize state for form submission status
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
 
   // Handle changes in form input fields
   const handleChange = (event) => {
@@ -29,7 +29,7 @@ function Contact() {
   // TODO: Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+    // setSubmitted(true);
 
     // If there are no validation errors, submit the form data
     if (!errors.emailError && !errors.telError) {
@@ -82,7 +82,7 @@ function Contact() {
     };
     validateField();
     console.log(errors);
-  }, [submitted, contact, errors]);
+  }, [contact, errors]);
 
   return (
     <>
