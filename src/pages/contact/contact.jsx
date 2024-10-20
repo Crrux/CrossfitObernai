@@ -26,7 +26,7 @@ function Contact() {
     }));
   };
 
-  // Handle form submission
+  // TODO: Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
