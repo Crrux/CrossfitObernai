@@ -18,13 +18,14 @@ header nav {
 
 #form_contact {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   background-color: #222;
   color: #ddd;
   padding: 20px;
   border-radius: 5px;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
+  box-sizing: border-box;
 }
 #form_contact_divname {
   display: flex;
@@ -32,6 +33,9 @@ header nav {
   flex-wrap: wrap;
   -moz-column-gap: 10px;
        column-gap: 10px;
+}
+#form_contact_divname label {
+  flex-grow: 1;
 }
 #form_contact_divname input {
   width: -moz-fit-content;
@@ -52,6 +56,7 @@ label input, label textarea {
   border-radius: 5px;
   background-color: #2f2f2f;
   color: #ddd;
+  box-sizing: border-box;
 }
 label textarea {
   resize: vertical;
@@ -177,4 +182,15 @@ input[type=submit]:hover {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 90%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

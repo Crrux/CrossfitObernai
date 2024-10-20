@@ -1,26 +1,47 @@
 $dark-bg: #222
 $light-text: #ddd
 $error-text: #ff6347
+// input,
+// textarea,
+// select,
+// button
+//     margin: 0
+//     padding: 0
+//     border: 0
+//     font-size: 100%
+//     font: inherit
+//     vertical-align: baseline
+//     background: transparent
+//     appearance: none
+
+//     &:focus
+//         outline: 0
 
 #form_contact
     display: flex
+    justify-content: center
+    // align-items: center
     flex-direction: column
     background-color: $dark-bg
     color: $light-text
     padding: 20px
     border-radius: 5px
-    width: fit-content
+    width: 100%
+    box-sizing: border-box
     &_divname
         display: flex
         flex-direction: row
         flex-wrap: wrap
         column-gap: 10px
+        label
+            flex-grow: 1
         input
             width: fit-content
 
 label
     display: block
     margin-bottom: 15px
+
     p
         margin-bottom: 5px
 
@@ -31,6 +52,7 @@ label
         border-radius: 5px
         background-color: lighten($dark-bg, 5%)
         color: $light-text
+        box-sizing: border-box
     textarea
         resize: vertical
     span

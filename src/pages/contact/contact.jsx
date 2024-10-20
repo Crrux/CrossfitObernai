@@ -93,71 +93,73 @@ function Contact() {
 
   return (
     <>
-      <p>contact form</p>
-      <form onSubmit={handleSubmit} noValidate id="form_contact">
-        <div id="form_contact_divname">
-          <label htmlFor="name">
-            <p>Nom</p>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={contact.name}
-              required
-              onChange={handleChange}
-            />
-            {errors.nameError && <span>{errors.nameError}</span>}
-          </label>
-          <label htmlFor="firstname">
-            <p>Prenom</p>
-            <input
-              type="text"
-              id="firstname"
-              name="firstname"
-              value={contact.firstname}
-              required
-              onChange={handleChange}
-            />
-            {errors.firstnameError && <span>{errors.firstnameError}</span>}
-          </label>
-        </div>
+      <main>
+        <p>contact form</p>
+        <form onSubmit={handleSubmit} noValidate id="form_contact">
+          <div id="form_contact_divname">
+            <label htmlFor="name">
+              <p>Nom</p>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={contact.name}
+                required
+                onChange={handleChange}
+              />
+              {errors.nameError && <span>{errors.nameError}</span>}
+            </label>
+            <label htmlFor="firstname">
+              <p>Prenom</p>
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                value={contact.firstname}
+                required
+                onChange={handleChange}
+              />
+              {errors.firstnameError && <span>{errors.firstnameError}</span>}
+            </label>
+          </div>
 
-        <label htmlFor="email">
-          <p>Email</p>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={contact.email}
-            required
-            onChange={handleChange}
-          />
-          {errors.emailError && <span>{errors.emailError}</span>}
-        </label>
-        <label htmlFor="tel">
-          <p>Telephone</p>
-          <input
-            type="tel"
-            id="tel"
-            name="tel"
-            value={contact.tel}
-            required
-            onChange={handleChange}
-          />
-          {errors.telError && <span>{errors.telError}</span>}
-        </label>
-        <label htmlFor="message">
-          <p>Message</p>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            onChange={handleChange}
-          />
-          {errors.messageError && <span>{errors.messageError}</span>}
-        </label>
-        <input type="submit" value="Submit" disabled={hasErrors} />
-      </form>
+          <label htmlFor="email">
+            <p>Email</p>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={contact.email}
+              required
+              onChange={handleChange}
+            />
+            {errors.emailError && <span>{errors.emailError}</span>}
+          </label>
+          <label htmlFor="tel">
+            <p>Telephone</p>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              value={contact.tel}
+              required
+              onChange={handleChange}
+            />
+            {errors.telError && <span>{errors.telError}</span>}
+          </label>
+          <label htmlFor="message">
+            <p>Message</p>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              onChange={handleChange}
+            />
+            {errors.messageError && <span>{errors.messageError}</span>}
+          </label>
+          <input type="submit" value="Submit" disabled={hasErrors} />
+        </form>
+      </main>
     </>
   );
 }
