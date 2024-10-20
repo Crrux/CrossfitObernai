@@ -58,6 +58,9 @@ label input, label textarea {
   color: #ddd;
   box-sizing: border-box;
 }
+label input:focus, label textarea:focus {
+  outline: none;
+}
 label textarea {
   resize: vertical;
 }
