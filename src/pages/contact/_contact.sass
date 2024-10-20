@@ -9,6 +9,7 @@ $error-text: #ff6347
     color: $light-text
     padding: 20px
     border-radius: 5px
+    width: fit-content
     &_divname
         display: flex
         flex-direction: row
@@ -22,13 +23,14 @@ label
         margin-bottom: 5px
 
     input, textarea
-        // width: 100%
+        width: 100%
         padding: 10px
         border: none
         border-radius: 5px
         background-color: lighten($dark-bg, 5%)
         color: $light-text
-
+    textarea
+        resize: vertical
     span
         color: $error-text
         font-size: 0.8em

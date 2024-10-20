@@ -23,6 +23,8 @@ header nav {
   color: #ddd;
   padding: 20px;
   border-radius: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #form_contact_divname {
   display: flex;
@@ -40,11 +42,15 @@ label p {
   margin-bottom: 5px;
 }
 label input, label textarea {
+  width: 100%;
   padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #2f2f2f;
   color: #ddd;
+}
+label textarea {
+  resize: vertical;
 }
 label span {
   color: #ff6347;
