@@ -16,6 +16,16 @@ header nav {
   min-height: 2000px;
 }
 
+#form_contact {
+  display: flex;
+  flex-direction: column;
+}
+#form_contact input[type=submit] {
+  margin-top: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .PopupPC {
   position: fixed;
   bottom: 0;

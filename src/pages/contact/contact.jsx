@@ -12,6 +12,9 @@ function Contact() {
   });
 
   // Initialize state for form validation errors
+  const [hasErrors, setHasErrors] = useState(true);
+
+  // Initialize state for form validation errors
   const [errors, setErrors] = useState({});
 
   // Initialize state for form submission status
@@ -32,7 +35,7 @@ function Contact() {
     // setSubmitted(true);
 
     // If there are no validation errors, submit the form data
-    if (!errors.emailError && !errors.telError) {
+    if (!hasErrors) {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
         .then((res) => {
@@ -81,13 +84,17 @@ function Contact() {
       setErrors(fieldValidationErrors);
     };
     validateField();
+
+    // Check if there are any validation errors and update the state accordingly
+    setHasErrors(Object.values(errors).some((error) => error !== ""));
+    console.log(hasErrors);
     console.log(errors);
-  }, [contact, errors]);
+  }, [contact, errors, hasErrors]);
 
   return (
     <>
       <p>contact form</p>
-      <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit} noValidate id="form_contact">
         <label htmlFor="name">
           <p>Nom</p>
           <input
@@ -98,6 +105,7 @@ function Contact() {
             required
             onChange={handleChange}
           />
+          {errors.nameError && <span>{errors.nameError}</span>}
         </label>
         <label htmlFor="firstname">
           <p>Prenom</p>
@@ -109,6 +117,7 @@ function Contact() {
             required
             onChange={handleChange}
           />
+          {errors.firstnameError && <span>{errors.firstnameError}</span>}
         </label>
         <label htmlFor="email">
           <p>Email</p>
@@ -120,6 +129,7 @@ function Contact() {
             required
             onChange={handleChange}
           />
+          {errors.emailError && <span>{errors.emailError}</span>}
         </label>
         <label htmlFor="tel">
           <p>Telephone</p>
@@ -131,6 +141,7 @@ function Contact() {
             required
             onChange={handleChange}
           />
+          {errors.telError && <span>{errors.telError}</span>}
         </label>
         <label htmlFor="message">
           <p>Message</p>
@@ -140,6 +151,7 @@ function Contact() {
             minLength="3"
             onChange={handleChange}
           />
+          {errors.messageError && <span>{errors.messageError}</span>}
         </label>
         <input type="submit" value="Submit" />
       </form>
