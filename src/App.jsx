@@ -6,7 +6,7 @@ import Error from "./pages/error/error";
 import Contact from "./pages/contact/contact";
 import Events from "./pages/events/events";
 import Class from "./pages/class/class";
-import Popup from "./components/popup/popup_tel";
+import Popup from "./components/popup/popup";
 
 function App() {
   return (

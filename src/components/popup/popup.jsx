@@ -48,6 +48,10 @@ function Popup() {
             <main>
               <Link to={"contact"} onClick={handleClosePopup}>
                 Lien contact
+                <img
+                  src={"../../../public/assets/popup/Popup_image.png"}
+                  alt=""
+                />
               </Link>
               <p>popup reservation PC</p>
             </main>
