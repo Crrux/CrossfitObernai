@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PopupImage from "/assets/popup/Popup_image.png";
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);
@@ -47,13 +48,8 @@ function Popup() {
             </header>
             <main>
               <Link to={"contact"} onClick={handleClosePopup}>
-                Lien contact
-                <img
-                  src={"../../../public/assets/popup/Popup_image.png"}
-                  alt=""
-                />
+                <img src={PopupImage} alt="" />
               </Link>
-              <p>popup reservation PC</p>
             </main>
           </div>
         </aside>
