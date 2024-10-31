@@ -20,6 +20,13 @@ header #Header_Logo {
   min-height: 2000px;
 }
 
+#main_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #form_contact {
   display: flex;
   justify-content: center;
@@ -29,6 +36,7 @@ header #Header_Logo {
   padding: 20px;
   border-radius: 5px;
   width: 100%;
+  max-width: 700px;
   box-sizing: border-box;
 }
 #form_contact_divname {

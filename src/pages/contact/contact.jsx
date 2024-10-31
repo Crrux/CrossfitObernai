@@ -93,7 +93,7 @@ function Contact() {
 
   return (
     <>
-      <main>
+      <main id="main_contact">
         <p>contact form</p>
         <form onSubmit={handleSubmit} noValidate id="form_contact">
           <div id="form_contact_divname">
