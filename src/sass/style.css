@@ -117,6 +117,7 @@ input[type=submit]:hover {
   padding: 10px;
   border-radius: 10px 10px 0 0;
   animation: PopupOpenPC 1s ease-in-out forwards;
+  z-index: 9999;
 }
 .PopupPC div {
   display: flex;
@@ -182,6 +183,7 @@ input[type=submit]:hover {
   color: black;
   display: flex;
   justify-content: flex-end;
+  z-index: 9999;
 }
 .PopupTel div {
   display: flex;
