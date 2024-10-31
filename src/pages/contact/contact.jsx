@@ -94,7 +94,7 @@ function Contact() {
   return (
     <>
       <main id="main_contact">
-        <p>contact form</p>
+        <h1>Formulaire de contact</h1>
         <form onSubmit={handleSubmit} noValidate id="form_contact">
           <div id="form_contact_divname">
             <label htmlFor="name">
