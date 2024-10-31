@@ -12,7 +12,6 @@ header nav {
 }
 
 .Home {
-  background-color: #120D16;
   min-height: 2000px;
 }
 
@@ -152,8 +151,7 @@ input[type=submit]:hover {
   position: sticky;
   top: 10px;
   width: auto;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100px;
   border-radius: 5px;
   margin-bottom: 10px;
   background-color: #ffd900;
@@ -194,7 +192,7 @@ input[type=submit]:hover {
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #232627;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -210,7 +208,6 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-image: url("/assets/1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
