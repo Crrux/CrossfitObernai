@@ -1,6 +1,6 @@
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 header a {
   text-decoration: none;
@@ -9,6 +9,10 @@ header a {
 header nav {
   display: flex;
   gap: 10px;
+}
+header #Header_Logo {
+  margin-top: 10px;
+  height: 100px;
 }
 
 .Home {
