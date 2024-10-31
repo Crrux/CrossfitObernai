@@ -104,6 +104,7 @@ function Contact() {
                 id="name"
                 name="name"
                 value={contact.name}
+                autoComplete="given-name"
                 required
                 onChange={handleChange}
               />
@@ -116,6 +117,7 @@ function Contact() {
                 id="firstname"
                 name="firstname"
                 value={contact.firstname}
+                autoComplete="family-name"
                 required
                 onChange={handleChange}
               />
@@ -130,6 +132,7 @@ function Contact() {
               id="email"
               name="email"
               value={contact.email}
+              autoComplete="email"
               required
               onChange={handleChange}
             />
@@ -142,6 +145,7 @@ function Contact() {
               id="tel"
               name="tel"
               value={contact.tel}
+              autoComplete="tel"
               required
               onChange={handleChange}
             />
