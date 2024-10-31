@@ -41,18 +41,21 @@ function Collapsible({ titre, text, string }) {
           !isFirstClick ? (isActive ? "active" : "inactive") : ""
         }`}
       >
-        {text ? (
+        {string ? (
           <>
-            {text.map((text) => (
-              <p key={text}>{text}</p>
-            ))}
+            <p>{string}</p>
           </>
         ) : (
           ""
         )}
-        {string ? (
+
+        {text ? (
           <>
-            <p>{string}</p>
+            <ul>
+              {text.map((text) => (
+                <li key={text}>{text}</li>
+              ))}
+            </ul>
           </>
         ) : (
           ""
