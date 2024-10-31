@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Popup from "./components/popup/popup";
+
 import Header from "./layout/header/header";
+
 import Home from "./pages/home/home";
+import Class from "./pages/class/class";
 import Planning from "./pages/planning/planning";
-import Error from "./pages/error/error";
 import Contact from "./pages/contact/contact";
 import Events from "./pages/events/events";
-import Class from "./pages/class/class";
-import Popup from "./components/popup/popup";
+import Error from "./pages/error/error";
 
 function App() {
   return (
