@@ -59,14 +59,6 @@ $temps-animations: 0.3s
         &.active
             max-height: 500px
 
-    .collapsible-content, .collapsible-divbutton
-        &.inactive
-            @media screen and ( min-width: $layout-breakpoint-tablet-min )
-                animation: radius5to10 $temps-animations linear forwards
-        &.active
-            @media screen and ( min-width: $layout-breakpoint-tablet-min )
-                animation: radius10to5 $temps-animations linear forwards
-
 @keyframes rotate-down
     from
         transform: rotate(360deg)

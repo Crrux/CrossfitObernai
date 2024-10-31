@@ -284,16 +284,6 @@ input[type=submit]:hover {
 .collapsible .collapsible-content.active {
   max-height: 500px;
 }
-@media screen and (min-width: 768px) {
-  .collapsible .collapsible-content.inactive, .collapsible .collapsible-divbutton.inactive {
-    animation: radius5to10 0.3s linear forwards;
-  }
-}
-@media screen and (min-width: 768px) {
-  .collapsible .collapsible-content.active, .collapsible .collapsible-divbutton.active {
-    animation: radius10to5 0.3s linear forwards;
-  }
-}
 
 @keyframes rotate-down {
   from {
