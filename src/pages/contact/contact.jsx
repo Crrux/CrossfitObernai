@@ -156,6 +156,7 @@ function Contact() {
             <textarea
               id="message"
               name="message"
+              placeholder="Votre message..."
               rows={10}
               onChange={handleChange}
             />
