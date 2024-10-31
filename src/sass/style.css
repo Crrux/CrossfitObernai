@@ -21,11 +21,9 @@ header #Header_Logo {
   min-height: 2000px;
 }
 
-#class ol > li {
-  margin-top: 15px;
-}
-#class ol ul {
-  margin-top: 5px;
+#class .collapsible {
+  margin-bottom: 10px;
+  width: 50%;
 }
 
 #main_contact {
