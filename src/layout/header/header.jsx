@@ -6,7 +6,7 @@ function Header() {
     <header>
       <div className="logo">
         <Link to={"/"}>
-          <img src={Logo} alt="Logo" id="Header_Logo" />
+          <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
         </Link>
       </div>
       <nav>
