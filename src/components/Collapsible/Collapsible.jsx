@@ -52,8 +52,8 @@ function Collapsible({ titre, text, string }) {
         {text ? (
           <>
             <ul>
-              {text.map((text) => (
-                <li key={text}>{text}</li>
+              {text.map((text, index) => (
+                <li key={index}>{text}</li>
               ))}
             </ul>
           </>
