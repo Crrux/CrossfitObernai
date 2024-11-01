@@ -334,8 +334,5 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   min-height: 100dvh;
 }/*# sourceMappingURL=style.css.map */
