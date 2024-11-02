@@ -338,6 +338,9 @@ input[type=submit]:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root li {
+  list-style-type: "- ";
+}
 
 #root {
   width: 90%;
