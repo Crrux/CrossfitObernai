@@ -125,9 +125,23 @@ input[type=submit]:hover {
   justify-content: space-evenly;
   align-items: center;
 }
+#Contact_info p a {
+  margin-left: 3px;
+}
+@media (max-width: 767.98px) {
+  #Contact_info {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
 #Contact_info_Reseaux {
   display: flex;
   gap: 20px;
+}
+@media (max-width: 767.98px) {
+  #Contact_info_Reseaux {
+    justify-content: center;
+  }
 }
 #Contact_info_Reseaux img {
   width: 50px;
