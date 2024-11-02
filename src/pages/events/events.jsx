@@ -22,6 +22,14 @@ function Events() {
           &quot; pour vous challenger auprès de concurrents venus des quatre
           coins de la France !
         </li>
+        <li>
+          Une compétition interne par équipe, pour profiter d&apos;un événement
+          fun avec vos meilleurs teammates de la box !
+        </li>
+        <li>
+          Des weekends sportifs à la box ou ailleurs, des randonnées, marchés de
+          noël et bien d&apos;autres choses organisées par nos équipes !
+        </li>
       </ul>
     </>
   );
