@@ -169,8 +169,12 @@ function Contact() {
         <section id="Contact_info">
           <div>
             <p>
-              Addresse:{" "}
-              <a href="geo:0,0?q=Crossfit+Obernai,Obernai+France">
+              Adresse:
+              <a
+                href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
+                target="_blank"
+                rel="noreferrer"
+              >
                 4 rue du Thal, 67210 Obernai
               </a>
             </p>
@@ -178,7 +182,7 @@ function Contact() {
               Téléphone: <a href="tel:+33614030694">06.14.03.06.94</a>
             </p>
             <p>
-              email:{" "}
+              Email:
               <a href="mailto:crossfitobernai@gmail.com">
                 crossfitobernai@gmail.com
               </a>
