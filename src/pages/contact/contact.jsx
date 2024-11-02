@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import LogoFacebook from "/assets/logos_svg/logo_facebook.svg";
+import LogoInstagram from "/assets/logos_svg/logo_instagram.svg";
 
 function Contact() {
   // Initialize state for contact form data
@@ -164,6 +166,52 @@ function Contact() {
           </label>
           <input type="submit" value="Submit" disabled={hasErrors} />
         </form>
+        <section id="Contact_info">
+          <div>
+            <p>
+              Addresse:{" "}
+              <a href="geo:0,0?q=Crossfit+Obernai,Obernai+France">
+                4 rue du Thal, 67210 Obernai
+              </a>
+            </p>
+            <p>
+              Téléphone: <a href="tel:+33614030694">06.14.03.06.94</a>
+            </p>
+            <p>
+              email:{" "}
+              <a href="mailto:crossfitobernai@gmail.com">
+                crossfitobernai@gmail.com
+              </a>
+            </p>
+            <div id="Contact_info_Reseaux">
+              <a
+                href="https://www.facebook.com/cfobernai/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={LogoFacebook} alt="Lien Facebook"></img>
+              </a>
+              <a
+                href="https://www.instagram.com/crossfitobernai/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={LogoInstagram} alt="Lien Instagram" />
+              </a>
+            </div>
+          </div>
+          <iframe
+            width="450"
+            height="250"
+            // frameBorder="0"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${
+              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
+            }&q=Crossfit+Obernai,Obernai+France`}
+            allowFullScreen
+          ></iframe>
+        </section>
       </main>
     </>
   );

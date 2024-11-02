@@ -61,6 +61,7 @@ header #Header_Logo {
   width: 100%;
   max-width: 700px;
   box-sizing: border-box;
+  margin-bottom: 50px;
 }
 #form_contact_divname {
   display: flex;
@@ -115,6 +116,21 @@ input[type=submit] {
 }
 input[type=submit]:hover {
   background-color: #ff3814;
+}
+
+#Contact_info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#Contact_info_Reseaux {
+  display: flex;
+  gap: 20px;
+}
+#Contact_info_Reseaux img {
+  width: 50px;
 }
 
 .PopupPC {
