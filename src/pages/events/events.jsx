@@ -16,6 +16,8 @@ function Events() {
           <a
             style={{ textDecoration: "none" }}
             href="https://www.instagram.com/heroesteamcontest/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Heroes Team Contest
           </a>
