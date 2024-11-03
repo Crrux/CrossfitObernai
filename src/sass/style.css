@@ -191,6 +191,98 @@
     transform: rotate(360deg);
   }
 }
+.Carroussel {
+  display: none;
+}
+
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  height: 600px;
+  width: 100%;
+  align-items: center;
+}
+@media screen and (max-width: 767.98px) {
+  .slideshow-container {
+    height: 255px;
+  }
+}
+.slideshow-container .mySlides {
+  position: relative;
+  width: 100%;
+}
+.slideshow-container .mySlides .myPictures {
+  display: none;
+  width: 100%;
+}
+.slideshow-container .mySlides .myPictures--imgcontainer {
+  display: flex;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+@media screen and (max-width: 767.98px) {
+  .slideshow-container .mySlides .myPictures--imgcontainer {
+    border-radius: 10px;
+    max-height: 255px;
+  }
+}
+.slideshow-container .mySlides .myPictures--imgcontainer img {
+  width: 100%;
+}
+.slideshow-container .mySlides .myPictures--indexation {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 50%;
+  z-index: 10;
+}
+.slideshow-container .prev, .slideshow-container .next {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 278px;
+  color: white;
+  font-weight: bold;
+  font-size: 45px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 0 10px 10px 10px;
+}
+@media screen and (max-width: 767.98px) {
+  .slideshow-container .prev, .slideshow-container .next {
+    top: 105.5px;
+  }
+}
+.slideshow-container .prev:hover, .slideshow-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.slideshow-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.slideshow-container .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 header {
   display: flex;
   justify-content: space-evenly;

@@ -1,9 +1,12 @@
+import Slideshow from "../../components/Slideshow/Slideshow";
+
 function Home() {
+  const Slideshow_data = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"];
   return (
     <main className="Home">
       <h1>CrossFit Obernai</h1>
-      <section>
-        <p>slides</p>
+      <section id="Slideshow_container">
+        <Slideshow data={Slideshow_data} />
       </section>
       <section>
         <h2>Qu&apos;est-ce que le CrossFit </h2>
