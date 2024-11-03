@@ -29,6 +29,8 @@ function Slideshow({ data }) {
     }
     slides[n - 1].style.display = "block";
   };
+
+  // auto play
   const index = slideIndex;
   setTimeout(() => {
     if (slideIndex > data.length) {
