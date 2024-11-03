@@ -33,11 +33,7 @@ function Slideshow({ data }) {
   // auto play
   const index = slideIndex;
   setTimeout(() => {
-    if (slideIndex > data.length) {
-      setSlideIndex(1);
-    } else {
-      setSlideIndex(index + 1);
-    }
+    setSlideIndex(index + 1);
   }, 3000);
 
   return (
