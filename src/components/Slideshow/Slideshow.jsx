@@ -29,16 +29,14 @@ function Slideshow({ data }) {
     }
     slides[n - 1].style.display = "block";
   };
-  useEffect(() => {
-    const index = slideIndex;
-    setTimeout(() => {
-      if (slideIndex > data.length) {
-        setSlideIndex(1);
-      } else {
-        setSlideIndex(index + 1);
-      }
-    }, 3000);
-  });
+  const index = slideIndex;
+  setTimeout(() => {
+    if (slideIndex > data.length) {
+      setSlideIndex(1);
+    } else {
+      setSlideIndex(index + 1);
+    }
+  }, 3000);
 
   return (
     <section className="slideshow-container">
