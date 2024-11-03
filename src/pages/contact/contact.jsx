@@ -111,6 +111,7 @@ function Contact() {
                 name="name"
                 value={contact.name}
                 autoComplete="given-name"
+                autoFocus
                 required
                 onChange={handleChange}
               />
