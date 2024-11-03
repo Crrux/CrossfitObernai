@@ -218,14 +218,6 @@ header #Header_Logo {
 .Home {
   min-height: 2000px;
 }
-.Home .Carousel {
-  height: 500px;
-}
-.Home .Carousel img {
-  display: block;
-  height: 100%;
-  margin: auto;
-}
 
 #class .collapsible {
   margin-bottom: 10px;
@@ -363,6 +355,10 @@ input[type=submit]:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root li {
+  list-style-type: "- ";
+}
+
 #root {
   width: 90%;
   background-color: rgba(0, 0, 0, 0.062745098);
