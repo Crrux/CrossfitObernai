@@ -51,9 +51,9 @@ function Slideshow({ data }) {
                   <img src={`/assets/Slideshow/${pictures}`} />
                 </div>
 
-                <p className="myPictures--indexation">
+                {/* <p className="myPictures--indexation">
                   {slideIndex}/{data.length}
-                </p>
+                </p> */}
               </div>
             ))}
           </>
