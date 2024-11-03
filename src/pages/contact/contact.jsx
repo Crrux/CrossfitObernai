@@ -82,7 +82,8 @@ function Contact() {
       fieldValidationErrors.telError = telValid ? "" : " is invalid";
 
       // Validate message field
-      let messageValid = contact.message.length > 2;
+      let messageValid =
+        contact.message.length > 2 || contact.message.length === 0;
       fieldValidationErrors.messageError = messageValid
         ? ""
         : " must be at least 3 characters long if there is any input";
