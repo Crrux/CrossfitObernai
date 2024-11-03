@@ -310,6 +310,15 @@ header #Header_Logo {
 .Home {
   min-height: 2000px;
 }
+.Home #Slideshow_container {
+  aspect-ratio: 16/9;
+  width: 800px;
+}
+.Home .Slideshow_section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 #class .collapsible {
   margin-bottom: 10px;

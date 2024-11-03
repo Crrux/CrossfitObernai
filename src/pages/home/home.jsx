@@ -5,8 +5,10 @@ function Home() {
   return (
     <main className="Home">
       <h1>CrossFit Obernai</h1>
-      <section id="Slideshow_container">
-        <Slideshow data={Slideshow_data} />
+      <section className="Slideshow_section">
+        <div id="Slideshow_container">
+          <Slideshow data={Slideshow_data} />
+        </div>
       </section>
       <section>
         <h2>Qu&apos;est-ce que le CrossFit </h2>
