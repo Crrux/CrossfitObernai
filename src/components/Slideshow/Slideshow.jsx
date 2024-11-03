@@ -8,9 +8,9 @@ function Slideshow({ data }) {
     showSlides(slideIndex);
   }, [slideIndex]);
 
-  const plusSlides = (n) => {
-    setSlideIndex(slideIndex + n);
-  };
+  // const plusSlides = (n) => {
+  //   setSlideIndex(slideIndex + n);
+  // };
 
   const showSlides = (n) => {
     let i;
@@ -58,7 +58,7 @@ function Slideshow({ data }) {
         )}
       </div>
 
-      {data.length > 1 ? (
+      {/* {data.length > 1 ? (
         <button className="prev" onClick={() => plusSlides(-1)} type="button">
           &#10094;
         </button>
@@ -71,7 +71,7 @@ function Slideshow({ data }) {
         </button>
       ) : (
         ""
-      )}
+      )} */}
     </section>
   );
 }
