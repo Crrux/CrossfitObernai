@@ -1,152 +1,3 @@
-header {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 20px;
-}
-header a {
-  text-decoration: none;
-  color: white;
-}
-header nav {
-  display: flex;
-  gap: 10px;
-}
-header nav a {
-  background-color: rgba(255, 255, 255, 0.2274509804);
-  padding: 3px;
-  border-radius: 5px;
-}
-header #Header_Logo {
-  margin-top: 10px;
-  height: 100px;
-}
-
-.Home {
-  min-height: 2000px;
-}
-
-#class .collapsible {
-  margin-bottom: 10px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-#class .collapsible_container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  row-gap: 20px;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
-}
-
-#main_contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#main_contact h1 {
-  margin-bottom: 50px;
-}
-
-#form_contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #222;
-  color: #ddd;
-  padding: 20px;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 700px;
-  box-sizing: border-box;
-  margin-bottom: 50px;
-}
-#form_contact_divname {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-}
-#form_contact_divname label {
-  flex-grow: 1;
-}
-#form_contact_divname input {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-label {
-  display: block;
-  margin-bottom: 15px;
-}
-label p {
-  margin-bottom: 5px;
-}
-label input, label textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #2f2f2f;
-  color: #ddd;
-  box-sizing: border-box;
-}
-label input:focus, label textarea:focus {
-  outline: none;
-}
-label textarea {
-  resize: vertical;
-}
-label span {
-  color: #ff6347;
-  font-size: 0.8em;
-}
-
-input[type=submit] {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ddd;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: -moz-fit-content;
-  width: fit-content;
-  border-radius: 5px;
-}
-input[type=submit]:hover {
-  background-color: #ff3814;
-}
-
-#Contact_info {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-}
-#Contact_info p a {
-  margin-left: 3px;
-}
-@media (max-width: 767.98px) {
-  #Contact_info {
-    gap: 20px;
-    flex-direction: column;
-  }
-}
-#Contact_info_Reseaux {
-  display: flex;
-  gap: 20px;
-}
-@media (max-width: 767.98px) {
-  #Contact_info_Reseaux {
-    justify-content: center;
-  }
-}
-#Contact_info_Reseaux img {
-  width: 50px;
-}
-
 .PopupPC {
   position: fixed;
   bottom: 0;
@@ -340,6 +191,158 @@ input[type=submit]:hover {
     transform: rotate(360deg);
   }
 }
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
+header nav {
+  display: flex;
+  gap: 10px;
+}
+header nav a {
+  background-color: rgba(255, 255, 255, 0.2274509804);
+  padding: 3px;
+  border-radius: 5px;
+}
+header #Header_Logo {
+  margin-top: 10px;
+  height: 100px;
+}
+
+.Home {
+  min-height: 2000px;
+}
+
+#class .collapsible {
+  margin-bottom: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#class .collapsible_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  row-gap: 20px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+
+#main_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#main_contact h1 {
+  margin-bottom: 50px;
+}
+
+#form_contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #222;
+  color: #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+#form_contact_divname {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#form_contact_divname label {
+  flex-grow: 1;
+}
+#form_contact_divname input {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+label p {
+  margin-bottom: 5px;
+}
+label input, label textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2f2f2f;
+  color: #ddd;
+  box-sizing: border-box;
+}
+label input:focus, label textarea:focus {
+  outline: none;
+}
+label textarea {
+  resize: vertical;
+}
+label span {
+  color: #ff6347;
+  font-size: 0.8em;
+}
+label #tel, label #email {
+  max-width: 300px;
+}
+
+input[type=submit] {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 5px;
+}
+input[type=submit]:hover {
+  background-color: #ff3814;
+}
+
+#Contact_info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#Contact_info p a {
+  margin-left: 3px;
+}
+@media (max-width: 767.98px) {
+  #Contact_info {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+#Contact_info_Reseaux {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 767.98px) {
+  #Contact_info_Reseaux {
+    justify-content: center;
+  }
+}
+#Contact_info_Reseaux img {
+  width: 50px;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
