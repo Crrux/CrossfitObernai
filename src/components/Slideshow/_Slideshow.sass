@@ -1,0 +1,74 @@
+$container-height: 600px
+$container-height-mobile: 255px
+
+.Carroussel
+    display: none
+
+.slideshow-container
+    width: 100%
+    position: relative
+    margin: auto
+    display: flex
+    height: $container-height
+    width: 100%
+    align-items: center
+
+    @media screen and ( max-width: $layout-breakpoint-small )
+        height: $container-height-mobile
+
+    .mySlides
+        position: relative
+        width: 100%
+        .myPictures
+            display: none
+            width: 100%
+            &--imgcontainer
+                display: flex
+                align-items: center
+                height: fit-content
+                max-height: $container-height
+                overflow: hidden
+                border-radius: 25px
+                @media screen and ( max-width: $layout-breakpoint-small )
+                    border-radius: 10px
+                    max-height: $container-height-mobile
+                img
+                    width: 100%
+
+            &--indexation
+                position: absolute
+                color: white
+                bottom: 0
+                left: 50%
+                z-index: 10
+
+    .prev, .next
+        background: none
+        border: none
+        cursor: pointer
+        position: absolute
+        top: calc( ($container-height / 2) - 22px )
+        color: white
+        font-weight: bold
+        font-size: 45px
+        transition: 0.6s ease
+        border-radius: 0 3px 3px 0
+        user-select: none
+        padding: 0 10px 10px 10px
+
+        @media screen and ( max-width: $layout-breakpoint-small )
+            top: calc( ($container-height-mobile / 2) - 22px )
+        &:hover
+            background-color: rgba(0, 0, 0, 0.8)
+    .next
+        right: 0
+        border-radius: 3px 0 0 3px
+    .fade
+        animation-name: fade
+        animation-duration: 1.5s
+
+@keyframes fade
+    from
+        opacity: .4
+    to
+        opacity: 1
