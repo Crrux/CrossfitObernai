@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Popup from "./components/popup/popup";
 
 import Header from "./layout/header/header";
+import Footer from "./layout/footer/footer";
 
 import Home from "./pages/home/home";
 import Class from "./pages/class/class";
@@ -27,6 +28,7 @@ function App() {
           <Route path="events" element={<Events />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

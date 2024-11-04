@@ -1,0 +1,21 @@
+footer
+    #Contact_info
+        display: flex
+        flex-direction: row
+        width: 100%
+        justify-content: space-evenly
+        align-items: center
+        p
+            a
+                margin-left: 3px
+        @media (max-width: $layout-breakpoint-small)
+            gap: 20px
+            flex-direction: column
+
+        &_Reseaux
+            display: flex
+            gap: 20px
+            @media (max-width: $layout-breakpoint-small)
+                justify-content: center
+            img
+                width: 50px
