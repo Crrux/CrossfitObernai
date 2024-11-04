@@ -1,6 +1,6 @@
 function Events() {
   return (
-    <>
+    <main>
       <h1>Nos evenements</h1>
       <p>
         Toute l&apos;année, nos événements viennent dynamiser la vie de la box.
@@ -33,7 +33,7 @@ function Events() {
           noël et bien d&apos;autres choses organisées par nos équipes !
         </li>
       </ul>
-    </>
+    </main>
   );
 }
 

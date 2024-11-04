@@ -1,6 +1,6 @@
 function Offers() {
   return (
-    <>
+    <main>
       <h1>Nos Offres</h1>
       <h2>Les abonnements</h2>
       <p>
@@ -48,7 +48,7 @@ function Offers() {
         <li>Pack 10 séances: validité de 12 mois, renouvelable.</li>
         <li>Pack 20 séances: validité de 12 mois, renouvelable.</li>
       </ul>
-    </>
+    </main>
   );
 }
 
