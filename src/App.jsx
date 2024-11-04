@@ -12,6 +12,7 @@ import Offers from "./pages/offers/offers";
 import Contact from "./pages/contact/contact";
 import Events from "./pages/events/events";
 import Error from "./pages/error/error";
+import MentionLegale from "./pages/legal_notices/legal_notices";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="events" element={<Events />} />
           <Route path="*" element={<Error />} />
+          <Route path="mentions-legales" element={<MentionLegale />} />
         </Routes>
         <Footer />
       </BrowserRouter>

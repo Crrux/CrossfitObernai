@@ -16,6 +16,7 @@ $layout-breakpoint-tablet-max: 1024px
 @import "../pages/planning/_planning"
 @import "../pages/offers/_offers"
 @import "../pages/error/_error"
+@import "../pages/legal_notices/_legal_notices"
 
 :root
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
@@ -37,9 +38,13 @@ $layout-breakpoint-tablet-max: 1024px
     width: 90%
     background-color: #00000010
     padding: 0 30px
+    display: flex
+    flex-direction: column
 body
     width: 100%
     margin: 0
     display: flex
     justify-content: center
     min-height: 100dvh
+    main
+        flex-grow: 1

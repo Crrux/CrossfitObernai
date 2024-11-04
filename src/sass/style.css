@@ -307,6 +307,9 @@ header #Header_Logo {
   height: 100px;
 }
 
+footer {
+  padding-bottom: 20px;
+}
 footer #Contact_info {
   display: flex;
   flex-direction: row;
@@ -464,6 +467,8 @@ input[type=submit]:hover {
   width: 90%;
   background-color: rgba(0, 0, 0, 0.062745098);
   padding: 0 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -472,4 +477,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100dvh;
+}
+body main {
+  flex-grow: 1;
 }/*# sourceMappingURL=style.css.map */

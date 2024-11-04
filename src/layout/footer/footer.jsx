@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LogoFacebook from "/assets/logos_svg/logo_facebook.svg";
 import LogoInstagram from "/assets/logos_svg/logo_instagram.svg";
 
@@ -87,6 +88,11 @@ function Footer() {
           allowFullScreen
         ></iframe>
       </section>
+      <div>
+        <p>
+          <Link to="/mentions-legales">Mentions legales</Link>
+        </p>
+      </div>
     </footer>
   );
 }
