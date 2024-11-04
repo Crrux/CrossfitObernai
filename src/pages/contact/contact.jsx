@@ -226,6 +226,8 @@ function Contact() {
                 <p>Adresse: 4 rue du Thal, 67210 Obernai</p>
                 <p>Téléphone: 06.14.03.06.94</p>
                 <p>Email: crossfitobernai@gmail.com</p>
+                {/* //TODO: horaires de la box  */}
+                <p>Horaire?</p>
                 <div id="Contact_info_Reseaux">
                   <a
                     href="https://www.facebook.com/cfobernai/"
