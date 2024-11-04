@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+
 import LogoFacebook from "/assets/logos_svg/logo_facebook.svg";
 import LogoInstagram from "/assets/logos_svg/logo_instagram.svg";
 
@@ -85,7 +87,7 @@ function Contact() {
       let messageValid = contact.message.length > 2;
       fieldValidationErrors.messageError = messageValid
         ? ""
-        : " must be at least 3 characters long if there is any input";
+        : " must be at least 3 characters long";
 
       setErrors(fieldValidationErrors);
     };
