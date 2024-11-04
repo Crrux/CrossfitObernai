@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import LogoFacebook from "/assets/logos_svg/logo_facebook.svg";
 import LogoInstagram from "/assets/logos_svg/logo_instagram.svg";
@@ -14,6 +15,9 @@ function Contact() {
     tel: "",
     message: "",
   });
+
+  const [captchaValue, setCaptchaValue] = useState(null);
+  console.log(captchaValue);
 
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
@@ -171,6 +175,10 @@ function Contact() {
             />
             {errors.messageError && <span>{errors.messageError}</span>}
           </label>
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_REACT_APP_GOOGLE_RECAPTCHA_KEY}
+            onChange={(val) => setCaptchaValue(val)}
+          />
           <input type="submit" value="Submit" disabled={hasErrors} />
         </form>
         <section id="Contact_info">
