@@ -7,13 +7,43 @@ header
     a
         text-decoration: none
         color: white
+
     nav
         display: flex
         gap: 10px
         a
-            background-color: #ffffff3a
+            // background-color: #ffffff3a
             padding: 3px
             border-radius: 5px
+            position: relative
+            width: fit-content
+            &:hover:not(.activeNavLink)
+                &:after
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 70%
+                    height: 3px
+                    background: linear-gradient(to right,#ffffff1a 0, #d11717 50%, #ffffff1a 100%)
+                    left: 50%
+                    transform: translateX(-50%)
+                    animation: width_animation 0.3s ease-in-out forwards
+        .activeNavLink
+            &:after
+                content: ''
+                display: block
+                position: absolute
+                width: 70%
+                height: 3px
+                background: linear-gradient(to right,#ffffff1a 0, #d11717 50%, #ffffff1a 100%)
+                left: 50%
+                transform: translateX(-50%)
     #Header_Logo
         margin-top: 10px
         height: 100px
+
+@keyframes width_animation
+    0%
+        width: 0%
+    100%
+        width: 70%

@@ -298,15 +298,46 @@ header nav {
   gap: 10px;
 }
 header nav a {
-  background-color: rgba(255, 255, 255, 0.2274509804);
   padding: 3px;
   border-radius: 5px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+header nav a:hover:not(.activeNavLink):after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #d11717 50%, rgba(255, 255, 255, 0.1019607843) 100%);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: width_animation 0.3s ease-in-out forwards;
+}
+header nav .activeNavLink:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #d11717 50%, rgba(255, 255, 255, 0.1019607843) 100%);
+  left: 50%;
+  transform: translateX(-50%);
 }
 header #Header_Logo {
   margin-top: 10px;
   height: 100px;
 }
 
+@keyframes width_animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
 footer {
   padding-bottom: 20px;
 }
