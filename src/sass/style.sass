@@ -41,8 +41,10 @@ $layout-breakpoint-tablet-max: 1024px
     padding: 0 30px
     display: flex
     flex-direction: column
+    @media (max-width: $layout-breakpoint-small)
+        width: 80%
 body
-    width: 100vw
+    width: 100dvw
     margin: 0
     display: flex
     justify-content: center

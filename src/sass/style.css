@@ -691,9 +691,14 @@ input[type=submit]:hover {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 767.98px) {
+  #root {
+    width: 80%;
+  }
+}
 
 body {
-  width: 100vw;
+  width: 100dvw;
   margin: 0;
   display: flex;
   justify-content: center;
