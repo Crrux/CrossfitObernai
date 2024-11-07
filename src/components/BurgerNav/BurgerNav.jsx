@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LogoHeader from "/assets/Header_logo.png";
 
 function BurgerNav() {
   const [isOpen, setIsOpen] = useState(false);
