@@ -3,7 +3,7 @@ import LogoFacebook from "/assets/logos_svg/logo_facebook.svg";
 import LogoInstagram from "/assets/logos_svg/logo_instagram.svg";
 
 function Footer() {
-  const test = true;
+  // const test = true;
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
   if (width <= 767.97) {
@@ -86,7 +86,7 @@ function Footer() {
             </>
           )}
         </div>
-        {test ? (
+        {/* {test ? (
           " "
         ) : (
           <iframe
@@ -100,7 +100,18 @@ function Footer() {
             }&q=Crossfit+Obernai,Obernai+France`}
             allowFullScreen
           ></iframe>
-        )}
+        )} */}
+        <iframe
+          width="450"
+          height="250"
+          frameBorder="0"
+          style={{ border: 0 }}
+          referrerPolicy="no-referrer-when-downgrade"
+          src={`https://www.google.com/maps/embed/v1/place?key=${
+            import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
+          }&q=Crossfit+Obernai,Obernai+France`}
+          allowFullScreen
+        ></iframe>
       </section>
       <div>
         <p>
