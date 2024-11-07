@@ -1,17 +1,23 @@
 import Slideshow from "../../components/Slideshow/Slideshow";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.png";
 
 function Home() {
   const Slideshow_data = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"];
   return (
     <main className="Home">
-      <h1>CrossFit Obernai</h1>
       <section className="Slideshow_section">
         <div id="Slideshow_container">
           <Slideshow data={Slideshow_data} />
         </div>
       </section>
       <section>
-        <h2>Qu&apos;est-ce que le CrossFit </h2>
+        <div className="main__header">
+          <div className="title_container">
+            <img src={TitleBackgroundImage} alt="Background" />
+            <p>Qu&apos;est que</p>
+            <h1>Le Crossfit</h1>
+          </div>
+        </div>
         <p>
           Le CrossFit est un programme d&apos;entraînement général adapté à
           tous, quelle que soit ta condition physique ou ton âge.
