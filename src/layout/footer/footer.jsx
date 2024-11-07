@@ -106,17 +106,19 @@ function Footer() {
             allowFullScreen
           ></iframe>
         )} */}
-        <iframe
-          width="450"
-          height="250"
-          frameBorder="0"
-          style={{ border: 0 }}
-          referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${
-            import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
-          }&q=Crossfit+Obernai,Obernai+France`}
-          allowFullScreen
-        ></iframe>
+        <div id="Google_map">
+          <iframe
+            width="100%"
+            height="250"
+            frameBorder="0"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${
+              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
+            }&q=Crossfit+Obernai,Obernai+France`}
+            allowFullScreen
+          ></iframe>
+        </div>
       </section>
       <div>
         <p>
