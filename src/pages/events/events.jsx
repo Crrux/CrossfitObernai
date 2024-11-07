@@ -1,7 +1,13 @@
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Evenements.png";
+
 function Events() {
   return (
-    <main>
-      <h1>Nos evenements</h1>
+    <main id="event_main">
+      <div className="title_container">
+        <img src={TitleBackgroundImage} alt="Background" />
+        <p>Toute l&apos;année</p>
+        <h1>Nos evenements</h1>
+      </div>
       <p>
         Toute l&apos;année, nos événements viennent dynamiser la vie de la box.
         A quoi vous attendre ?
