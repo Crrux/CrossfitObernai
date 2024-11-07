@@ -450,7 +450,8 @@ header #NavPc .activeNavLink:after {
 }
 header #Header_Logo {
   margin-top: 10px;
-  height: 200px;
+  max-height: 200px;
+  max-width: 100%;
 }
 
 @keyframes width_animation {
@@ -692,7 +693,7 @@ input[type=submit]:hover {
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   margin: 0;
   display: flex;
   justify-content: center;
