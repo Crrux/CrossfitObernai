@@ -363,7 +363,7 @@
     position: fixed;
     right: -100vw;
     bottom: 0;
-    height: 100vh;
+    height: 100%;
     padding: 2rem;
     background-color: #000;
     visibility: hidden;
@@ -371,7 +371,7 @@
   }
   .show-nav .navbar__links {
     right: 0;
-    width: 100vw;
+    width: 100%;
     visibility: visible;
   }
   .show-nav .burger-bar:before {
