@@ -12,15 +12,16 @@ function Header() {
   }
   return (
     <header>
+      <div className="logo">
+        <Link to={"/"}>
+          <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
+        </Link>
+      </div>
+
       {isTabletorAbove ? (
         <BurgerNav />
       ) : (
         <>
-          <div className="logo">
-            <Link to={"/"}>
-              <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
-            </Link>
-          </div>
           <nav id="NavPc">
             <Link
               to={"class"}
