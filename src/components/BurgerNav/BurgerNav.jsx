@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Logo from "/assets/Header_logo.png";
+
 function BurgerNav() {
   const [isOpen, setIsOpen] = useState(false);
   const handleShowLinks = () => setIsOpen(!isOpen);
   return (
     <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
       <ul className="navbar__links">
+        <li className="navbar__logo">
+          <Link to={"/"} onClick={handleShowLinks}>
+            <img src={Logo} id="navburger-logo" />
+          </Link>
+        </li>
         <li className="navbar__item">
           <Link to={"/"} className={`navbar__link`} onClick={handleShowLinks}>
             Acceuil
