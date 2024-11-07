@@ -296,9 +296,14 @@
   position: fixed;
   width: 100vw;
   minh-height: 75px;
-  background-color: #000;
   color: white;
   z-index: 10;
+}
+.navbar__logo {
+  z-index: 11;
+}
+.navbar__logo img {
+  width: 15%;
 }
 .navbar__links {
   display: flex;
@@ -310,6 +315,7 @@
 .navbar__burger {
   width: 40px;
   height: 40px;
+  z-index: 12;
   background: transparent;
   border: none;
   color: inherit;
@@ -328,7 +334,7 @@
   .navbar__link {
     display: block;
     padding: 1.5rem;
-    fontsize: 5vw;
+    font-size: 5vw;
   }
   .navbar__burger {
     display: block;
@@ -412,18 +418,18 @@ header a {
   text-decoration: none;
   color: white;
 }
-header nav {
+header #NavPc {
   display: flex;
   gap: 10px;
 }
-header nav a {
+header #NavPc a {
   padding: 3px;
   border-radius: 5px;
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
 }
-header nav a:hover:not(.activeNavLink):after {
+header #NavPc a:hover:not(.activeNavLink):after {
   content: "";
   display: block;
   position: absolute;
@@ -434,7 +440,7 @@ header nav a:hover:not(.activeNavLink):after {
   transform: translateX(-50%);
   animation: width_animation 0.3s ease-in-out forwards;
 }
-header nav .activeNavLink:after {
+header #NavPc .activeNavLink:after {
   content: "";
   display: block;
   position: absolute;

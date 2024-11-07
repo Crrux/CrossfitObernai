@@ -7,9 +7,12 @@
     position: fixed
     width: 100vw
     minh-height: 75px
-    background-color: #000
     color: white
     z-index: 10
+    &__logo
+        z-index: 11
+        img
+            width: 15%
     &__links
         display: flex
     &__link
@@ -18,6 +21,7 @@
     &__burger
         width: 40px
         height: 40px
+        z-index: 12
         background: transparent
         border: none
         color: inherit
@@ -34,7 +38,7 @@
         &__link
             display: block
             padding: 1.5rem
-            fontsize: 5vw
+            font-size: 5vw
         &__burger
             display: block
             position: fixed
