@@ -54,7 +54,7 @@ function Footer() {
           ) : (
             <>
               <p>
-                Adresse:
+                <strong>Adresse : </strong>
                 <a
                   href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
                   target="_blank"
@@ -63,8 +63,13 @@ function Footer() {
                   4 rue du Thal, 67210 Obernai
                 </a>
               </p>
-              <p>Téléphone: 06.14.03.06.94</p>
-              <p>Email: crossfitobernai@gmail.com</p>
+              <p>
+                <strong>Téléphone : </strong> 06.14.03.06.94
+              </p>
+              <p>
+                {" "}
+                <strong>Email : </strong> crossfitobernai@gmail.com
+              </p>
               {/* //TODO: horaires de la box  */}
               <p>Horaire?</p>
               <div id="Contact_info_Reseaux">
