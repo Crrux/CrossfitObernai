@@ -1,7 +1,7 @@
 function Planning() {
   return (
     <main>
-      <p>Planning</p>
+      <h1>Planning</h1>
     </main>
   );
 }
