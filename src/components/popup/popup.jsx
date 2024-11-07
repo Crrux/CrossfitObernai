@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import PopupImage from "/assets/popup/Popup_image.png";
+import PopupImage from "/assets/popup/Popup_pc.png";
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);

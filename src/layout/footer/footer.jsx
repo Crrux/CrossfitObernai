@@ -3,6 +3,7 @@ import LogoFacebook from "/assets/logos_svg/logo_facebook.svg";
 import LogoInstagram from "/assets/logos_svg/logo_instagram.svg";
 
 function Footer() {
+  const test = true;
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
   if (width <= 767.97) {
@@ -52,7 +53,16 @@ function Footer() {
             </>
           ) : (
             <>
-              <p>Adresse: 4 rue du Thal, 67210 Obernai</p>
+              <p>
+                Adresse:
+                <a
+                  href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  4 rue du Thal, 67210 Obernai
+                </a>
+              </p>
               <p>Téléphone: 06.14.03.06.94</p>
               <p>Email: crossfitobernai@gmail.com</p>
               {/* //TODO: horaires de la box  */}
@@ -76,17 +86,21 @@ function Footer() {
             </>
           )}
         </div>
-        <iframe
-          width="450"
-          height="250"
-          frameBorder="0"
-          style={{ border: 0 }}
-          referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${
-            import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
-          }&q=Crossfit+Obernai,Obernai+France`}
-          allowFullScreen
-        ></iframe>
+        {test ? (
+          " "
+        ) : (
+          <iframe
+            width="450"
+            height="250"
+            frameBorder="0"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${
+              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
+            }&q=Crossfit+Obernai,Obernai+France`}
+            allowFullScreen
+          ></iframe>
+        )}
       </section>
       <div>
         <p>

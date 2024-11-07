@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 function Contact() {
   // Initialize state for contact form data
@@ -13,8 +13,8 @@ function Contact() {
     message: "",
   });
 
-  const [captchaValue, setCaptchaValue] = useState(null);
-  console.log(captchaValue);
+  // const [captchaValue, setCaptchaValue] = useState(null);
+  // console.log(captchaValue);
 
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
@@ -167,10 +167,10 @@ function Contact() {
             />
             {errors.messageError && <span>{errors.messageError}</span>}
           </label>
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             sitekey={import.meta.env.VITE_REACT_APP_GOOGLE_RECAPTCHA_KEY}
             onChange={(val) => setCaptchaValue(val)}
-          />
+          /> */}
           <input type="submit" value="Submit" disabled={hasErrors} />
         </form>
       </main>
