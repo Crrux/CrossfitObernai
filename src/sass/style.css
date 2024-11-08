@@ -789,6 +789,10 @@ body main {
   flex-grow: 1;
 }
 
+.main__header p {
+  z-index: -1;
+}
+
 @media (max-width: 767.98px) {
   .main__header {
     display: flex;
