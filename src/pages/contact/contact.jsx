@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 
 function Contact() {
-  window.scrollTo(0, 0);
   // Initialize state for contact form data
   const [contact, setContact] = useState({
     name: "",
@@ -14,6 +13,11 @@ function Contact() {
     message: "",
   });
 
+  // Initialize state for form submission status
+  const [isFormSent, setisFormSent] = useState(false);
+  const [isFormLoading, setIsFormLoading] = useState(false);
+  console.log(isFormLoading);
+
   // const [captchaValue, setCaptchaValue] = useState(null);
   // console.log(captchaValue);
 
@@ -22,9 +26,6 @@ function Contact() {
 
   // Initialize state for form validation errors
   const [errors, setErrors] = useState({});
-
-  // Initialize state for form submission status
-  // const [submitted, setSubmitted] = useState(false);
 
   // Handle changes in form input fields
   const handleChange = (event) => {
@@ -38,15 +39,29 @@ function Contact() {
   // TODO: Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
-    // setSubmitted(true);
-
     // If there are no validation errors, submit the form data
     if (!hasErrors) {
-      axios
-        .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
-        .then((res) => {
-          console.log(res.data);
-        });
+      setIsFormLoading(true);
+      try {
+        setIsFormLoading(true);
+        axios
+          .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
+          .then((res) => {
+            console.log(res.data);
+            setisFormSent(true);
+          })
+          .catch((error) => {
+            console.log(isFormSent);
+            console.error("erreur");
+            console.error(error);
+          })
+          .finally(() => {
+            setIsFormLoading(false);
+          });
+      } catch (error) {
+        console.error(error);
+        setIsFormLoading(false);
+      }
     } else {
       // If there are validation errors, log them to the console
       console.log(errors);
