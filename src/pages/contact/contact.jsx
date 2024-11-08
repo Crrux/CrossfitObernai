@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 
 function Contact() {
+  window.scrollTo(0, 0);
   // Initialize state for contact form data
   const [contact, setContact] = useState({
     name: "",

@@ -3,6 +3,7 @@ import TitleBackgroundImage from "/assets/title_background/TitleBackground_Cross
 
 function Home() {
   const Slideshow_data = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"];
+  window.scrollTo(0, 0);
   return (
     <main className="Home">
       <section className="Slideshow_section">
