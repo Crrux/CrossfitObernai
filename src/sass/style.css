@@ -295,7 +295,7 @@
   padding: 1rem;
   position: fixed;
   width: 100vw;
-  minh-height: 75px;
+  min-height: 75px;
   color: white;
   z-index: 10;
 }
@@ -684,6 +684,10 @@ input[type=submit]:hover {
   outline: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #root {
   width: 90%;
   background-color: rgba(0, 0, 0, 0.062745098);
@@ -693,7 +697,7 @@ input[type=submit]:hover {
 }
 @media (max-width: 767.98px) {
   #root {
-    width: 80%;
+    width: 100%;
   }
 }
 
