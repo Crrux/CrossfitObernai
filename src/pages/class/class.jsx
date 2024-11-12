@@ -1,7 +1,6 @@
 import Collapsible from "../../components/Collapsible/Collapsible";
 
 function Class() {
-  window.scrollTo(0, 0);
   return (
     <main id="class">
       <h1 id="test">Nos Cours</h1>

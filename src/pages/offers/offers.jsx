@@ -1,5 +1,4 @@
 function Offers() {
-  window.scrollTo(0, 0);
   return (
     <main>
       <h1>Nos Offres</h1>

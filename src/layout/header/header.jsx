@@ -10,10 +10,13 @@ function Header() {
   if (width <= 767.97) {
     isTabletorAbove = true;
   }
+  const HandleRedirect = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <header>
       <div className="logo">
-        <Link to={"/"}>
+        <Link to={"/"} onClick={HandleRedirect}>
           <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
         </Link>
       </div>
@@ -26,6 +29,7 @@ function Header() {
             <Link
               to={"class"}
               className={location.pathname === "/class" ? "activeNavLink" : ""}
+              onClick={HandleRedirect}
             >
               Nos cours
             </Link>
@@ -34,12 +38,14 @@ function Header() {
               className={
                 location.pathname === "/planning" ? "activeNavLink" : ""
               }
+              onClick={HandleRedirect}
             >
               Planning
             </Link>
             <Link
               to={"offres"}
               className={location.pathname === "/offres" ? "activeNavLink" : ""}
+              onClick={HandleRedirect}
             >
               Les offres
             </Link>
@@ -48,16 +54,20 @@ function Header() {
               className={
                 location.pathname === "/contact" ? "activeNavLink" : ""
               }
+              onClick={HandleRedirect}
             >
               Contact
             </Link>
             <Link
               to={"events"}
               className={location.pathname === "/events" ? "activeNavLink" : ""}
+              onClick={HandleRedirect}
             >
               Evenements
             </Link>
-            <Link to={"testerreur"}>Test erreur</Link>
+            <Link to={"testerreur"} onClick={HandleRedirect}>
+              Test erreur
+            </Link>
           </nav>
         </>
       )}

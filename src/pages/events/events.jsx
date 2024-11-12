@@ -1,7 +1,6 @@
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Evenements.png";
 
 function Events() {
-  window.scrollTo(0, 0);
   return (
     <main id="event_main">
       <div className="main__header">

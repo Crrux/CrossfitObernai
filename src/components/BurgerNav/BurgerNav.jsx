@@ -6,6 +6,10 @@ import Logo from "/assets/Header_logo.png";
 function BurgerNav() {
   const [isOpen, setIsOpen] = useState(false);
   const handleShowLinks = () => setIsOpen(!isOpen);
+  const handleShowLinksRedirect = () => {
+    window.scrollTo(0, 0);
+    setIsOpen(!isOpen);
+  };
   return (
     <>
       <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
@@ -17,12 +21,16 @@ function BurgerNav() {
       <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
         <ul className="navbar__links">
           <li className="navbar__logo">
-            <Link to={"/"} onClick={handleShowLinks}>
+            <Link to={"/"} onClick={handleShowLinksRedirect}>
               <img src={Logo} id="navburger-logo" />
             </Link>
           </li>
           <li className="navbar__item">
-            <Link to={"/"} className={`navbar__link`} onClick={handleShowLinks}>
+            <Link
+              to={"/"}
+              className={`navbar__link`}
+              onClick={handleShowLinksRedirect}
+            >
               Acceuil
             </Link>
           </li>
@@ -30,7 +38,7 @@ function BurgerNav() {
             <Link
               to={"class"}
               className={`navbar__link`}
-              onClick={handleShowLinks}
+              onClick={handleShowLinksRedirect}
             >
               Nos Cours
             </Link>
@@ -39,7 +47,7 @@ function BurgerNav() {
             <Link
               to={"planning"}
               className={`navbar__link`}
-              onClick={handleShowLinks}
+              onClick={handleShowLinksRedirect}
             >
               Planning
             </Link>
@@ -48,7 +56,7 @@ function BurgerNav() {
             <Link
               to={"offres"}
               className={`navbar__link`}
-              onClick={handleShowLinks}
+              onClick={handleShowLinksRedirect}
             >
               Les offres
             </Link>
@@ -57,7 +65,7 @@ function BurgerNav() {
             <Link
               to={"contact"}
               className={`navbar__link`}
-              onClick={handleShowLinks}
+              onClick={handleShowLinksRedirect}
             >
               Contact
             </Link>
@@ -66,7 +74,7 @@ function BurgerNav() {
             <Link
               to={"events"}
               className={`navbar__link`}
-              onClick={handleShowLinks}
+              onClick={handleShowLinksRedirect}
             >
               Evenements
             </Link>
@@ -75,7 +83,7 @@ function BurgerNav() {
             <Link
               to={"testerreur"}
               className={`navbar__link`}
-              onClick={handleShowLinks}
+              onClick={handleShowLinksRedirect}
             >
               Test erreur
             </Link>
