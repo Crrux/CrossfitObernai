@@ -10,13 +10,13 @@ function Header() {
   if (width <= 767.97) {
     isTabletorAbove = true;
   }
-  const HandleRedirect = () => {
+  const HandleRedirectDisplay = () => {
     window.scrollTo(0, 0);
   };
   return (
     <header>
       <div className="logo">
-        <Link to={"/"} onClick={HandleRedirect}>
+        <Link to={"/"} onClick={HandleRedirectDisplay}>
           <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
         </Link>
       </div>
@@ -29,7 +29,7 @@ function Header() {
             <Link
               to={"class"}
               className={location.pathname === "/class" ? "activeNavLink" : ""}
-              onClick={HandleRedirect}
+              onClick={HandleRedirectDisplay}
             >
               Nos cours
             </Link>
@@ -38,14 +38,14 @@ function Header() {
               className={
                 location.pathname === "/planning" ? "activeNavLink" : ""
               }
-              onClick={HandleRedirect}
+              onClick={HandleRedirectDisplay}
             >
               Planning
             </Link>
             <Link
               to={"offres"}
               className={location.pathname === "/offres" ? "activeNavLink" : ""}
-              onClick={HandleRedirect}
+              onClick={HandleRedirectDisplay}
             >
               Les offres
             </Link>
@@ -54,18 +54,18 @@ function Header() {
               className={
                 location.pathname === "/contact" ? "activeNavLink" : ""
               }
-              onClick={HandleRedirect}
+              onClick={HandleRedirectDisplay}
             >
               Contact
             </Link>
             <Link
               to={"events"}
               className={location.pathname === "/events" ? "activeNavLink" : ""}
-              onClick={HandleRedirect}
+              onClick={HandleRedirectDisplay}
             >
               Evenements
             </Link>
-            <Link to={"testerreur"} onClick={HandleRedirect}>
+            <Link to={"testerreur"} onClick={HandleRedirectDisplay}>
               Test erreur
             </Link>
           </nav>
