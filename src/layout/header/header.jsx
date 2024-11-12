@@ -7,12 +7,15 @@ function Header() {
   const location = useLocation();
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
+
   if (width <= 767.97) {
     isTabletorAbove = true;
   }
+
   const HandleRedirectDisplay = () => {
     window.scrollTo(0, 0);
   };
+
   return (
     <header>
       <div className="logo">
