@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "/assets/Header_logo.png";
+import { LinksLocal } from "../../layout/header/links";
 
 function BurgerNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,16 +11,11 @@ function BurgerNav() {
     window.scrollTo(0, 0);
     setIsOpen(!isOpen);
   };
-  return (
-    <>
-      <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
-        <button className="navbar__burger" onClick={handleShowLinks}>
-          <span className="burger-bar"></span>
-        </button>
-      </div>
 
-      <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
-        <ul className="navbar__links">
+  const renderNavigation = () => {
+    if (LinksLocal) {
+      return (
+        <>
           <li className="navbar__logo">
             <Link to={"/"} onClick={handleShowLinksRedirect}>
               <img src={Logo} id="navburger-logo" />
@@ -36,7 +32,7 @@ function BurgerNav() {
           </li>
           <li className="navbar__item">
             <Link
-              to={"cours"}
+              to={LinksLocal.class}
               className={`navbar__link`}
               onClick={handleShowLinksRedirect}
             >
@@ -45,7 +41,7 @@ function BurgerNav() {
           </li>
           <li className="navbar__item">
             <Link
-              to={"planning"}
+              to={LinksLocal.planning}
               className={`navbar__link`}
               onClick={handleShowLinksRedirect}
             >
@@ -54,7 +50,7 @@ function BurgerNav() {
           </li>
           <li className="navbar__item">
             <Link
-              to={"offres"}
+              to={LinksLocal.offers}
               className={`navbar__link`}
               onClick={handleShowLinksRedirect}
             >
@@ -63,7 +59,7 @@ function BurgerNav() {
           </li>
           <li className="navbar__item">
             <Link
-              to={"contact"}
+              to={LinksLocal.contact}
               className={`navbar__link`}
               onClick={handleShowLinksRedirect}
             >
@@ -72,7 +68,7 @@ function BurgerNav() {
           </li>
           <li className="navbar__item">
             <Link
-              to={"events"}
+              to={LinksLocal.events}
               className={`navbar__link`}
               onClick={handleShowLinksRedirect}
             >
@@ -88,7 +84,21 @@ function BurgerNav() {
               Test erreur
             </Link>
           </li>
-        </ul>
+        </>
+      );
+    }
+    return null;
+  };
+  return (
+    <>
+      <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
+        <button className="navbar__burger" onClick={handleShowLinks}>
+          <span className="burger-bar"></span>
+        </button>
+      </div>
+
+      <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
+        <ul className="navbar__links">{renderNavigation(LinksLocal)}</ul>
       </nav>
     </>
   );
