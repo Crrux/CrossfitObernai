@@ -36,7 +36,7 @@ function BurgerNav() {
           </li>
           <li className="navbar__item">
             <Link
-              to={"class"}
+              to={"cours"}
               className={`navbar__link`}
               onClick={handleShowLinksRedirect}
             >

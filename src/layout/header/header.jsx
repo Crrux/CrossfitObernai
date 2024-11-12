@@ -30,7 +30,7 @@ function Header() {
         <>
           <nav id="NavPc">
             <Link
-              to={"class"}
+              to={"cours"}
               className={location.pathname === "/class" ? "activeNavLink" : ""}
               onClick={HandleRedirectDisplay}
             >
