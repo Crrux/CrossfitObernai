@@ -1,9 +1,16 @@
 import Collapsible from "../../components/Collapsible/Collapsible";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Seances.png";
 
 function Class() {
   return (
     <main id="class">
-      <h1 id="test">Nos Cours</h1>
+      <div className="main__header">
+        <div className="title_container">
+          <img src={TitleBackgroundImage} alt="Background" />
+          <p>Découvrez</p>
+          <h1>Nos séances</h1>
+        </div>
+      </div>
       <div className="collapsible_container">
         <Collapsible
           titre={"1. Le WOD"}

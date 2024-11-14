@@ -1,7 +1,15 @@
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Offres.png";
+
 function Offers() {
   return (
-    <main>
-      <h1>Nos Offres</h1>
+    <main id="offers">
+      <div className="main__header">
+        <div className="title_container">
+          <img src={TitleBackgroundImage} alt="Background" />
+          <p>Consultez</p>
+          <h1>Notre planning</h1>
+        </div>
+      </div>
       <h2>Les abonnements</h2>
       <p>
         Chez CrossFit Obernai, nous avons à cœur de vous proposer une offre qui

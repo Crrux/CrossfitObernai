@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import ReCAPTCHA from "react-google-recaptcha";
 
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.png";
+
 // Todo: Form submission / validation / validation error display
 
 function Contact() {
@@ -109,7 +111,13 @@ function Contact() {
   return (
     <>
       <main id="main_contact">
-        <h1>Formulaire de contact</h1>
+        <div className="main__header">
+          <div className="title_container">
+            <img src={TitleBackgroundImage} alt="Background" />
+            <p>Pour plus d&apos;informations</p>
+            <h1>Contact</h1>
+          </div>
+        </div>
         <form onSubmit={handleSubmit} noValidate id="form_contact">
           <div id="form_contact_divname">
             <label htmlFor="name">
