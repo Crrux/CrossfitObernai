@@ -675,7 +675,7 @@ footer #Contact_info #Google_map {
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 10px 80px;
+  padding: 10px 83px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   color: black;
 }
@@ -691,7 +691,7 @@ footer #Contact_info #Google_map {
 #main_contact .title_container p {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(-5px);
+  transform: translateX(-50%) translateY(0px);
   white-space: nowrap;
 }
 #main_contact .title_container h1 {
@@ -700,6 +700,7 @@ footer #Contact_info #Google_map {
   z-index: 2;
   width: -moz-fit-content;
   width: fit-content;
+  transform: translateY(5px);
 }
 #main_contact #form_contact {
   display: flex;
