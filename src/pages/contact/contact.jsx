@@ -57,7 +57,6 @@ function Contact() {
         .finally(() => {
           // Reset the loading state
           setIsFormLoading(false);
-          console.log("Form not loading.");
         });
     }
   }
