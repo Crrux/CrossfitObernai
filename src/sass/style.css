@@ -797,10 +797,11 @@ input[type=submit]:hover {
 }
 #event_main .title_container h1 {
   display: flex;
-  padding: 0 10px;
+  padding: 0 20px;
   z-index: 2;
   width: -moz-fit-content;
   width: fit-content;
+  transform: translateY(5px);
 }
 
 #Planning .title_container {

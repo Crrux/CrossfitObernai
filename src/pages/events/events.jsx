@@ -7,7 +7,7 @@ function Events() {
         <div className="title_container">
           <img src={TitleBackgroundImage} alt="Background" />
           <p>Toute l&apos;année</p>
-          <h1>Nos evenements</h1>
+          <h1>Les événements</h1>
         </div>
       </div>
 
