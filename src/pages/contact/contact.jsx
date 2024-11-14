@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import ReCAPTCHA from "react-google-recaptcha";
 
+// Todo: Form submission / validation / validation error display
+
 function Contact() {
   // Initialize state for contact form data
   const [contact, setContact] = useState({
