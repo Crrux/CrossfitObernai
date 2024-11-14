@@ -41,30 +41,24 @@ function Contact() {
     e.preventDefault();
     // If there are no validation errors, submit the form data
     if (!hasErrors) {
+      // Set the loading state
       setIsFormLoading(true);
-      try {
-        setIsFormLoading(true);
-        axios
-          .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
-          .then((res) => {
-            console.log(res.data);
-            setisFormSent(true);
-          })
-          .catch((error) => {
-            console.log(isFormSent);
-            console.error("erreur");
-            console.error(error);
-          })
-          .finally(() => {
-            setIsFormLoading(false);
-          });
-      } catch (error) {
-        console.error(error);
-        setIsFormLoading(false);
-      }
-    } else {
-      // If there are validation errors, log them to the console
-      console.log(errors);
+
+      // Send the POST request
+      axios
+        .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
+        .then((res) => {
+          console.log(res.data);
+          setisFormSent(true);
+        })
+        .catch((error) => {
+          console.error("An error occurred while submitting the form:", error);
+        })
+        .finally(() => {
+          // Reset the loading state
+          setIsFormLoading(false);
+          console.log("Form not loading.");
+        });
     }
   }
 
