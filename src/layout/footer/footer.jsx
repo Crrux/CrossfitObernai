@@ -131,11 +131,11 @@ function Footer() {
               </tr>
               <tr>
                 <th scope="row">Mercredi:</th>
-                <td>07:00 - 20:30</td>
+                <td>07h00 - 20h30</td>
               </tr>
               <tr>
                 <th scope="row">Jeudi:</th>
-                <td>12:30 - 20h30</td>
+                <td>12h30 - 20h30</td>
               </tr>
               <tr>
                 <th scope="row">Vendredi:</th>
@@ -143,7 +143,7 @@ function Footer() {
               </tr>
               <tr>
                 <th scope="row">Samedi:</th>
-                <td>09:00 - 12:00</td>
+                <td>09h00 - 12h00</td>
               </tr>
               <tr>
                 <th scope="row">Dimanche:</th>
