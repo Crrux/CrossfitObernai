@@ -578,6 +578,12 @@ footer #Contact_info #Google_map {
 @media (max-width: 767.98px) {
   footer #Contact_info #Google_map {
     width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  footer #Contact_info #Google_map iframe {
+    margin: auto;
+    width: 30rem;
   }
 }
 .Home {
