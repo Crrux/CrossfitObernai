@@ -1,5 +1,5 @@
 $button-height: 50px
-$button-height-small: 30px
+$button-height-small: 50px
 $temps-animations: 0.3s
 
 .collapsible
@@ -15,7 +15,10 @@ $temps-animations: 0.3s
         align-items: center
         width: 100%
         height: $button-height
-        background-color: #FF6060
+        // background: rgb(50,0,0)
+        // background: linear-gradient(90deg, rgba(50,0,0,1) 0%, rgba(149,39,39,1) 50%, rgba(50,0,0,1) 100%)
+        background: rgb(218,79,132)
+        background: linear-gradient(to right, #da4f84, #36d6e7, #f9a726)
         color: white
         border-radius: 5px
         @media screen and ( max-width: $layout-breakpoint-small )
@@ -24,6 +27,8 @@ $temps-animations: 0.3s
             height: $button-height-small
             border-radius: 5px
         p
+            flex-grow: 1
+            text-align: center
             padding-left: 10px
 
         .collapsible-button
