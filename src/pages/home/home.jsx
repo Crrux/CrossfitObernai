@@ -2,7 +2,13 @@ import Slideshow from "../../components/Slideshow/Slideshow";
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.png";
 
 function Home() {
-  const Slideshow_data = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"];
+  const Slideshow_data = [
+    { name: "1", src: "1.jpeg", alt: "1" },
+    { name: "2", src: "2.jpeg", alt: "2" },
+    { name: "3", src: "3.jpeg", alt: "3" },
+    { name: "4", src: "4.jpeg", alt: "4" },
+  ];
+
   return (
     <main className="Home">
       <section className="Slideshow_section">

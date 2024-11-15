@@ -41,10 +41,13 @@ function Slideshow({ data }) {
       <div className="mySlides">
         {data ? (
           <>
-            {data.map((pictures) => (
-              <div key={pictures} className="myPictures fade">
+            {data.map((pictures, index) => (
+              <div key={index} className="myPictures fade">
                 <div className="myPictures--imgcontainer">
-                  <img src={`/assets/Slideshow/${pictures}`} />
+                  <img
+                    src={`/assets/Slideshow/${pictures.src}`}
+                    alt={`${pictures.alt}`}
+                  />
                 </div>
 
                 {/* <p className="myPictures--indexation">
@@ -77,7 +80,7 @@ function Slideshow({ data }) {
 }
 
 Slideshow.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
 };
 
 export default Slideshow;
