@@ -54,7 +54,7 @@ function Footer() {
           ) : (
             <>
               <p>
-                <strong>Adresse : </strong>
+                <strong>📍</strong>
                 <a
                   href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
                   target="_blank"
@@ -64,14 +64,12 @@ function Footer() {
                 </a>
               </p>
               <p>
-                <strong>Téléphone : </strong> 06.14.03.06.94
+                <strong>📞</strong> 06.14.03.06.94
               </p>
               <p>
                 {" "}
-                <strong>Email : </strong> crossfitobernai@gmail.com
+                <strong>📩</strong> crossfitobernai@gmail.com
               </p>
-              {/* //TODO: horaires de la box  */}
-              <p>Horaire?</p>
               <div id="Contact_info_Reseaux">
                 <a
                   href="https://www.facebook.com/cfobernai/"
@@ -118,6 +116,43 @@ function Footer() {
             }&q=Crossfit+Obernai,Obernai+France`}
             allowFullScreen
           ></iframe>
+        </div>
+        <div id="Hours_info">
+          <h2>Horaires</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th scope="row">Lundi:</th>
+                <td>10h00 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Mardi:</th>
+                <td>12h30 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Mercredi:</th>
+                <td>07:00 - 20:30</td>
+              </tr>
+              <tr>
+                <th scope="row">Jeudi:</th>
+                <td>12:30 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Vendredi:</th>
+                <td>10h00 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Samedi:</th>
+                <td>09:00 - 12:00</td>
+              </tr>
+              <tr>
+                <th scope="row">Dimanche:</th>
+                <td>
+                  <span style={{ color: "red" }}>Fermé</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
       <div>
