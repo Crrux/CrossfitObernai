@@ -9,6 +9,11 @@ function Footer() {
   if (width <= 767.97) {
     isTabletorAbove = true;
   }
+
+  const HandleRedirectDisplay = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer>
       <section id="Contact_info">
@@ -157,7 +162,9 @@ function Footer() {
       </section>
       <div>
         <p>
-          <Link to="/mentions-legales">Mentions legales</Link>
+          <Link to="/mentions-legales" onClick={HandleRedirectDisplay}>
+            Mentions legales
+          </Link>
         </p>
       </div>
     </footer>
