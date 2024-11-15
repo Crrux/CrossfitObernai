@@ -124,7 +124,7 @@
   width: 100%;
   height: 50px;
   background: rgb(218, 79, 132);
-  background: radial-gradient(circle, rgb(218, 79, 132) 0%, rgb(218, 79, 132) 35%, rgb(249, 167, 38) 64%, rgb(249, 167, 38) 100%);
+  background: linear-gradient(to right, #da4f84, #36d6e7, #f9a726);
   color: white;
   border-radius: 5px;
 }
