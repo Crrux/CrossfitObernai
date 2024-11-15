@@ -16,7 +16,7 @@ function Footer() {
 
   return (
     <footer>
-      <section id="Contact_info">
+      <section id="Contact_container">
         {/* {test ? (
           " "
         ) : (
@@ -84,11 +84,11 @@ function Footer() {
             </tbody>
           </table>
         </div>
-        <div>
+        <div id="Contact_info">
           {isTabletorAbove ? (
             <>
               <p>
-                Adresse:
+                📍
                 <a
                   href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
                   target="_blank"
@@ -98,10 +98,10 @@ function Footer() {
                 </a>
               </p>
               <p>
-                Téléphone: <a href="tel:+33614030694">06.14.03.06.94</a>
+                📞 <a href="tel:+33614030694">06.14.03.06.94</a>
               </p>
               <p>
-                Email:
+                📩
                 <a href="mailto:crossfitobernai@gmail.com">
                   crossfitobernai@gmail.com
                 </a>
@@ -139,7 +139,6 @@ function Footer() {
                 <strong>📞</strong> 06.14.03.06.94
               </p>
               <p>
-                {" "}
                 <strong>📩</strong> crossfitobernai@gmail.com
               </p>
               <div id="Contact_info_Reseaux">
