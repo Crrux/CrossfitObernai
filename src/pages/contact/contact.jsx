@@ -1,5 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import ReCAPTCHA from "react-google-recaptcha";
+
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.png";
+
+// Todo: Form submission / validation / validation error display
 
 function Contact() {
   // Initialize state for contact form data
@@ -11,14 +17,19 @@ function Contact() {
     message: "",
   });
 
+  // Initialize state for form submission status
+  const [isFormSent, setisFormSent] = useState(false);
+  const [isFormLoading, setIsFormLoading] = useState(false);
+  console.log(isFormLoading);
+
+  // const [captchaValue, setCaptchaValue] = useState(null);
+  // console.log(captchaValue);
+
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
 
   // Initialize state for form validation errors
   const [errors, setErrors] = useState({});
-
-  // Initialize state for form submission status
-  // const [submitted, setSubmitted] = useState(false);
 
   // Handle changes in form input fields
   const handleChange = (event) => {
@@ -32,18 +43,25 @@ function Contact() {
   // TODO: Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
-    // setSubmitted(true);
-
     // If there are no validation errors, submit the form data
     if (!hasErrors) {
+      // Set the loading state
+      setIsFormLoading(true);
+
+      // Send the POST request
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
         .then((res) => {
           console.log(res.data);
+          setisFormSent(true);
+        })
+        .catch((error) => {
+          console.error("An error occurred while submitting the form:", error);
+        })
+        .finally(() => {
+          // Reset the loading state
+          setIsFormLoading(false);
         });
-    } else {
-      // If there are validation errors, log them to the console
-      console.log(errors);
     }
   }
 
@@ -75,11 +93,10 @@ function Contact() {
       fieldValidationErrors.telError = telValid ? "" : " is invalid";
 
       // Validate message field
-      let messageValid =
-        contact.message.length > 2 || contact.message.length === 0;
+      let messageValid = contact.message.length > 2;
       fieldValidationErrors.messageError = messageValid
         ? ""
-        : " must be at least 3 characters long if there is any input";
+        : " must be at least 3 characters long";
 
       setErrors(fieldValidationErrors);
     };
@@ -93,8 +110,14 @@ function Contact() {
 
   return (
     <>
-      <main>
-        <p>contact form</p>
+      <main id="main_contact">
+        <div className="main__header">
+          <div className="title_container">
+            <img src={TitleBackgroundImage} alt="Background" />
+            <p>Pour plus d&apos;informations</p>
+            <h1>Contact</h1>
+          </div>
+        </div>
         <form onSubmit={handleSubmit} noValidate id="form_contact">
           <div id="form_contact_divname">
             <label htmlFor="name">
@@ -104,6 +127,8 @@ function Contact() {
                 id="name"
                 name="name"
                 value={contact.name}
+                autoComplete="given-name"
+                autoFocus
                 required
                 onChange={handleChange}
               />
@@ -116,6 +141,7 @@ function Contact() {
                 id="firstname"
                 name="firstname"
                 value={contact.firstname}
+                autoComplete="family-name"
                 required
                 onChange={handleChange}
               />
@@ -130,6 +156,7 @@ function Contact() {
               id="email"
               name="email"
               value={contact.email}
+              autoComplete="email"
               required
               onChange={handleChange}
             />
@@ -142,6 +169,7 @@ function Contact() {
               id="tel"
               name="tel"
               value={contact.tel}
+              autoComplete="tel"
               required
               onChange={handleChange}
             />
@@ -152,11 +180,16 @@ function Contact() {
             <textarea
               id="message"
               name="message"
+              placeholder="Votre message..."
               rows={10}
               onChange={handleChange}
             />
             {errors.messageError && <span>{errors.messageError}</span>}
           </label>
+          {/* <ReCAPTCHA
+            sitekey={import.meta.env.VITE_REACT_APP_GOOGLE_RECAPTCHA_KEY}
+            onChange={(val) => setCaptchaValue(val)}
+          /> */}
           <input type="submit" value="Submit" disabled={hasErrors} />
         </form>
       </main>

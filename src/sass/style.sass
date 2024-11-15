@@ -1,3 +1,13 @@
+$layout-breakpoint-small: 767.98px
+$layout-breakpoint-tablet-min: 768px
+$layout-breakpoint-tablet-max: 1024px
+
+@import "../components/popup/_popup"
+@import "../components/Collapsible/_Collapsible"
+@import "../components/Slideshow/_Slideshow.sass"
+@import "../components/BurgerNav/_BurgerNav"
+@import "../components/Loading/_Loading"
+
 @import "../layout/header/_header"
 @import "../layout/footer/_footer"
 
@@ -6,9 +16,9 @@
 @import "../pages/contact/_contact"
 @import "../pages/events/_events"
 @import "../pages/planning/_planning"
+@import "../pages/offers/_offers"
 @import "../pages/error/_error"
-
-@import "../components/popup/_popup"
+@import "../pages/legal_notices/_legal_notices"
 
 :root
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
@@ -23,16 +33,35 @@
     text-rendering: optimizeLegibility
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
+    outline: none
+
+*
+    box-sizing: border-box
 
 #root
     width: 90%
+    background-color: #00000010
+    padding: 0 30px
+    display: flex
+    flex-direction: column
+    @media (max-width: $layout-breakpoint-small)
+        width: 100%
 body
-    width: 100%
+    width: 100dvw
     margin: 0
     display: flex
     justify-content: center
-    // background-image: url('/assets/1.jpg')
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center center
-    min-height: 100vh
+    min-height: 100dvh
+    main
+        flex-grow: 1
+
+.main__header
+    p
+        z-index: -1
+
+@media (max-width: $layout-breakpoint-small)
+    .main__header
+        display: flex
+        justify-content: center
+        width: 100%
+        margin-bottom: 50px

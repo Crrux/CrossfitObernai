@@ -1,8 +1,8 @@
 function Error() {
   return (
-    <>
-      <p>error</p>
-    </>
+    <main>
+      <p>404 error</p>
+    </main>
   );
 }
 

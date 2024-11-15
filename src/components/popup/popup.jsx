@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import PopupImage from "/assets/popup/Popup_image.png";
+import PopupImagePc from "/assets/popup/Popup_pc.png";
+import PopupImageTel from "/assets/popup/Popup_tel.png";
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);
@@ -24,7 +25,7 @@ function Popup() {
         <aside className={`PopupTel`}>
           <div>
             <Link to={"/contact"} onClick={handleClosePopup}>
-              <p>popup reservation tel</p>
+              <img src={PopupImageTel} alt="" id="PopupImageTel" />
             </Link>
 
             <button className={`close-button`} onClick={handleClosePopup}>
@@ -48,7 +49,7 @@ function Popup() {
             </header>
             <main>
               <Link to={"contact"} onClick={handleClosePopup}>
-                <img src={PopupImage} alt="" />
+                <img src={PopupImagePc} alt="" />
               </Link>
             </main>
           </div>

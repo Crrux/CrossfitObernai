@@ -1,0 +1,77 @@
+$button-height: 50px
+$button-height-small: 50px
+$temps-animations: 0.3s
+
+.collapsible
+    display: flex
+    flex-direction: column
+    position: relative
+    .collapsible-divbutton
+        position: absolute
+        z-index: 1
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        height: $button-height
+        // background: rgb(50,0,0)
+        // background: linear-gradient(90deg, rgba(50,0,0,1) 0%, rgba(149,39,39,1) 50%, rgba(50,0,0,1) 100%)
+        background: rgb(218,79,132)
+        background: linear-gradient(to right, #da4f84, #36d6e7, #f9a726)
+        color: white
+        border-radius: 5px
+        @media screen and ( max-width: $layout-breakpoint-small )
+            font-size: 1rem
+            font-weight: 600
+            height: $button-height-small
+            border-radius: 5px
+        p
+            flex-grow: 1
+            text-align: center
+            padding-left: 10px
+
+        .collapsible-button
+            cursor: pointer
+            border: none
+            background: none
+            text-align: left
+            outline: none
+            color: white
+            margin-right: 10px
+            font-size: 1.5rem
+            .icon-down-rotated
+                animation: rotate-down $temps-animations linear forwards
+            .icon-up-rotated
+                animation: rotate-up $temps-animations linear forwards
+            &:focus
+                border: solid 1px #F6F6F673
+
+    .collapsible-content
+        z-index: 0
+        background-color: #F6F6F673
+        max-height: 0
+        width: 100%
+        overflow: hidden
+        transition: max-height $temps-animations ease-out
+        padding-top: $button-height
+        border-radius: 5px 5px 5px 5px
+        @media screen and ( max-width: $layout-breakpoint-small )
+            padding-top: $button-height-small
+        p
+            padding: 0 20px 0 20px
+
+        &.active
+            max-height: 500px
+
+@keyframes rotate-down
+    from
+        transform: rotate(360deg)
+    to
+        transform: rotate(180deg)
+
+@keyframes rotate-up
+    from
+        transform: rotate(180deg)
+    to
+        transform: rotate(360deg)
