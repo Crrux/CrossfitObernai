@@ -553,6 +553,8 @@ footer #Contact_info {
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 footer #Contact_info p a {
   margin-left: 3px;

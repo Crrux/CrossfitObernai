@@ -12,6 +12,71 @@ function Footer() {
   return (
     <footer>
       <section id="Contact_info">
+        {/* {test ? (
+          " "
+        ) : (
+          <iframe
+            width="450"
+            height="250"
+            frameBorder="0"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${
+              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
+            }&q=Crossfit+Obernai,Obernai+France`}
+            allowFullScreen
+          ></iframe>
+        )} */}
+        <div id="Google_map">
+          <iframe
+            width="100%"
+            height="250"
+            frameBorder="0"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${
+              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
+            }&q=Crossfit+Obernai,Obernai+France`}
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div id="Hours_info">
+          <h2>Horaires</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th scope="row">Lundi:</th>
+                <td>10h00 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Mardi:</th>
+                <td>12h30 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Mercredi:</th>
+                <td>07h00 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Jeudi:</th>
+                <td>12h30 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Vendredi:</th>
+                <td>10h00 - 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Samedi:</th>
+                <td>09h00 - 12h00</td>
+              </tr>
+              <tr>
+                <th scope="row">Dimanche:</th>
+                <td>
+                  <span style={{ color: "red" }}>Fermé</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div>
           {isTabletorAbove ? (
             <>
@@ -88,71 +153,6 @@ function Footer() {
               </div>
             </>
           )}
-        </div>
-        {/* {test ? (
-          " "
-        ) : (
-          <iframe
-            width="450"
-            height="250"
-            frameBorder="0"
-            style={{ border: 0 }}
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${
-              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
-            }&q=Crossfit+Obernai,Obernai+France`}
-            allowFullScreen
-          ></iframe>
-        )} */}
-        <div id="Google_map">
-          <iframe
-            width="100%"
-            height="250"
-            frameBorder="0"
-            style={{ border: 0 }}
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${
-              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
-            }&q=Crossfit+Obernai,Obernai+France`}
-            allowFullScreen
-          ></iframe>
-        </div>
-        <div id="Hours_info">
-          <h2>Horaires</h2>
-          <table>
-            <tbody>
-              <tr>
-                <th scope="row">Lundi:</th>
-                <td>10h00 - 20h30</td>
-              </tr>
-              <tr>
-                <th scope="row">Mardi:</th>
-                <td>12h30 - 20h30</td>
-              </tr>
-              <tr>
-                <th scope="row">Mercredi:</th>
-                <td>07h00 - 20h30</td>
-              </tr>
-              <tr>
-                <th scope="row">Jeudi:</th>
-                <td>12h30 - 20h30</td>
-              </tr>
-              <tr>
-                <th scope="row">Vendredi:</th>
-                <td>10h00 - 20h30</td>
-              </tr>
-              <tr>
-                <th scope="row">Samedi:</th>
-                <td>09h00 - 12h00</td>
-              </tr>
-              <tr>
-                <th scope="row">Dimanche:</th>
-                <td>
-                  <span style={{ color: "red" }}>Fermé</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </section>
       <div>
