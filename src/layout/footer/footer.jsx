@@ -76,7 +76,9 @@ function Footer() {
               <tr>
                 <th scope="row">Dimanche:</th>
                 <td>
-                  <span style={{ color: "red" }}>Fermé</span>
+                  <span style={{ color: "red", fontWeight: "bold" }}>
+                    Fermé
+                  </span>
                 </td>
               </tr>
             </tbody>
