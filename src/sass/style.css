@@ -629,6 +629,10 @@ footer #Footer_bottom-container p {
   padding: 0;
   margin: 0;
 }
+footer #Footer_bottom-container p a {
+  text-decoration: none;
+  color: inherit;
+}
 
 @media (max-width: 767.98px) {
   footer {
@@ -972,10 +976,14 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100dvh;
+  font-size: calc(15px + 0.390625vw);
 }
 body main {
   flex-grow: 1;
   padding: 0 30px;
+}
+body footer {
+  font-size: calc(15px + 0.1vw);
 }
 
 .main__header p {
