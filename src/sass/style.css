@@ -67,11 +67,11 @@
 }
 .PopupTel {
   position: sticky;
-  top: 10px;
+  top: 20px;
   width: auto;
   height: 70px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 0 10px 10px 10px;
   padding: 10px;
   background-color: #333138;
   color: black;
