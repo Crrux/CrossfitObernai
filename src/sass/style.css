@@ -514,7 +514,7 @@ header #NavPc a:hover:not(.activeNavLink):after {
   position: absolute;
   width: 70%;
   height: 3px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #d11717 20%, #d11717 80%, rgba(255, 255, 255, 0.1019607843) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
   left: 50%;
   transform: translateX(-50%);
   animation: width_animation 0.3s ease-in-out forwards;
@@ -525,7 +525,7 @@ header #NavPc .activeNavLink:after {
   position: absolute;
   width: 70%;
   height: 3px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #d11717 20%, #d11717 80%, rgba(255, 255, 255, 0.1019607843) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
   left: 50%;
   transform: translateX(-50%);
 }

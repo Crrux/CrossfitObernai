@@ -8,6 +8,8 @@ function Header() {
   const location = useLocation();
   let isTabletorAbove = false;
   const { innerWidth: width } = window;
+  console.log(location.pathname);
+  console.log(Links.class);
 
   if (width <= 767.97) {
     isTabletorAbove = true;
