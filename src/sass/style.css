@@ -140,6 +140,7 @@
   flex-grow: 1;
   text-align: center;
   padding-left: 10px;
+  white-space: nowrap;
 }
 .collapsible .collapsible-divbutton .collapsible-button {
   cursor: pointer;
@@ -198,6 +199,10 @@
     transform: rotate(360deg);
   }
 }
+.collapsible {
+  font-size: 15px;
+}
+
 .Carroussel {
   display: none;
 }
@@ -732,7 +737,7 @@ footer #Footer_bottom-container p a {
 #class .collapsible_container {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   row-gap: 20px;
   -moz-column-gap: 50px;
        column-gap: 50px;
