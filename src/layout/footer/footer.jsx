@@ -161,7 +161,7 @@ function Footer() {
           )}
         </div>
       </section>
-      <div>
+      <div id="Footer_bottom-container">
         <p>
           <Link to="/mentions-legales" onClick={HandleRedirectDisplay}>
             Mentions legales

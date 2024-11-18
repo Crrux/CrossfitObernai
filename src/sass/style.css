@@ -544,8 +544,9 @@ header #Header_Logo {
   }
 }
 footer {
+  background-color: #131516;
   margin-top: 50px;
-  padding-bottom: 20px;
+  padding-top: 50px;
 }
 footer #Contact_container {
   display: flex;
@@ -600,16 +601,15 @@ footer #Contact_container #Contact_info_Reseaux {
   gap: 20px;
   justify-content: space-evenly;
 }
-@media (max-width: 767.98px) {
-  footer #Contact_container #Contact_info_Reseaux {
-    justify-content: center;
-  }
-}
 footer #Contact_container #Contact_info_Reseaux img {
   width: 50px;
 }
 footer #Contact_container #Google_map {
   width: 500px;
+}
+footer #Contact_container #Hours_info {
+  display: flex;
+  flex-direction: column;
 }
 footer #Contact_container #Hours_info table th {
   text-align: left;
@@ -618,8 +618,22 @@ footer #Contact_container #Hours_info table th {
 footer #Contact_container #Hours_info table tr {
   text-align: right;
 }
+footer #Footer_bottom-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 30px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+footer #Footer_bottom-container p {
+  padding: 0;
+  margin: 0;
+}
 
 @media (max-width: 767.98px) {
+  footer {
+    padding: 1rem;
+  }
   footer #Contact_container #Google_map {
     width: 100%;
     display: flex;
@@ -943,7 +957,6 @@ input[type=submit]:hover {
 #root {
   width: 90%;
   background-color: rgba(0, 0, 0, 0.062745098);
-  padding: 0 30px;
   display: flex;
   flex-direction: column;
 }
@@ -962,6 +975,7 @@ body {
 }
 body main {
   flex-grow: 1;
+  padding: 0 30px;
 }
 
 .main__header p {
