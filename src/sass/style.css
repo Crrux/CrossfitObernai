@@ -945,6 +945,13 @@ input[type=submit]:hover {
   width: fit-content;
 }
 
+#main_error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
