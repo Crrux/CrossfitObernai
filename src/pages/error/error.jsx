@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
+import { useEffect } from "react";
 
 function Error() {
   const navigate = useNavigate();
 
-  setTimeout(() => {
-    navigate("/");
-    window.scrollTo(0, 0);
-  }, 4000);
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/");
+      window.scrollTo(0, 0);
+    }, 4000);
+  });
 
   return (
     <main id="main_error">

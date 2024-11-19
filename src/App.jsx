@@ -17,7 +17,11 @@ import MentionLegale from "./pages/legal_notices/legal_notices";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+        }}
+      >
         <Popup />
         <Header />
         <Routes>
