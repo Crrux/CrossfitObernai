@@ -6,6 +6,7 @@ function Error() {
 
   setTimeout(() => {
     navigate("/");
+    window.scrollTo(0, 0);
   }, 4000);
 
   return (
