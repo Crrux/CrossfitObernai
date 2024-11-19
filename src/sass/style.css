@@ -810,6 +810,9 @@ footer #Footer_bottom-container p a {
   width: -moz-fit-content;
   width: fit-content;
 }
+#main_contact #form_contact input, #main_contact #form_contact .label input, #main_contact #form_contact textarea {
+  font-size: 1.4rem;
+}
 
 label {
   display: block;
