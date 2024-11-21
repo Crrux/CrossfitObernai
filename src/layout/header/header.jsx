@@ -93,6 +93,19 @@ function Header() {
           </li>
           <li className="navbar__item">
             <Link
+              to={LinksLocal.coachs}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.coachs && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Nos Coachs
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
               to={LinksLocal.contact}
               className={`navbar__link ${
                 location.pathname === LinksLocal.contact && !isTabletorAbove
