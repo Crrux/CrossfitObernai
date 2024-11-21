@@ -7,7 +7,8 @@
     position: fixed
     width: 100vw
     min-height: 75px
-    color: white
+    color: light-dark($color-dark, $color-light)
+    // color: white
     z-index: 10
     &__links
         display: flex
@@ -32,6 +33,7 @@
         text-decoration: none
 @media screen and (max-width: 768px)
     .navbar
+        color: $color-dark
         &__link
             display: block
             padding: 1.5rem
@@ -82,7 +84,8 @@
             height: 3px
             position: relative
             border-radius: 3px
-            background-color: #fff
+            background-color: light-dark($background-dark, $background-light)
+
             transition: all 0.3s ease-in-out
         .burger-bar::before,
         .burger-bar::after
@@ -96,6 +99,10 @@
         .burger-bar::after
             transform: translateY(12px)
     .show-nav
+        .burger-bar,
+        .burger-bar::before,
+        .burger-bar::after
+            background-color: $background-light
         .burger-bar:before
             transform: rotate(45deg)
         .burger-bar:after
