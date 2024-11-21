@@ -20,7 +20,6 @@ function Header() {
   const handleShowLinks = () => setIsOpen(!isOpen);
   const handleShowLinksRedirection = () => {
     window.scrollTo(0, 0);
-    console.log(isTabletorAbove);
     if (setIsTabletorAbove) setIsOpen(false);
   };
 
