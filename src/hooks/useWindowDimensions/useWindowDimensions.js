@@ -10,17 +10,14 @@ function getWindowDimensions() {
 
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions);
-  const [resizeCount, setResizeCount] = useState(0);
+
   useEffect(() => {
     function handleResize() {
-      if (resizeCount < 3) {
-        setWindowDimensions(getWindowDimensions);
-        setResizeCount(resizeCount + 1);
-      }
+      setWindowDimensions(getWindowDimensions);
     }
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [resizeCount]);
+  });
   return windowDimensions;
 }

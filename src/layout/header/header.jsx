@@ -1,96 +1,134 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "/assets/Header_logo.png";
 
-import BurgerNav from "../../components/BurgerNav/BurgerNav";
-import { LinksLocal as Links } from "./links.js";
+import { LinksLocal } from "./links.js";
+import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
 
 function Header() {
   const location = useLocation();
-  let isTabletorAbove = false;
-  const { innerWidth: width } = window;
+  const [isTabletorAbove, setIsTabletorAbove] = useState(false);
+  const { height, width } = useWindowDimensions();
+  const [isOpen, setIsOpen] = useState(false);
 
-  if (width <= 767.97) {
-    isTabletorAbove = true;
-  }
+  useEffect(() => {
+    if (width <= 767.97) {
+      setIsTabletorAbove(false);
+    } else setIsTabletorAbove(true);
+  }, [isTabletorAbove, height, width]);
 
-  const HandleRedirectDisplay = () => {
+  const handleShowLinks = () => setIsOpen(!isOpen);
+  const handleShowLinksRedirection = () => {
     window.scrollTo(0, 0);
-  };
-
-  const renderNavigation = () => {
-    if (Links) {
-      return (
-        <>
-          {isTabletorAbove ? (
-            <BurgerNav />
-          ) : (
-            <>
-              <nav id="NavPc">
-                <Link
-                  to={Links.class}
-                  className={
-                    location.pathname === Links.class ? "activeNavLink" : ""
-                  }
-                  onClick={HandleRedirectDisplay}
-                >
-                  Nos cours
-                </Link>
-                <Link
-                  to={Links.planning}
-                  className={
-                    location.pathname === Links.planning ? "activeNavLink" : ""
-                  }
-                  onClick={HandleRedirectDisplay}
-                >
-                  Planning
-                </Link>
-                <Link
-                  to={Links.offers}
-                  className={
-                    location.pathname === Links.offers ? "activeNavLink" : ""
-                  }
-                  onClick={HandleRedirectDisplay}
-                >
-                  Les offres
-                </Link>
-                <Link
-                  to={Links.contact}
-                  className={
-                    location.pathname === Links.contact ? "activeNavLink" : ""
-                  }
-                  onClick={HandleRedirectDisplay}
-                >
-                  Contact
-                </Link>
-                <Link
-                  to={Links.events}
-                  className={
-                    location.pathname === Links.events ? "activeNavLink" : ""
-                  }
-                  onClick={HandleRedirectDisplay}
-                >
-                  Evenements
-                </Link>
-                <Link to={"testerreur"} onClick={HandleRedirectDisplay}>
-                  Test erreur
-                </Link>
-              </nav>
-            </>
-          )}
-        </>
-      );
-    }
-    return null;
+    console.log(isTabletorAbove);
+    if (setIsTabletorAbove) setIsOpen(false);
   };
 
   return (
     <header>
       <div className="logo">
-        <Link to={"/"} onClick={HandleRedirectDisplay}>
+        <Link to={"/"} onClick={handleShowLinksRedirection}>
           <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
         </Link>
       </div>
-      {renderNavigation()}
+      <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
+        <button className="navbar__burger" onClick={handleShowLinks}>
+          <span className="burger-bar"></span>
+        </button>
+      </div>
+
+      <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
+        <ul className="navbar__links">
+          <li className="navbar__logo">
+            <Link to={"/"} onClick={handleShowLinksRedirection}>
+              <img src={Logo} id="navburger-logo" />
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={"/"}
+              className={`navbar__link`}
+              onClick={handleShowLinksRedirection}
+            >
+              Acceuil
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={LinksLocal.class}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.class && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Nos Cours
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={LinksLocal.planning}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.planning && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Planning
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={LinksLocal.offers}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.offers && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Les offres
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={LinksLocal.contact}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.contact && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Contact
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={LinksLocal.events}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.events && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Evenements
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={"testerreur"}
+              className={`navbar__link`}
+              onClick={handleShowLinksRedirection}
+            >
+              Test erreur
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }
