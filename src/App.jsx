@@ -14,6 +14,7 @@ import Contact from "./pages/contact/contact";
 import Events from "./pages/events/events";
 import Error from "./pages/error/error";
 import MentionLegale from "./pages/legal_notices/legal_notices";
+import HelmetRendering from "./layout/helmet/helmet";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           v7_startTransition: true,
         }}
       >
+        <HelmetRendering />
         <Popup />
         <Header />
         <Routes>
