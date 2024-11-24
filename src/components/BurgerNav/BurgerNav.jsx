@@ -5,6 +5,12 @@ import Logo from "/assets/Header_logo.png";
 import { LinksLocal } from "../../layout/header/links";
 
 function BurgerNav() {
+  let isTabletorAbove = false;
+  const { innerWidth: width } = window;
+
+  if (width <= 767.97) {
+    isTabletorAbove = true;
+  }
   const [isOpen, setIsOpen] = useState(false);
   const handleShowLinks = () => setIsOpen(!isOpen);
   const handleShowLinksRedirect = () => {
@@ -12,10 +18,16 @@ function BurgerNav() {
     setIsOpen(!isOpen);
   };
 
-  const renderNavigation = () => {
-    if (LinksLocal) {
-      return (
-        <>
+  return (
+    <>
+      <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
+        <button className="navbar__burger" onClick={handleShowLinks}>
+          <span className="burger-bar"></span>
+        </button>
+      </div>
+
+      <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
+        <ul className="navbar__links">
           <li className="navbar__logo">
             <Link to={"/"} onClick={handleShowLinksRedirect}>
               <img src={Logo} id="navburger-logo" />
@@ -33,7 +45,11 @@ function BurgerNav() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.class}
-              className={`navbar__link`}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.class && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
               onClick={handleShowLinksRedirect}
             >
               Nos Cours
@@ -42,7 +58,11 @@ function BurgerNav() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.planning}
-              className={`navbar__link`}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.planning && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
               onClick={handleShowLinksRedirect}
             >
               Planning
@@ -51,7 +71,11 @@ function BurgerNav() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.offers}
-              className={`navbar__link`}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.offers && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
               onClick={handleShowLinksRedirect}
             >
               Les offres
@@ -60,7 +84,11 @@ function BurgerNav() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.contact}
-              className={`navbar__link`}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.contact && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
               onClick={handleShowLinksRedirect}
             >
               Contact
@@ -69,7 +97,11 @@ function BurgerNav() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.events}
-              className={`navbar__link`}
+              className={`navbar__link ${
+                location.pathname === LinksLocal.events && !isTabletorAbove
+                  ? "activeNavLink"
+                  : ""
+              }`}
               onClick={handleShowLinksRedirect}
             >
               Evenements
@@ -84,21 +116,7 @@ function BurgerNav() {
               Test erreur
             </Link>
           </li>
-        </>
-      );
-    }
-    return null;
-  };
-  return (
-    <>
-      <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
-        <button className="navbar__burger" onClick={handleShowLinks}>
-          <span className="burger-bar"></span>
-        </button>
-      </div>
-
-      <nav className={`navbar ${isOpen ? "show-nav" : "hide-nav"}`}>
-        <ul className="navbar__links">{renderNavigation(LinksLocal)}</ul>
+        </ul>
       </nav>
     </>
   );
