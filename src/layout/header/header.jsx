@@ -49,14 +49,14 @@ function Header() {
               className={`navbar__link`}
               onClick={handleShowLinksRedirection}
             >
-              Acceuil
+              <i className="fa-solid fa-house" id="home_link"></i>
             </Link>
           </li>
           <li className="navbar__item">
             <Link
               to={LinksLocal.class}
               className={`navbar__link ${
-                location.pathname === LinksLocal.class && !isTabletorAbove
+                location.pathname === LinksLocal.class && isTabletorAbove
                   ? "activeNavLink"
                   : ""
               }`}
@@ -69,7 +69,7 @@ function Header() {
             <Link
               to={LinksLocal.planning}
               className={`navbar__link ${
-                location.pathname === LinksLocal.planning && !isTabletorAbove
+                location.pathname === LinksLocal.planning && isTabletorAbove
                   ? "activeNavLink"
                   : ""
               }`}
@@ -82,7 +82,7 @@ function Header() {
             <Link
               to={LinksLocal.offers}
               className={`navbar__link ${
-                location.pathname === LinksLocal.offers && !isTabletorAbove
+                location.pathname === LinksLocal.offers && isTabletorAbove
                   ? "activeNavLink"
                   : ""
               }`}
@@ -95,7 +95,7 @@ function Header() {
             <Link
               to={LinksLocal.coachs}
               className={`navbar__link ${
-                location.pathname === LinksLocal.coachs && !isTabletorAbove
+                location.pathname === LinksLocal.coachs && isTabletorAbove
                   ? "activeNavLink"
                   : ""
               }`}
@@ -108,7 +108,7 @@ function Header() {
             <Link
               to={LinksLocal.contact}
               className={`navbar__link ${
-                location.pathname === LinksLocal.contact && !isTabletorAbove
+                location.pathname === LinksLocal.contact && isTabletorAbove
                   ? "activeNavLink"
                   : ""
               }`}
@@ -121,7 +121,7 @@ function Header() {
             <Link
               to={LinksLocal.events}
               className={`navbar__link ${
-                location.pathname === LinksLocal.events && !isTabletorAbove
+                location.pathname === LinksLocal.events && isTabletorAbove
                   ? "activeNavLink"
                   : ""
               }`}

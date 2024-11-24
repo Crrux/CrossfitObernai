@@ -8,11 +8,34 @@ header
     a
         text-decoration: none
         color: light-dark($color-light, $color-dark)
+    #Header_Logo
+        margin-top: 10px
+        max-height: 200px
+        max-width: 100%
 
-    #NavPc
+    #home_link
+        font-size: 2rem
+
+    .navbar
         display: flex
-        gap: 10px
-        a
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        padding: 1rem
+        width: 100vw
+        min-height: 75px
+        color: light-dark($color-light, $color-dark)
+        z-index: 10
+        &__links
+            width: 100%
+            display: flex
+            justify-content: center
+            img
+                display: none
+                height: 100px
+        &__link
+            padding: 0 0.3rem
+            color: inherit
             position: relative
             width: fit-content
             &:hover:not(.activeNavLink)
@@ -36,32 +59,7 @@ header
                 background: linear-gradient(to right,#ffffff1a 0, #36d6e7 20%, #36d6e7 80%, #ffffff1a 100%)
                 left: 50%
                 transform: translateX(-50%)
-    #Header_Logo
-        margin-top: 10px
-        max-height: 200px
-        max-width: 100%
 
-    .navbar
-        display: flex
-        flex-wrap: wrap
-        align-items: center
-        justify-content: space-between
-        padding: 1rem
-
-        width: 100vw
-        min-height: 75px
-        color: light-dark($color-light, $color-dark)
-        z-index: 10
-        &__links
-            width: 100%
-            display: flex
-            justify-content: center
-            img
-                display: none
-                height: 100px
-        &__link
-            padding: 0 0.3rem
-            color: inherit
         &__burger
             width: 40px
             height: 40px

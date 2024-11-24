@@ -382,40 +382,13 @@ header a {
   text-decoration: none;
   color: light-dark(#000, #f5f5f5);
 }
-header #NavPc {
-  display: flex;
-  gap: 10px;
-}
-header #NavPc a {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-header #NavPc a:hover:not(.activeNavLink):after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 70%;
-  height: 3px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
-  left: 50%;
-  transform: translateX(-50%);
-  animation: width_animation 0.3s ease-in-out forwards;
-}
-header #NavPc .activeNavLink:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 70%;
-  height: 3px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
-  left: 50%;
-  transform: translateX(-50%);
-}
 header #Header_Logo {
   margin-top: 10px;
   max-height: 200px;
   max-width: 100%;
+}
+header #home_link {
+  font-size: 2rem;
 }
 header .navbar {
   display: flex;
@@ -440,6 +413,30 @@ header .navbar__links img {
 header .navbar__link {
   padding: 0 0.3rem;
   color: inherit;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+header .navbar__link:hover:not(.activeNavLink):after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: width_animation 0.3s ease-in-out forwards;
+}
+header .navbar .activeNavLink:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
+  left: 50%;
+  transform: translateX(-50%);
 }
 header .navbar__burger {
   width: 40px;
