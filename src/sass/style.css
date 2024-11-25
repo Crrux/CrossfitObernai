@@ -605,6 +605,16 @@ footer #Contact_container #Contact_info {
   flex-direction: column;
   gap: 20px;
 }
+footer #Contact_container #Contact_info table {
+  border-spacing: 20px 10px;
+}
+footer #Contact_container #Contact_info table td {
+  text-align: left;
+}
+footer #Contact_container #Contact_info table td a {
+  color: #FFF;
+  text-decoration: none;
+}
 @media (max-width: 767.98px) {
   footer #Contact_container #Contact_info {
     position: relative;
@@ -637,9 +647,6 @@ footer #Contact_container #Contact_info_Reseaux {
 }
 footer #Contact_container #Contact_info_Reseaux img {
   width: 50px;
-}
-footer #Contact_container #Google_map {
-  width: 500px;
 }
 footer #Contact_container #Hours_info {
   display: flex;
@@ -1027,7 +1034,7 @@ input[type=submit]:hover {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
+  color-scheme: light;
   color: light-dark(#000, #f5f5f5);
   background-color: light-dark(#f5f5f5, #232627);
   font-synthesis: none;

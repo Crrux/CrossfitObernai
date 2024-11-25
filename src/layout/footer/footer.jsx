@@ -17,22 +17,7 @@ function Footer() {
   return (
     <footer>
       <section id="Contact_container">
-        {/* {test ? (
-          " "
-        ) : (
-          <iframe
-            width="450"
-            height="250"
-            frameBorder="0"
-            style={{ border: 0 }}
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${
-              import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY
-            }&q=Crossfit+Obernai,Obernai+France`}
-            allowFullScreen
-          ></iframe>
-        )} */}
-        <div id="Google_map">
+        {/* <div id="Google_map">
           <iframe
             width="100%"
             height="250"
@@ -44,7 +29,7 @@ function Footer() {
             }&q=Crossfit+Obernai,Obernai+France`}
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
         <div id="Hours_info">
           <h2>Horaires</h2>
           <table>
@@ -85,80 +70,50 @@ function Footer() {
           </table>
         </div>
         <div id="Contact_info">
-          {isTabletorAbove ? (
-            <>
-              <p>
-                📍
-                <a
-                  href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  4 rue du Thal, 67210 Obernai
-                </a>
-              </p>
-              <p>
-                📞 <a href="tel:+33614030694">06.14.03.06.94</a>
-              </p>
-              <p>
-                📩
-                <a href="mailto:crossfitobernai@gmail.com">
-                  crossfitobernai@gmail.com
-                </a>
-              </p>
-              <div id="Contact_info_Reseaux">
-                <a
-                  href="https://www.facebook.com/cfobernai/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={LogoFacebook} alt="Lien Facebook"></img>
-                </a>
-                <a
-                  href="https://www.instagram.com/crossfitobernai/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={LogoInstagram} alt="Lien Instagram" />
-                </a>
-              </div>
-            </>
-          ) : (
-            <>
-              <p>
-                <strong>📍</strong>
-                <a
-                  href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  4 rue du Thal, 67210 Obernai
-                </a>
-              </p>
-              <p>
-                <strong>📞</strong> 06.14.03.06.94
-              </p>
-              <p>
-                <strong>📩</strong> crossfitobernai@gmail.com
-              </p>
-              <div id="Contact_info_Reseaux">
-                <a
-                  href="https://www.facebook.com/cfobernai/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={LogoFacebook} alt="Lien Facebook"></img>
-                </a>
-                <a
-                  href="https://www.instagram.com/crossfitobernai/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={LogoInstagram} alt="Lien Instagram" />
-                </a>
-              </div>
-            </>
-          )}
+          <table>
+            <tbody>
+              <tr>
+                <th>📍</th>
+                <td>
+                  <a
+                    href="https://maps.app.goo.gl/8VZHC6K4swqYMEe4A"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    4 rue du Thal, 67210 Obernai
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <th>📞</th>
+                <td>
+                  {isTabletorAbove ? <a href="tel:+33614030694">06.14.03.06.94</a> : <p>06.14.03.06.94</p>}
+                </td>
+              </tr>
+              <tr>
+                <th>📩</th>
+                <td>
+                  <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="Contact_info_Reseaux">
+            <a
+              href="https://www.facebook.com/cfobernai/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={LogoFacebook} alt="Lien Facebook"></img>
+            </a>
+            <a
+              href="https://www.instagram.com/crossfitobernai/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={LogoInstagram} alt="Lien Instagram" />
+            </a>
+          </div>
         </div>
       </section>
       <div id="Footer_bottom-container">
