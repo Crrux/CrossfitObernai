@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PopupImagePc from "/assets/popup/Popup_pc.png";
 import PopupImageTel from "/assets/popup/Popup_tel.png";
+import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
-  let isTabletorAbove = false;
-  const { innerWidth: width } = window;
-  if (width <= 767.97) {
-    isTabletorAbove = true;
-  }
+
+  const [isTabletorAbove, setIsTabletorAbove] = useState();
+  const { height, width } = useWindowDimensions();
+  useEffect(() => {
+    if (width <= 1024) {
+      setIsTabletorAbove(false);
+    } else setIsTabletorAbove(true);
+  }, [isTabletorAbove, height, width]);
 
   const handleClosePopup = () => {
     setIsButtonClicked(true);
@@ -21,7 +25,7 @@ function Popup() {
     <>
       {/* Tel popup */}
 
-      {isOpen && isTabletorAbove && (
+      {isOpen && !isTabletorAbove && (
         <aside className={`PopupTel`}>
           <div>
             <Link to={"/contact"} onClick={handleClosePopup}>
@@ -37,7 +41,7 @@ function Popup() {
 
       {/* Pc popup */}
 
-      {isOpen && !isTabletorAbove && (
+      {isOpen && isTabletorAbove && (
         <aside
           className={`PopupPC ${isButtonClicked ? "close-animation-pc" : ""}`}
         >
