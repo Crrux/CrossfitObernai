@@ -61,12 +61,13 @@
 }
 .PopupTel {
   top: 10px;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #333138;
+}
+.PopupTel > div {
   color: black;
   display: flex;
   justify-content: flex-end;
+  padding: 10px;
+  border-radius: 5px;
 }
 .PopupTel div {
   display: flex;
@@ -109,6 +110,9 @@
 .scroll {
   position: sticky;
   z-index: 9999;
+}
+.scroll > div {
+  background-color: #333138;
 }
 @media screen and (max-width: 1024px) {
   .scroll {
