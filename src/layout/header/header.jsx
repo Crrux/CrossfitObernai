@@ -102,18 +102,6 @@ function Header() {
           </li>
           <li className="navbar__item">
             <Link
-              to={LinksLocal.contact}
-              className={`navbar__link ${location.pathname === LinksLocal.contact && isTabletorAbove
-                ? "activeNavLink"
-                : ""
-                }`}
-              onClick={handleShowLinksRedirection}
-            >
-              Contact
-            </Link>
-          </li>
-          <li className="navbar__item">
-            <Link
               to={LinksLocal.events}
               className={`navbar__link ${location.pathname === LinksLocal.events && isTabletorAbove
                 ? "activeNavLink"
@@ -122,6 +110,18 @@ function Header() {
               onClick={handleShowLinksRedirection}
             >
               Evenements
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
+              to={LinksLocal.contact}
+              className={`navbar__link ${location.pathname === LinksLocal.contact && isTabletorAbove
+                ? "activeNavLink"
+                : ""
+                }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Contact
             </Link>
           </li>
           <li className="navbar__item">
