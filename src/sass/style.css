@@ -683,34 +683,8 @@ footer #Footer_bottom-container p a {
     text-align: center;
   }
 }
-.Home .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 20px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-.Home .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-.Home .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
-}
 .Home .title_container h1 {
-  display: flex;
   padding: 0 3.3rem;
-  z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .Home #Slideshow_container {
   aspect-ratio: 16/9;
@@ -722,31 +696,8 @@ footer #Footer_bottom-container p a {
   width: 100%;
 }
 
-#class .main__header {
-  display: flex;
-  justify-content: center;
-}
 #class .main__header .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 10px 0px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-#class .main__header .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-#class .main__header .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-3px);
 }
 #class .main__header .title_container h1 {
   display: flex;
@@ -776,38 +727,9 @@ footer #Footer_bottom-container p a {
   align-items: center;
   flex-direction: column;
 }
-#main_contact .main__header {
-  margin-bottom: 2rem;
-}
-#main_contact .main__header .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 83px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-#main_contact .main__header .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-#main_contact .main__header .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(0px);
-  white-space: nowrap;
-}
 #main_contact .main__header .title_container h1 {
   display: flex;
   padding: 0 10px;
-  z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
   transform: translateY(5px);
 }
 #main_contact #form_contact {
@@ -884,125 +806,21 @@ input[type=submit]:hover {
   background-color: #ff3814;
 }
 
-#event_main .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 20px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-#event_main .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-#event_main .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
-}
 #event_main .title_container h1 {
-  display: flex;
   padding: 0 20px;
-  z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
   transform: translateY(5px);
 }
 
-#Planning .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 20px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-#Planning .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-#Planning .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
-}
 #Planning .title_container h1 {
-  display: flex;
   padding: 0 30px;
-  z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
-#offers .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 20px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-#offers .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-#offers .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
-}
-#offers .title_container h1 {
-  display: flex;
+#offers .title_containe h1 {
   padding: 0 60px;
-  z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
-#main_coach .title_container {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 20px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  color: black;
-}
-#main_coach .title_container img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  z-index: -1;
-}
-#main_coach .title_container p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
-}
 #main_coach .title_container h1 {
-  display: flex;
   padding: 0 3.3rem;
-  z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 #main_coach #Slideshow_container {
   aspect-ratio: 16/9;
@@ -1066,6 +884,40 @@ body footer {
   font-size: calc(15px + 0.1vw);
 }
 
+.main__header {
+  display: flex;
+  justify-content: center;
+}
+.main__header .title_container {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 0px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  color: black;
+}
+.main__header .title_container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  z-index: -1;
+}
+.main__header .title_container p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-3px);
+  white-space: nowrap;
+}
+.main__header .title_container h1 {
+  display: flex;
+  padding: 0 75px;
+  z-index: 2;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .main__header p {
   z-index: -1;
 }
