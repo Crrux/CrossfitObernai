@@ -417,7 +417,7 @@ header .navbar__link {
   width: -moz-fit-content;
   width: fit-content;
 }
-header .navbar__link:hover:not(.activeNavLink):after {
+header .navbar__link:not(.navbar__item:nth-child(2) .navbar__link):hover:after {
   content: "";
   display: block;
   position: absolute;
@@ -548,6 +548,11 @@ header .navbar a {
     background: transparent;
   }
 }
+@media screen and (min-width: 768px) {
+  header .navbar__item:nth-child(2):hover {
+    animation: upscale 0.3s ease-in-out forwards;
+  }
+}
 
 @keyframes width_animation {
   0% {
@@ -555,6 +560,14 @@ header .navbar a {
   }
   100% {
     width: 70%;
+  }
+}
+@keyframes upscale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }
 footer {
