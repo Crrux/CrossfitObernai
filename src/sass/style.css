@@ -679,15 +679,6 @@ footer #Footer_bottom-container p a {
   footer {
     padding: 1rem;
   }
-  footer #Contact_container #Google_map {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  footer #Contact_container #Google_map iframe {
-    margin: auto;
-    width: 30rem;
-  }
   footer #Hours_info {
     text-align: center;
   }
