@@ -56,14 +56,12 @@
 
 .PopupTel
     top: 10px
-    border-radius: 5px
-    // margin: 0 10px 10px 10px
-    padding: 10px
-    background-color: #333138
-    color: black
-    display: flex
-    justify-content: flex-end
-
+    >div
+        color: black
+        display: flex
+        justify-content: flex-end
+        padding: 10px
+        border-radius: 5px
     div
         display: flex
         justify-content: space-between
@@ -99,12 +97,10 @@
 .scroll
     position: sticky
     z-index: 9999
-    @media screen and (max-width: $layout-breakpoint-tablet-max)
-        width: 95%
-        left: 1rem
-    @media screen and (max-width: $layout-breakpoint-tablet-min)
-        width: 80%
-        left: 1rem
+    width: calc( 100% - 6rem )
+    left: 2rem
+    >div
+        background-color: #333138
 
 .fixe
     background-color: $background-light

@@ -2,7 +2,11 @@
     // min-height: 2000px
     #Slideshow_container
         aspect-ratio: 16/9
-        width: 800px
+        width: 100%
+        max-width: 1080px
+        @media screen and (max-width: 768px)
+            width: 100%
+
     .Slideshow
         &_section
             display: flex

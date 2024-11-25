@@ -4,6 +4,8 @@ import PopupImagePc from "/assets/popup/Popup_pc.png";
 import PopupImageTel from "/assets/popup/Popup_tel.png";
 import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
 import { useSwipeable } from 'react-swipeable';
+import { motion } from "framer-motion";
+
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,8 +28,6 @@ function Popup() {
 
   }, [scrollY]);
 
-  console.log(scrollY)
-
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
@@ -43,6 +43,7 @@ function Popup() {
   const handlers = useSwipeable({
     onSwipedLeft: () => handleClosePopup(),
     onSwipedRight: () => handleClosePopup(),
+    onSwipedUp: () => handleClosePopup(),
     preventScrollOnSwipe: true,
     trackMouse: true
   })
@@ -52,18 +53,22 @@ function Popup() {
       {/* Tel popup */}
 
       {isOpen && !isTabletorAbove && (
+
         <aside className={`PopupTel ${scrollY > 100 ? 'scroll' : 'fixe'}`} {...handlers}>
-
-          <div>
-            <Link to={"/contact"} onClick={handleClosePopup}>
-              <img src={PopupImageTel} alt="" id="PopupImageTel" />
-            </Link>
-            {scrollY > 100 ? <button className={`close-button`} onClick={handleClosePopup}>
-              X
-            </button> : ''}
-          </div>
-
+          <motion.div drag dragConstraints={{ right: 0, left: 0, bottom: 0 }} >
+            <div>
+              <Link to={"/contact"} onClick={handleClosePopup}>
+                <img src={PopupImageTel} alt="" id="PopupImageTel" />
+              </Link>
+              {/* {scrollY > 100 ?
+                <button className={`close-button`} onClick={handleClosePopup}>
+                  X
+                </button>
+                : ''} */}
+            </div>
+          </motion.div>
         </aside>
+
       )}
 
       {/* Pc popup */}
