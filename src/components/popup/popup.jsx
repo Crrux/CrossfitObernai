@@ -7,9 +7,28 @@ import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimens
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
-
   const [isTabletorAbove, setIsTabletorAbove] = useState();
+
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  }, [scrollY]);
+
+  console.log(scrollY)
+
   const { height, width } = useWindowDimensions();
+
   useEffect(() => {
     if (width <= 1024) {
       setIsTabletorAbove(false);
@@ -26,15 +45,15 @@ function Popup() {
       {/* Tel popup */}
 
       {isOpen && !isTabletorAbove && (
-        <aside className={`PopupTel`}>
+        <aside className={`PopupTel ${scrollY > 100 ? 'scroll' : 'fixe'}`}>
           <div>
             <Link to={"/contact"} onClick={handleClosePopup}>
               <img src={PopupImageTel} alt="" id="PopupImageTel" />
             </Link>
-
-            <button className={`close-button`} onClick={handleClosePopup}>
+            {scrollY > 100 ? <button className={`close-button`} onClick={handleClosePopup}>
               X
-            </button>
+            </button> : ''}
+
           </div>
         </aside>
       )}

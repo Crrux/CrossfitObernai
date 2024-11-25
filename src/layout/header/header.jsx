@@ -12,7 +12,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (width <= 767.97) {
+    if (width <= 1024) {
       setIsTabletorAbove(false);
     } else setIsTabletorAbove(true);
   }, [isTabletorAbove, height, width]);
@@ -56,8 +56,8 @@ function Header() {
             <Link
               to={LinksLocal.class}
               className={`navbar__link ${location.pathname === LinksLocal.class && isTabletorAbove
-                  ? "activeNavLink"
-                  : ""
+                ? "activeNavLink"
+                : ""
                 }`}
               onClick={handleShowLinksRedirection}
             >
@@ -68,8 +68,8 @@ function Header() {
             <Link
               to={LinksLocal.planning}
               className={`navbar__link ${location.pathname === LinksLocal.planning && isTabletorAbove
-                  ? "activeNavLink"
-                  : ""
+                ? "activeNavLink"
+                : ""
                 }`}
               onClick={handleShowLinksRedirection}
             >
@@ -80,8 +80,8 @@ function Header() {
             <Link
               to={LinksLocal.offers}
               className={`navbar__link ${location.pathname === LinksLocal.offers && isTabletorAbove
-                  ? "activeNavLink"
-                  : ""
+                ? "activeNavLink"
+                : ""
                 }`}
               onClick={handleShowLinksRedirection}
             >
@@ -92,8 +92,8 @@ function Header() {
             <Link
               to={LinksLocal.coachs}
               className={`navbar__link ${location.pathname === LinksLocal.coachs && isTabletorAbove
-                  ? "activeNavLink"
-                  : ""
+                ? "activeNavLink"
+                : ""
                 }`}
               onClick={handleShowLinksRedirection}
             >
@@ -104,8 +104,8 @@ function Header() {
             <Link
               to={LinksLocal.contact}
               className={`navbar__link ${location.pathname === LinksLocal.contact && isTabletorAbove
-                  ? "activeNavLink"
-                  : ""
+                ? "activeNavLink"
+                : ""
                 }`}
               onClick={handleShowLinksRedirection}
             >
@@ -116,8 +116,8 @@ function Header() {
             <Link
               to={LinksLocal.events}
               className={`navbar__link ${location.pathname === LinksLocal.events && isTabletorAbove
-                  ? "activeNavLink"
-                  : ""
+                ? "activeNavLink"
+                : ""
                 }`}
               onClick={handleShowLinksRedirection}
             >
