@@ -110,21 +110,11 @@
 .scroll {
   position: sticky;
   z-index: 9999;
+  width: calc(100% - 6rem);
+  left: 2rem;
 }
 .scroll > div {
   background-color: #333138;
-}
-@media screen and (max-width: 1024px) {
-  .scroll {
-    width: 95%;
-    left: 1rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .scroll {
-    width: 80%;
-    left: 1rem;
-  }
 }
 
 .fixe {
