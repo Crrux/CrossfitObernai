@@ -55,11 +55,10 @@ function Header() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.class}
-              className={`navbar__link ${
-                location.pathname === LinksLocal.class && isTabletorAbove
+              className={`navbar__link ${location.pathname === LinksLocal.class && isTabletorAbove
                   ? "activeNavLink"
                   : ""
-              }`}
+                }`}
               onClick={handleShowLinksRedirection}
             >
               Nos Cours
@@ -68,11 +67,10 @@ function Header() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.planning}
-              className={`navbar__link ${
-                location.pathname === LinksLocal.planning && isTabletorAbove
+              className={`navbar__link ${location.pathname === LinksLocal.planning && isTabletorAbove
                   ? "activeNavLink"
                   : ""
-              }`}
+                }`}
               onClick={handleShowLinksRedirection}
             >
               Planning
@@ -81,11 +79,10 @@ function Header() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.offers}
-              className={`navbar__link ${
-                location.pathname === LinksLocal.offers && isTabletorAbove
+              className={`navbar__link ${location.pathname === LinksLocal.offers && isTabletorAbove
                   ? "activeNavLink"
                   : ""
-              }`}
+                }`}
               onClick={handleShowLinksRedirection}
             >
               Les offres
@@ -94,11 +91,10 @@ function Header() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.coachs}
-              className={`navbar__link ${
-                location.pathname === LinksLocal.coachs && isTabletorAbove
+              className={`navbar__link ${location.pathname === LinksLocal.coachs && isTabletorAbove
                   ? "activeNavLink"
                   : ""
-              }`}
+                }`}
               onClick={handleShowLinksRedirection}
             >
               Nos Coachs
@@ -107,11 +103,10 @@ function Header() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.contact}
-              className={`navbar__link ${
-                location.pathname === LinksLocal.contact && isTabletorAbove
+              className={`navbar__link ${location.pathname === LinksLocal.contact && isTabletorAbove
                   ? "activeNavLink"
                   : ""
-              }`}
+                }`}
               onClick={handleShowLinksRedirection}
             >
               Contact
@@ -120,11 +115,10 @@ function Header() {
           <li className="navbar__item">
             <Link
               to={LinksLocal.events}
-              className={`navbar__link ${
-                location.pathname === LinksLocal.events && isTabletorAbove
+              className={`navbar__link ${location.pathname === LinksLocal.events && isTabletorAbove
                   ? "activeNavLink"
                   : ""
-              }`}
+                }`}
               onClick={handleShowLinksRedirection}
             >
               Evenements
