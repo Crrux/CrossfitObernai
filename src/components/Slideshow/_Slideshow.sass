@@ -1,31 +1,26 @@
-$container-height: 600px
+$container-height: 100%
 $container-height-mobile: 255px
 
 .Carroussel
     display: none
 
 .slideshow-container
-    width: 100%
     position: relative
     margin: auto
     display: flex
-    height: $container-height
     width: 100%
     align-items: center
-
-    @media screen and ( max-width: $layout-breakpoint-small )
-        height: $container-height-mobile
+    aspect-ratio: 16/9
 
     .mySlides
         position: relative
+        aspect-ratio: 16/9
         width: 100%
         .myPictures
             display: none
-            width: 100%
             &--imgcontainer
                 display: flex
                 align-items: center
-                height: fit-content
                 max-height: $container-height
                 overflow: hidden
                 border-radius: 25px
