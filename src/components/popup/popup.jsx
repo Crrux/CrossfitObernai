@@ -41,18 +41,17 @@ function Popup() {
         <aside
           className={`PopupPC ${isButtonClicked ? "close-animation-pc" : ""}`}
         >
+
           <div>
-            <header>
-              <button className={`close-button`} onClick={handleClosePopup}>
-                X
-              </button>
-            </header>
-            <main>
-              <Link to={"contact"} onClick={handleClosePopup}>
-                <img src={PopupImagePc} alt="" />
-              </Link>
-            </main>
+            <button className={`close-button`} onClick={handleClosePopup}>
+              X
+            </button>
           </div>
+          <Link to={"contact"} onClick={handleClosePopup}>
+            <div>
+              <img src={PopupImagePc} alt="" />
+            </div>
+          </Link>
         </aside>
       )}
     </>

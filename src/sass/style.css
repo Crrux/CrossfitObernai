@@ -3,47 +3,39 @@
   bottom: 0;
   right: 7%;
   width: 500px;
-  height: 300px;
-  background-color: #3b3838;
+  background-color: #000;
   color: black;
   margin-right: 10px;
-  padding: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-radius: 10px 10px 0 0;
   animation: PopupOpenPC 1s ease-in-out forwards;
-  z-index: 9999;
+  z-index: 9990;
 }
 .PopupPC div {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
 }
-.PopupPC div header {
-  width: 100%;
-}
-.PopupPC div header button {
+.PopupPC div button {
+  position: absolute;
+  right: 3px;
+  top: 3px;
   margin-left: auto;
   margin-bottom: 10px;
   border: 0;
-  padding: 0;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-.PopupPC div main a {
+.PopupPC div img {
   width: 100%;
-  text-decoration: none;
-  color: black;
-}
-.PopupPC div main p {
-  width: 100%;
-}
-.PopupPC div main img {
-  width: 100%;
+  padding: 10px;
 }
 .PopupPC.close-animation-pc {
   animation: PopupClosePC 1s ease-in-out forwards;
