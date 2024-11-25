@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PopupImagePc from "/assets/popup/Popup_pc.png";
 import PopupImageTel from "/assets/popup/Popup_tel.png";
 import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
+import { useSwipeable } from 'react-swipeable';
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(true);
@@ -39,13 +40,20 @@ function Popup() {
     setIsButtonClicked(true);
     setTimeout(() => setIsOpen(false), 0);
   };
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleClosePopup(),
+    onSwipedRight: () => handleClosePopup(),
+    preventScrollOnSwipe: true,
+    trackMouse: true
+  })
 
   return (
     <>
       {/* Tel popup */}
 
       {isOpen && !isTabletorAbove && (
-        <aside className={`PopupTel ${scrollY > 100 ? 'scroll' : 'fixe'}`}>
+        <aside className={`PopupTel ${scrollY > 100 ? 'scroll' : 'fixe'}`} {...handlers}>
+
           <div>
             <Link to={"/contact"} onClick={handleClosePopup}>
               <img src={PopupImageTel} alt="" id="PopupImageTel" />
@@ -53,8 +61,8 @@ function Popup() {
             {scrollY > 100 ? <button className={`close-button`} onClick={handleClosePopup}>
               X
             </button> : ''}
-
           </div>
+
         </aside>
       )}
 
