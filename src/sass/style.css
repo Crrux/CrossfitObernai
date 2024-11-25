@@ -562,7 +562,7 @@ header .navbar a {
     background: transparent;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   header .navbar__link:hover:not(.activeNavLink):after {
     content: "";
     display: block;
