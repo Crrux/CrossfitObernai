@@ -38,7 +38,7 @@ header
             color: inherit
             position: relative
             width: fit-content
-            &:not(.navbar__item:nth-child(2) .navbar__link):hover
+            &:hover
                 &:after
                     content: ''
                     display: block
@@ -162,6 +162,8 @@ header
             &__item:nth-child(2)
                 &:hover
                     animation: upscale 0.3s ease-in-out forwards
+                a:hover:after
+                    display: none
 
 @keyframes width_animation
     0%

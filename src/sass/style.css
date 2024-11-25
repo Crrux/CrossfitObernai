@@ -417,7 +417,7 @@ header .navbar__link {
   width: -moz-fit-content;
   width: fit-content;
 }
-header .navbar__link:not(.navbar__item:nth-child(2) .navbar__link):hover:after {
+header .navbar__link:hover:after {
   content: "";
   display: block;
   position: absolute;
@@ -551,6 +551,9 @@ header .navbar a {
 @media screen and (min-width: 768px) {
   header .navbar__item:nth-child(2):hover {
     animation: upscale 0.3s ease-in-out forwards;
+  }
+  header .navbar__item:nth-child(2) a:hover:after {
+    display: none;
   }
 }
 
