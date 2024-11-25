@@ -417,17 +417,6 @@ header .navbar__link {
   width: -moz-fit-content;
   width: fit-content;
 }
-header .navbar__link:hover:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 70%;
-  height: 3px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
-  left: 50%;
-  transform: translateX(-50%);
-  animation: width_animation 0.3s ease-in-out forwards;
-}
 header .navbar .activeNavLink:after {
   content: "";
   display: block;
@@ -549,6 +538,17 @@ header .navbar a {
   }
 }
 @media screen and (min-width: 768px) {
+  header .navbar__link:hover:not(.activeNavLink):after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1019607843) 0, #36d6e7 20%, #36d6e7 80%, rgba(255, 255, 255, 0.1019607843) 100%);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: width_animation 0.3s ease-in-out forwards;
+  }
   header .navbar__item:nth-child(2):hover {
     animation: upscale 0.3s ease-in-out forwards;
   }
@@ -858,7 +858,7 @@ body main .main__header .title_container {
   padding: 10px 0px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   color: black;
-  width: 50%;
+  width: 40%;
 }
 @media (max-width: 767.98px) {
   body main .main__header .title_container {

@@ -38,17 +38,6 @@ header
             color: inherit
             position: relative
             width: fit-content
-            &:hover
-                &:after
-                    content: ''
-                    display: block
-                    position: absolute
-                    width: 70%
-                    height: 3px
-                    background: linear-gradient(to right,#ffffff1a 0, #36d6e7 20%, #36d6e7 80%, #ffffff1a 100%)
-                    left: 50%
-                    transform: translateX(-50%)
-                    animation: width_animation 0.3s ease-in-out forwards
         .activeNavLink
             &:after
                 content: ''
@@ -159,6 +148,18 @@ header
                 background: transparent
     @media screen and (min-width: 768px)
         .navbar
+            &__link
+                &:hover:not(.activeNavLink)
+                    &:after
+                        content: ''
+                        display: block
+                        position: absolute
+                        width: 70%
+                        height: 3px
+                        background: linear-gradient(to right,#ffffff1a 0, #36d6e7 20%, #36d6e7 80%, #ffffff1a 100%)
+                        left: 50%
+                        transform: translateX(-50%)
+                        animation: width_animation 0.3s ease-in-out forwards
             &__item:nth-child(2)
                 &:hover
                     animation: upscale 0.3s ease-in-out forwards
