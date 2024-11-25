@@ -264,6 +264,7 @@
   }
 }
 .slideshow-container .mySlides .myPictures--imgcontainer img {
+  aspect-ratio: 16/9;
   width: 100%;
 }
 .slideshow-container .mySlides .myPictures--indexation {
@@ -405,6 +406,11 @@ header #Header_Logo {
   margin-top: 10px;
   max-height: 200px;
   max-width: 100%;
+}
+@media screen and (max-width: 767.98px) {
+  header #Header_Logo {
+    max-height: 100px;
+  }
 }
 header #home_link {
   font-size: 2rem;
@@ -704,7 +710,13 @@ footer #Footer_bottom-container p a {
 }
 .Home #Slideshow_container {
   aspect-ratio: 16/9;
-  width: 800px;
+  width: 100%;
+  max-width: 1080px;
+}
+@media screen and (max-width: 768px) {
+  .Home #Slideshow_container {
+    width: 100%;
+  }
 }
 .Home .Slideshow_section {
   display: flex;
