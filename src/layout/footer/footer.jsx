@@ -61,9 +61,7 @@ function Footer() {
               <tr>
                 <th scope="row">Dimanche:</th>
                 <td>
-                  <span style={{ color: "red", fontWeight: "bold" }}>
-                    Fermé
-                  </span>
+                  09h00 - 12h00
                 </td>
               </tr>
             </tbody>
