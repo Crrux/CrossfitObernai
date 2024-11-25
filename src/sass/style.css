@@ -2,7 +2,9 @@
   position: fixed;
   bottom: 0;
   right: 7%;
-  width: 500px;
+  width: 25%;
+  min-width: 250px;
+  max-width: 600px;
   background-color: #000;
   color: black;
   margin-right: 10px;
