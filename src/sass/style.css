@@ -382,6 +382,30 @@
   }
 }
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #232627;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 header {
   display: flex;
   justify-content: space-evenly;
@@ -422,6 +446,12 @@ header .navbar__links {
   width: 100%;
   display: flex;
   justify-content: center;
+  gap: 40px;
+}
+@media screen and (max-width: 1024px) {
+  header .navbar__links {
+    gap: 3px;
+  }
 }
 header .navbar__links img {
   display: none;

@@ -1,4 +1,8 @@
-import Slideshow from "../../components/Slideshow/Slideshow";
+import { lazy, Suspense } from 'react';
+
+const Slideshow = lazy(() => import("../../components/Slideshow/Slideshow"))
+import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
+
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.webp";
 
 function Home() {
@@ -13,7 +17,9 @@ function Home() {
     <main className="Home">
       <section className="Slideshow_section">
         <div id="Slideshow_container">
-          <Slideshow data={Slideshow_data} />
+          <Suspense fallback={<LoadingSpinner />}>
+            <Slideshow data={Slideshow_data} />
+          </Suspense>
         </div>
       </section>
       <section>
