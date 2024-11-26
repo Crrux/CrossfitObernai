@@ -31,7 +31,7 @@ function Footer() {
           ></iframe>
         </div> */}
         <div id="Hours_info">
-          <h2>Horaires</h2>
+          <h3>Horaires</h3>
           <table>
             <tbody>
               <tr>

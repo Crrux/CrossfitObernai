@@ -31,7 +31,7 @@ function Header() {
         </Link>
       </div>
       <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
-        <button className="navbar__burger" onClick={handleShowLinks}>
+        <button className="navbar__burger" onClick={handleShowLinks} aria-label="Toggle navigation">
           <span className="burger-bar"></span>
         </button>
       </div>
@@ -40,7 +40,7 @@ function Header() {
         <ul className="navbar__links">
           <li className="navbar__logo">
             <Link to={"/"} onClick={handleShowLinksRedirection}>
-              <img src={Logo} id="navburger-logo" />
+              <img src={Logo} id="navburger-logo" alt="Logo Crossfit Obernai - Link to Home" />
             </Link>
           </li>
           <li className="navbar__item">
@@ -48,6 +48,7 @@ function Header() {
               to={"/"}
               className={`navbar__link`}
               onClick={handleShowLinksRedirection}
+              aria-label="Link to Home"
             >
               <i className="fa-solid fa-house" id="home_link"></i>
             </Link>

@@ -64,7 +64,7 @@ function Popup() {
                 handleRedirectionDisplay();
                 handleClosePopup();
               }}>
-                <img src={PopupImageTel} alt="" id="PopupImageTel" />
+                <img src={PopupImageTel} alt="Link for a free trial" id="PopupImageTel" aria-label="Link for a free trial" />
               </Link>
               {/* {scrollY > 100 ?
                 <button className={`close-button`} onClick={handleClosePopup}>
@@ -94,7 +94,7 @@ function Popup() {
             handleClosePopup();
           }}>
             <div>
-              <img src={PopupImagePc} alt="" />
+              <img src={PopupImagePc} alt="Link for a free trial" aria-label="Link for a free trial" />
             </div>
           </Link>
         </aside>
