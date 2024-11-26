@@ -40,6 +40,9 @@ function Popup() {
     setIsButtonClicked(true);
     setTimeout(() => setIsOpen(false), 0);
   };
+
+  const handleRedirectionDisplay = () => window.scrollTo(0, 0);
+
   const handlers = useSwipeable({
     onSwipedLeft: () => handleClosePopup(),
     onSwipedRight: () => handleClosePopup(),
@@ -57,7 +60,10 @@ function Popup() {
         <aside className={`PopupTel ${scrollY > 100 ? 'scroll' : 'fixe'}`} {...handlers}>
           <motion.div drag dragConstraints={{ right: 0, left: 0, bottom: 0 }} >
             <div>
-              <Link to={"/contact"} onClick={handleClosePopup}>
+              <Link to={"/contact"} onClick={() => {
+                handleRedirectionDisplay();
+                handleClosePopup();
+              }}>
                 <img src={PopupImageTel} alt="" id="PopupImageTel" />
               </Link>
               {/* {scrollY > 100 ?
@@ -83,7 +89,10 @@ function Popup() {
               X
             </button>
           </div>
-          <Link to={"contact"} onClick={handleClosePopup}>
+          <Link to={"contact"} onClick={() => {
+            handleRedirectionDisplay();
+            handleClosePopup();
+          }}>
             <div>
               <img src={PopupImagePc} alt="" />
             </div>
