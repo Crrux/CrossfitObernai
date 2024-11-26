@@ -1,5 +1,5 @@
 import Collapsible from "../../components/Collapsible/Collapsible";
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Seances.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Seances.webp";
 
 function Class() {
   return (

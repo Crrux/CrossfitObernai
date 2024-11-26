@@ -1,4 +1,4 @@
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Evenements.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Evenements.webp";
 
 function Events() {
   return (

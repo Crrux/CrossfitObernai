@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import PopupImagePc from "/assets/popup/Popup_pc.png";
-import PopupImageTel from "/assets/popup/Popup_tel.png";
+import PopupImagePc from "/assets/popup/Popup_pc.webp";
+import PopupImageTel from "/assets/popup/Popup_tel.webp";
 import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
 import { useSwipeable } from 'react-swipeable';
 import { motion } from "framer-motion";

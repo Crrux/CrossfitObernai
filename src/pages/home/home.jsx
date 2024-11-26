@@ -1,5 +1,5 @@
 import Slideshow from "../../components/Slideshow/Slideshow";
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.webp";
 
 function Home() {
   const Slideshow_data = [

@@ -1,4 +1,4 @@
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Planning.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Planning.webp";
 
 function Planning() {
   window.scrollTo(0, 0);

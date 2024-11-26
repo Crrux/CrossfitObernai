@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import ReCAPTCHA from "react-google-recaptcha";
 
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 
 // Todo: Form submission / validation / validation error display
 

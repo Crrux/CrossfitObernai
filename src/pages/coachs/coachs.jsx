@@ -1,4 +1,4 @@
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Coachs.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Coachs.webp";
 
 function Coach() {
   return (

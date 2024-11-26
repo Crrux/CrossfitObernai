@@ -1,4 +1,4 @@
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Offres.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Offres.webp";
 
 function Offers() {
   return (
