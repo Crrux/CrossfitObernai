@@ -115,10 +115,13 @@
 }
 .scroll > div {
   background-color: #333138;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  overflow: hidden;
 }
 
 .fixe {
-  background-color: #f5f5f5;
+  background: transparent;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 20px;
