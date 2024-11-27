@@ -8,14 +8,14 @@ import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimens
 function Header() {
   const location = useLocation();
   const [isTabletorAbove, setIsTabletorAbove] = useState(false);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (width <= 1024) {
       setIsTabletorAbove(false);
     } else setIsTabletorAbove(true);
-  }, [isTabletorAbove, height, width]);
+  }, [isTabletorAbove, width]);
 
   const handleShowLinks = () => setIsOpen(!isOpen);
   const handleShowLinksRedirection = () => {
