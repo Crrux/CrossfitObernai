@@ -12,7 +12,7 @@
   padding-bottom: 1rem;
   border-radius: 10px 10px 0 0;
   animation: PopupOpenPC 1s ease-in-out forwards;
-  z-index: 9990;
+  z-index: 100;
 }
 .PopupPC div {
   display: flex;
@@ -109,7 +109,7 @@
 
 .scroll {
   position: sticky;
-  z-index: 9999;
+  z-index: 100;
   width: calc(100% - 6rem);
   left: 2rem;
 }
@@ -477,18 +477,12 @@ header .navbar {
   width: 100vw;
   min-height: 75px;
   color: light-dark(#000, #f5f5f5);
-  z-index: 10;
+  z-index: 200;
 }
 header .navbar__links {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 40px;
-}
-@media screen and (max-width: 1024px) {
-  header .navbar__links {
-    gap: 3px;
-  }
 }
 header .navbar__links img {
   display: none;
@@ -514,7 +508,7 @@ header .navbar .activeNavLink:after {
 header .navbar__burger {
   width: 40px;
   height: 40px;
-  z-index: 12;
+  z-index: 202;
   background: transparent;
   border: none;
   color: inherit;

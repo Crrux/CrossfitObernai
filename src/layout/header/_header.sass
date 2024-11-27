@@ -27,14 +27,11 @@ header
         width: 100vw
         min-height: 75px
         color: light-dark($color-light, $color-dark)
-        z-index: 10
+        z-index: 200
         &__links
             width: 100%
             display: flex
             justify-content: center
-            gap: 40px
-            @media screen and (max-width: $layout-breakpoint-tablet-max)
-                gap: 3px
             img
                 display: none
                 height: 100px
@@ -57,7 +54,7 @@ header
         &__burger
             width: 40px
             height: 40px
-            z-index: 12
+            z-index: 202
             background: transparent
             border: none
             color: inherit
