@@ -1,91 +1,96 @@
 $dark-bg: #222
 $light-text: #ddd
 $error-text: #ff6347
-// input,
-// textarea,
-// select,
-// button
-//     margin: 0
-//     padding: 0
-//     border: 0
-//     font-size: 100%
-//     font: inherit
-//     vertical-align: baseline
-//     background: transparent
-//     appearance: none
+$form-font-size: 1.4rem
+$form-padding: 10px
+$form-border-radius: 5px
+$form-bg-color: lighten($dark-bg, 5%)
+$layout-breakpoint-small: 600px
 
-//     &:focus
-//         outline: 0
 #main_contact
     display: flex
     justify-content: center
     align-items: center
     flex-direction: column
+
     #form_contact
         display: flex
         justify-content: center
-        // align-items: center
         flex-direction: column
         background-color: $dark-bg
         color: $light-text
         padding: 20px
-        border-radius: 5px
+        border-radius: $form-border-radius
         width: 100%
         max-width: 1024px
         box-sizing: border-box
         margin-bottom: 50px
+
         &_divname
             display: flex
             flex-direction: row
             flex-wrap: wrap
             column-gap: 10px
+
             label
                 flex-grow: 1
+
             input
                 width: 20vw
                 min-width: 250px
                 max-width: 400px
+
                 @media screen and (max-width: $layout-breakpoint-small)
                     width: 100%
 
-        input, .label input, textarea
-            font-size: 1.4rem
         &_checkbox_container
             display: flex
             flex-direction: row
+            justify-content: center
             margin-bottom: 15px
             gap: 10px
+
+            p
+                user-select: none
+
         label:not(#form_contact_checkbox_container)
             display: block
             margin-bottom: 15px
+
             p
                 margin-bottom: 5px
 
-            input, textarea
-                width: 100%
-                padding: 10px
-                border: none
-                border-radius: 5px
-                background-color: lighten($dark-bg, 5%)
-                color: $light-text
-                box-sizing: border-box
-                &:focus
-                    outline: none
-            textarea
-                resize: vertical
-                min-height: 150px
-            span
-                color: $error-text
-                font-size: 0.8em
-            #tel, #email
-                min-width: 250px
-                max-width: 400px
-input[type="submit"]
-    background-color: rgb(255, 255,255,0.1 )
-    color: $light-text
-    cursor: pointer
-    transition: background-color 0.3s ease
-    width: fit-content
-    border-radius: 5px
-    &:hover
-        background-color: darken($error-text, 10%)
+        input:not([type="checkbox"]), .label input:not([type="checkbox"]), textarea
+            font-size: $form-font-size
+            width: 100%
+            padding: $form-padding
+            border: none
+            border-radius: $form-border-radius
+            background-color: $form-bg-color
+            color: $light-text
+            box-sizing: border-box
+
+        &:focus
+            outline: none
+
+    textarea
+        resize: vertical
+        min-height: 150px
+
+    span
+        color: $error-text
+        font-size: 0.8em
+
+    #tel, #email
+        min-width: 250px
+        max-width: 400px
+
+    input[type="submit"]
+        background-color: rgba(255, 255, 255, 0.1)
+        color: $light-text
+        cursor: pointer
+        transition: background-color 0.3s ease
+        width: fit-content
+        border-radius: $form-border-radius
+        &:hover
+            background-color: darken($error-text, 10%)

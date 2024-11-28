@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import ReCAPTCHA from "react-google-recaptcha";
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 import { Link } from "react-router-dom";
@@ -41,6 +39,7 @@ function Contact() {
       [name]: type === 'checkbox' ? checked : value,
     }));
   }
+
   // TODO: Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
@@ -135,7 +134,7 @@ function Contact() {
                 required
                 onChange={handleChange}
               />
-              {errors.nameError && <span>{errors.nameError}</span>}
+              {/* {errors.nameError && <span>{errors.nameError}</span>} */}
             </label>
             <label htmlFor="firstname">
               <p>Prenom</p>
@@ -148,7 +147,7 @@ function Contact() {
                 required
                 onChange={handleChange}
               />
-              {errors.firstnameError && <span>{errors.firstnameError}</span>}
+              {/* {errors.firstnameError && <span>{errors.firstnameError}</span>} */}
             </label>
           </div>
 
@@ -163,7 +162,7 @@ function Contact() {
               required
               onChange={handleChange}
             />
-            {errors.emailError && <span>{errors.emailError}</span>}
+            {/* {errors.emailError && <span>{errors.emailError}</span>} */}
           </label>
           <label htmlFor="tel">
             <p>Telephone</p>
@@ -176,7 +175,7 @@ function Contact() {
               required
               onChange={handleChange}
             />
-            {errors.telError && <span>{errors.telError}</span>}
+            {/* {errors.telError && <span>{errors.telError}</span>} */}
           </label>
           <label htmlFor="message">
             <p>Message</p>
@@ -187,17 +186,13 @@ function Contact() {
               rows={10}
               onChange={handleChange}
             />
-            {errors.messageError && <span>{errors.messageError}</span>}
+            {/* {errors.messageError && <span>{errors.messageError}</span>} */}
           </label>
           <label htmlFor="radio" id="form_contact_checkbox_container">
             <input type="checkbox" id="radio" name="radio" value='consent' onChange={handleChange}></input>
             <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
 
-          {/* <ReCAPTCHA
-            sitekey={import.meta.env.VITE_REACT_APP_GOOGLE_RECAPTCHA_KEY}
-            onChange={(val) => setCaptchaValue(val)}
-          /> */}
           <input type="submit" value="Submit" disabled={hasErrors} />
         </form>
       </main>

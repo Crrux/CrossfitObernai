@@ -832,19 +832,22 @@ footer #Footer_bottom-container p a {
   min-width: 250px;
   max-width: 400px;
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 600px) {
   #main_contact #form_contact_divname input {
     width: 100%;
   }
 }
-#main_contact #form_contact input, #main_contact #form_contact .label input, #main_contact #form_contact textarea {
-  font-size: 1.4rem;
-}
 #main_contact #form_contact_checkbox_container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin-bottom: 15px;
   gap: 10px;
+}
+#main_contact #form_contact_checkbox_container p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #main_contact #form_contact label:not(#form_contact_checkbox_container) {
   display: block;
@@ -853,7 +856,8 @@ footer #Footer_bottom-container p a {
 #main_contact #form_contact label:not(#form_contact_checkbox_container) p {
   margin-bottom: 5px;
 }
-#main_contact #form_contact label:not(#form_contact_checkbox_container) input, #main_contact #form_contact label:not(#form_contact_checkbox_container) textarea {
+#main_contact #form_contact input:not([type=checkbox]), #main_contact #form_contact .label input:not([type=checkbox]), #main_contact #form_contact textarea {
+  font-size: 1.4rem;
   width: 100%;
   padding: 10px;
   border: none;
@@ -862,23 +866,22 @@ footer #Footer_bottom-container p a {
   color: #ddd;
   box-sizing: border-box;
 }
-#main_contact #form_contact label:not(#form_contact_checkbox_container) input:focus, #main_contact #form_contact label:not(#form_contact_checkbox_container) textarea:focus {
+#main_contact #form_contact:focus {
   outline: none;
 }
-#main_contact #form_contact label:not(#form_contact_checkbox_container) textarea {
+#main_contact textarea {
   resize: vertical;
   min-height: 150px;
 }
-#main_contact #form_contact label:not(#form_contact_checkbox_container) span {
+#main_contact span {
   color: #ff6347;
   font-size: 0.8em;
 }
-#main_contact #form_contact label:not(#form_contact_checkbox_container) #tel, #main_contact #form_contact label:not(#form_contact_checkbox_container) #email {
+#main_contact #tel, #main_contact #email {
   min-width: 250px;
   max-width: 400px;
 }
-
-input[type=submit] {
+#main_contact input[type=submit] {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ddd;
   cursor: pointer;
@@ -887,7 +890,7 @@ input[type=submit] {
   width: fit-content;
   border-radius: 5px;
 }
-input[type=submit]:hover {
+#main_contact input[type=submit]:hover {
   background-color: #ff3814;
 }
 
@@ -931,7 +934,7 @@ input[type=submit]:hover {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 600px) {
   #root {
     width: 100%;
   }
@@ -963,7 +966,7 @@ body main .main__header .title_container {
   color: black;
   width: 40%;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 600px) {
   body main .main__header .title_container {
     width: 100%;
   }
