@@ -16,6 +16,7 @@ function Contact() {
     email: "",
     tel: "",
     message: "",
+    radio: null
   });
 
   // Initialize state for form submission status
@@ -34,13 +35,12 @@ function Contact() {
 
   // Handle changes in form input fields
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     setContact((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
-  };
-
+  }
   // TODO: Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
@@ -108,6 +108,7 @@ function Contact() {
     setHasErrors(Object.values(errors).some((error) => error !== ""));
     console.log(hasErrors);
     console.log(errors);
+    console.log(contact)
   }, [contact, errors, hasErrors]);
 
   return (
@@ -189,7 +190,7 @@ function Contact() {
             {errors.messageError && <span>{errors.messageError}</span>}
           </label>
           <label htmlFor="radio" id="form_contact_checkbox_container">
-            <input type="checkbox" id="radio" name="radio"></input>
+            <input type="checkbox" id="radio" name="radio" value='consent' onChange={handleChange}></input>
             <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
 
