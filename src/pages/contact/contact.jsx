@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
+import { Link } from "react-router-dom";
 
 // Todo: Form submission / validation / validation error display
 
@@ -187,6 +188,11 @@ function Contact() {
             />
             {errors.messageError && <span>{errors.messageError}</span>}
           </label>
+          <label htmlFor="radio" id="form_contact_checkbox_container">
+            <input type="checkbox" id="radio" name="radio"></input>
+            <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
+          </label>
+
           {/* <ReCAPTCHA
             sitekey={import.meta.env.VITE_REACT_APP_GOOGLE_RECAPTCHA_KEY}
             onChange={(val) => setCaptchaValue(val)}

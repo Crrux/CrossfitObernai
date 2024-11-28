@@ -31,7 +31,7 @@ $error-text: #ff6347
         padding: 20px
         border-radius: 5px
         width: 100%
-        max-width: 700px
+        max-width: 1024px
         box-sizing: border-box
         margin-bottom: 50px
         &_divname
@@ -42,35 +42,44 @@ $error-text: #ff6347
             label
                 flex-grow: 1
             input
-                width: fit-content
+                width: 20vw
+                min-width: 250px
+                max-width: 400px
+                @media screen and (max-width: $layout-breakpoint-small)
+                    width: 100%
+
         input, .label input, textarea
             font-size: 1.4rem
+        &_checkbox_container
+            display: flex
+            flex-direction: row
+            margin-bottom: 15px
+            gap: 10px
+        label:not(#form_contact_checkbox_container)
+            display: block
+            margin-bottom: 15px
+            p
+                margin-bottom: 5px
 
-label
-    display: block
-    margin-bottom: 15px
-
-    p
-        margin-bottom: 5px
-
-    input, textarea
-        width: 100%
-        padding: 10px
-        border: none
-        border-radius: 5px
-        background-color: lighten($dark-bg, 5%)
-        color: $light-text
-        box-sizing: border-box
-        &:focus
-            outline: none
-    textarea
-        resize: vertical
-    span
-        color: $error-text
-        font-size: 0.8em
-    #tel, #email
-        max-width: 300px
-
+            input, textarea
+                width: 100%
+                padding: 10px
+                border: none
+                border-radius: 5px
+                background-color: lighten($dark-bg, 5%)
+                color: $light-text
+                box-sizing: border-box
+                &:focus
+                    outline: none
+            textarea
+                resize: vertical
+                min-height: 150px
+            span
+                color: $error-text
+                font-size: 0.8em
+            #tel, #email
+                min-width: 250px
+                max-width: 400px
 input[type="submit"]
     background-color: rgb(255, 255,255,0.1 )
     color: $light-text

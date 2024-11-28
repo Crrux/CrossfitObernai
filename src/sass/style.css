@@ -813,7 +813,7 @@ footer #Footer_bottom-container p a {
   padding: 20px;
   border-radius: 5px;
   width: 100%;
-  max-width: 700px;
+  max-width: 1024px;
   box-sizing: border-box;
   margin-bottom: 50px;
 }
@@ -828,21 +828,32 @@ footer #Footer_bottom-container p a {
   flex-grow: 1;
 }
 #main_contact #form_contact_divname input {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 20vw;
+  min-width: 250px;
+  max-width: 400px;
+}
+@media screen and (max-width: 767.98px) {
+  #main_contact #form_contact_divname input {
+    width: 100%;
+  }
 }
 #main_contact #form_contact input, #main_contact #form_contact .label input, #main_contact #form_contact textarea {
   font-size: 1.4rem;
 }
-
-label {
+#main_contact #form_contact_checkbox_container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+#main_contact #form_contact label:not(#form_contact_checkbox_container) {
   display: block;
   margin-bottom: 15px;
 }
-label p {
+#main_contact #form_contact label:not(#form_contact_checkbox_container) p {
   margin-bottom: 5px;
 }
-label input, label textarea {
+#main_contact #form_contact label:not(#form_contact_checkbox_container) input, #main_contact #form_contact label:not(#form_contact_checkbox_container) textarea {
   width: 100%;
   padding: 10px;
   border: none;
@@ -851,18 +862,20 @@ label input, label textarea {
   color: #ddd;
   box-sizing: border-box;
 }
-label input:focus, label textarea:focus {
+#main_contact #form_contact label:not(#form_contact_checkbox_container) input:focus, #main_contact #form_contact label:not(#form_contact_checkbox_container) textarea:focus {
   outline: none;
 }
-label textarea {
+#main_contact #form_contact label:not(#form_contact_checkbox_container) textarea {
   resize: vertical;
+  min-height: 150px;
 }
-label span {
+#main_contact #form_contact label:not(#form_contact_checkbox_container) span {
   color: #ff6347;
   font-size: 0.8em;
 }
-label #tel, label #email {
-  max-width: 300px;
+#main_contact #form_contact label:not(#form_contact_checkbox_container) #tel, #main_contact #form_contact label:not(#form_contact_checkbox_container) #email {
+  min-width: 250px;
+  max-width: 400px;
 }
 
 input[type=submit] {
