@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 import { Link } from "react-router-dom";
+import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 
 // Todo: Form submission / validation / validation error display
 
@@ -14,16 +15,12 @@ function Contact() {
     email: "",
     tel: "",
     message: "",
-    radio: null
+    checkbox: false
   });
 
   // Initialize state for form submission status
   const [isFormSent, setisFormSent] = useState(false);
   const [isFormLoading, setIsFormLoading] = useState(false);
-  console.log(isFormLoading);
-
-  // const [captchaValue, setCaptchaValue] = useState(null);
-  // console.log(captchaValue);
 
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
@@ -74,40 +71,44 @@ function Contact() {
       // Validate name field
       let nameValid = /^[\p{L}\s'-]{2,}$/u.test(contact.name);
       fieldValidationErrors.nameError = nameValid
-        ? ""
-        : " must contain only letters and 2 caractere minimum";
+        ? false
+        : true;
 
       // Validate firstname field
       let firstnameValid = /^[\p{L}\s'-]{2,}$/u.test(contact.firstname);
       fieldValidationErrors.firstnameError = firstnameValid
-        ? ""
-        : " must contain only letters and 2 caractere minimum";
+        ? false
+        : true;
 
       // Validate email field
       let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
         contact.email
       );
-      fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
+      fieldValidationErrors.emailError = emailValid
+        ? false
+        : true;
 
       // Validate telephone field
       let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
-      fieldValidationErrors.telError = telValid ? "" : " is invalid";
+      fieldValidationErrors.telError = telValid
+        ? false
+        : true;
 
       // Validate message field
       let messageValid = contact.message.length > 2;
       fieldValidationErrors.messageError = messageValid
-        ? ""
-        : " must be at least 3 characters long";
+        ? false
+        : true;
 
+      let checkboxValid = contact.checkbox
+      fieldValidationErrors.checkboxError = !checkboxValid
+      console.log(hasErrors)
       setErrors(fieldValidationErrors);
     };
     validateField();
 
     // Check if there are any validation errors and update the state accordingly
-    setHasErrors(Object.values(errors).some((error) => error !== ""));
-    console.log(hasErrors);
-    console.log(errors);
-    console.log(contact)
+    setHasErrors(Object.values(errors).some((error) => error !== false));
   }, [contact, errors, hasErrors]);
 
   return (
@@ -188,12 +189,13 @@ function Contact() {
             />
             {/* {errors.messageError && <span>{errors.messageError}</span>} */}
           </label>
-          <label htmlFor="radio" id="form_contact_checkbox_container">
-            <input type="checkbox" id="radio" name="radio" value='consent' onChange={handleChange}></input>
+          <label htmlFor="checkbox" id="form_contact_checkbox_container">
+            <input type="checkbox" id="checkbox" name="checkbox" value='consent' onChange={handleChange}></input>
             <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
 
           <input type="submit" value="Submit" disabled={hasErrors} />
+          {isFormLoading ? <LoadingSpinner /> : ""}
         </form>
       </main>
     </>
