@@ -49,7 +49,11 @@ function Contact() {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
+          // console.log(res)
+          if (res.status === 200) {
+            console.log("status 200 retourner")
+          }
           setisFormSent(true);
         })
         .catch((error) => {
