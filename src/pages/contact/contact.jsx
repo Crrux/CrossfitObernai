@@ -53,6 +53,8 @@ function Contact() {
           // console.log(res)
           if (res.status === 200) {
             console.log("status 200 retourner")
+          } else if (res.status !== 200) {
+            console.log("status pas 200 retourner")
           }
           setisFormSent(true);
         })
