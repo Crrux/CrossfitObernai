@@ -821,8 +821,8 @@ footer #Footer_bottom-container p a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 #main_contact #form_contact_divname label {
   flex-grow: 1;
