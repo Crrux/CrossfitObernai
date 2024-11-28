@@ -102,7 +102,10 @@ function Contact() {
 
       let checkboxValid = contact.checkbox
       fieldValidationErrors.checkboxError = !checkboxValid
-      console.log(hasErrors)
+      console.log("hasErrors : ", hasErrors)
+      if (hasErrors) {
+        console.log('fieldValidationErrors : ', fieldValidationErrors)
+      }
       setErrors(fieldValidationErrors);
     };
     validateField();
