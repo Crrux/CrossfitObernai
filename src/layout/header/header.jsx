@@ -53,7 +53,7 @@ function Header() {
               <i className="fa-solid fa-house" id="home_link"></i>
             </Link>
           </li>
-          <li className="navbar__item">
+          {/* <li className="navbar__item">
             <Link
               to={LinksLocal.class}
               className={`navbar__link ${location.pathname === LinksLocal.class && isTabletorAbove
@@ -64,7 +64,7 @@ function Header() {
             >
               Nos Cours
             </Link>
-          </li>
+          </li> */}
           <li className="navbar__item">
             <Link
               to={LinksLocal.class}
@@ -137,7 +137,7 @@ function Header() {
               Contact
             </Link>
           </li>
-          <li className="navbar__item">
+          {/* <li className="navbar__item">
             <Link
               to={"testerreur"}
               className={`navbar__link`}
@@ -145,7 +145,7 @@ function Header() {
             >
               Test erreur
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

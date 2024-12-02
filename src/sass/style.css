@@ -818,12 +818,19 @@ footer #Footer_bottom-container p a {
   margin-right: auto;
 }
 #class .collapsible_container {
+  width: 100%;
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   row-gap: 20px;
   -moz-column-gap: 50px;
        column-gap: 50px;
+}
+@media screen and (max-width: 767.98px) {
+  #class .collapsible_container {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 #main_contact {
