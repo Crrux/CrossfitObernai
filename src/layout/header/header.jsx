@@ -67,6 +67,18 @@ function Header() {
           </li>
           <li className="navbar__item">
             <Link
+              to={LinksLocal.class}
+              className={`navbar__link ${location.pathname === LinksLocal.class && isTabletorAbove
+                ? "activeNavLink"
+                : ""
+                }`}
+              onClick={handleShowLinksRedirection}
+            >
+              Nos Séances
+            </Link>
+          </li>
+          <li className="navbar__item">
+            <Link
               to={LinksLocal.planning}
               className={`navbar__link ${location.pathname === LinksLocal.planning && isTabletorAbove
                 ? "activeNavLink"

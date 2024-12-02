@@ -95,12 +95,14 @@
             align-items: center
             cursor: pointer
 .scroll
-    position: sticky
+    position: fixed
     z-index: 100
-    width: calc( 100% - 6rem )
-    left: 2rem
+    top: 10
+    left: 50%
+    transform: translateX(-50%)
+    width: 75dvw
     >div
-        background-color: #333138
+        background-color: #000
         border-radius: 10px
         border: 1px solid #fff
         overflow: hidden

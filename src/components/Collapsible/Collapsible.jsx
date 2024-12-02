@@ -12,10 +12,9 @@ function Collapsible({ titre, text, string }) {
   };
   return (
     <div className="collapsible">
-      <div
-        className={`collapsible-divbutton ${
-          !isFirstClick ? (isActive ? "active" : "inactive") : ""
-        }`}
+      <bouton
+        className={`collapsible-divbutton ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
+          }`} onClick={handleClick}
       >
         <p>{titre}</p>
         <button
@@ -25,21 +24,19 @@ function Collapsible({ titre, text, string }) {
         >
           <i
             id="icon"
-            className={`fa-solid fa-chevron-up ${
-              !isFirstClick
+            className={`fa-solid fa-chevron-up ${!isFirstClick
                 ? isActive
                   ? "icon-down-rotated"
                   : "icon-up-rotated"
                 : ""
-            }`}
+              }`}
           ></i>
         </button>
-      </div>
+      </bouton>
 
       <div
-        className={`collapsible-content ${
-          !isFirstClick ? (isActive ? "active" : "inactive") : ""
-        }`}
+        className={`collapsible-content ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
+          }`}
       >
         {string ? (
           <>

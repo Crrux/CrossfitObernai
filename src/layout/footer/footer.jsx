@@ -35,31 +35,31 @@ function Footer() {
           <table>
             <tbody>
               <tr>
-                <th scope="row">Lundi:</th>
+                <th scope="row">Lundi :</th>
                 <td>10h00 - 20h30</td>
               </tr>
               <tr>
-                <th scope="row">Mardi:</th>
+                <th scope="row">Mardi :</th>
                 <td>12h30 - 20h30</td>
               </tr>
               <tr>
-                <th scope="row">Mercredi:</th>
+                <th scope="row">Mercredi :</th>
                 <td>07h00 - 20h30</td>
               </tr>
               <tr>
-                <th scope="row">Jeudi:</th>
+                <th scope="row">Jeudi :</th>
                 <td>12h30 - 20h30</td>
               </tr>
               <tr>
-                <th scope="row">Vendredi:</th>
+                <th scope="row">Vendredi :</th>
                 <td>10h00 - 20h30</td>
               </tr>
               <tr>
-                <th scope="row">Samedi:</th>
+                <th scope="row">Samedi :</th>
                 <td>09h00 - 12h00</td>
               </tr>
               <tr>
-                <th scope="row">Dimanche:</th>
+                <th scope="row">Dimanche :</th>
                 <td>
                   09h00 - 12h00
                 </td>
@@ -97,20 +97,23 @@ function Footer() {
             </tbody>
           </table>
           <div id="Contact_info_Reseaux">
-            <a
-              href="https://www.facebook.com/cfobernai/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={LogoFacebook} alt="Lien Facebook"></img>
-            </a>
-            <a
-              href="https://www.instagram.com/crossfitobernai/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={LogoInstagram} alt="Lien Instagram" />
-            </a>
+            <p> couleur sur Suivez-nous !</p>
+            <div>
+              <a
+                href="https://www.facebook.com/cfobernai/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={LogoFacebook} alt="Lien Facebook"></img>
+              </a>
+              <a
+                href="https://www.instagram.com/crossfitobernai/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={LogoInstagram} alt="Lien Instagram" />
+              </a>
+            </div>
           </div>
         </div>
       </section>

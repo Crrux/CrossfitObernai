@@ -22,7 +22,7 @@ function Home() {
           </Suspense>
         </div>
       </section>
-      <section>
+      <section className='text__container'>
         <div className="main__header">
           <div className="title_container">
             <img src={TitleBackgroundImage} alt="Background" />
