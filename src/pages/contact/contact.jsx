@@ -131,7 +131,7 @@ function Contact() {
           </div>
         </div>
         <form onSubmit={handleSubmit} noValidate id="form_contact">
-          <div id="form_contact_divname">
+          <div className="form_contact_container">
             <label htmlFor="name">
               <p>Nom</p>
               <input
@@ -144,7 +144,7 @@ function Contact() {
                 required
                 onChange={handleChange}
               />
-              {/* {errors.nameError && <span>{errors.nameError}</span>} */}
+              {errors.nameError && <span>erreur</span>}
             </label>
             <label htmlFor="firstname">
               <p>Prenom</p>
@@ -157,36 +157,38 @@ function Contact() {
                 required
                 onChange={handleChange}
               />
-              {/* {errors.firstnameError && <span>{errors.firstnameError}</span>} */}
+              {errors.firstnameError && <span>erreur</span>}
+            </label>
+          </div>
+          <div className="form_contact_container">
+            <label htmlFor="email">
+              <p>Email</p>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={contact.email}
+                autoComplete="email"
+                required
+                onChange={handleChange}
+              />
+              {errors.emailError && <span>erreur</span>}
+            </label>
+            <label htmlFor="tel">
+              <p>Telephone</p>
+              <input
+                type="tel"
+                id="tel"
+                name="tel"
+                value={contact.tel}
+                autoComplete="tel"
+                required
+                onChange={handleChange}
+              />
+              {errors.telError && <span>erreur</span>}
             </label>
           </div>
 
-          <label htmlFor="email">
-            <p>Email</p>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={contact.email}
-              autoComplete="email"
-              required
-              onChange={handleChange}
-            />
-            {/* {errors.emailError && <span>{errors.emailError}</span>} */}
-          </label>
-          <label htmlFor="tel">
-            <p>Telephone</p>
-            <input
-              type="tel"
-              id="tel"
-              name="tel"
-              value={contact.tel}
-              autoComplete="tel"
-              required
-              onChange={handleChange}
-            />
-            {/* {errors.telError && <span>{errors.telError}</span>} */}
-          </label>
           <label htmlFor="message">
             <p>Message</p>
             <textarea
@@ -196,7 +198,7 @@ function Contact() {
               rows={10}
               onChange={handleChange}
             />
-            {/* {errors.messageError && <span>{errors.messageError}</span>} */}
+            {errors.messageError && <span>erreur</span>}
           </label>
           <label htmlFor="checkbox" id="form_contact_checkbox_container">
             <input type="checkbox" id="checkbox" name="checkbox" value='consent' onChange={handleChange}></input>

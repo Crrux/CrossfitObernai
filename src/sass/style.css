@@ -845,23 +845,20 @@ footer #Footer_bottom-container p a {
   box-sizing: border-box;
   margin-bottom: 50px;
 }
-#main_contact #form_contact_divname {
+#main_contact #form_contact .form_contact_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
-#main_contact #form_contact_divname label {
+#main_contact #form_contact .form_contact_container label {
   flex-grow: 1;
-}
-#main_contact #form_contact_divname input {
-  width: 20vw;
-  min-width: 250px;
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 600px) {
-  #main_contact #form_contact_divname input {
+  #main_contact #form_contact .form_contact_container label input {
     width: 100%;
   }
 }
@@ -878,7 +875,6 @@ footer #Footer_bottom-container p a {
           user-select: none;
 }
 #main_contact #form_contact label:not(#form_contact_checkbox_container) {
-  display: block;
   margin-bottom: 15px;
 }
 #main_contact #form_contact label:not(#form_contact_checkbox_container) p {
@@ -904,10 +900,6 @@ footer #Footer_bottom-container p a {
 #main_contact span {
   color: #ff6347;
   font-size: 0.8em;
-}
-#main_contact #tel, #main_contact #email {
-  min-width: 250px;
-  max-width: 400px;
 }
 #main_contact input[type=submit] {
   background-color: rgba(255, 255, 255, 0.1);
@@ -943,7 +935,7 @@ footer #Footer_bottom-container p a {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light;
+  color-scheme: light dark;
   color: light-dark(#000, #f5f5f5);
   background-color: light-dark(#f5f5f5, #232627);
   font-synthesis: none;

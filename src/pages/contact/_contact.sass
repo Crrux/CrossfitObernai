@@ -12,7 +12,6 @@ $layout-breakpoint-small: 600px
     justify-content: center
     align-items: center
     flex-direction: column
-
     #form_contact
         display: flex
         justify-content: center
@@ -25,23 +24,23 @@ $layout-breakpoint-small: 600px
         max-width: 1024px
         box-sizing: border-box
         margin-bottom: 50px
-
-        &_divname
-            display: flex
-            flex-direction: row
-            flex-wrap: wrap
-            column-gap: 30px
-
-            label
-                flex-grow: 1
-
-            input
-                width: 20vw
-                min-width: 250px
-                max-width: 400px
-
-                @media screen and (max-width: $layout-breakpoint-small)
-                    width: 100%
+        .form_contact
+            &_container
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                column-gap: 30px
+                label
+                    flex-grow: 1
+                    display: flex
+                    flex-direction: column
+                    // width: 100%
+                    input
+                        // flex-grow: 1
+                        // min-width: 250px
+                        // max-width: 400px
+                        @media screen and (max-width: $layout-breakpoint-small)
+                            width: 100%
 
         &_checkbox_container
             display: flex
@@ -54,7 +53,7 @@ $layout-breakpoint-small: 600px
                 user-select: none
 
         label:not(#form_contact_checkbox_container)
-            display: block
+            // display: block
             margin-bottom: 15px
 
             p
@@ -80,10 +79,6 @@ $layout-breakpoint-small: 600px
     span
         color: $error-text
         font-size: 0.8em
-
-    #tel, #email
-        min-width: 250px
-        max-width: 400px
 
     input[type="submit"]
         background-color: rgba(255, 255, 255, 0.1)
