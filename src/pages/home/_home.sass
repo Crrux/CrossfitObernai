@@ -5,13 +5,15 @@
         flex-direction: column
         justify-content: center
         align-items: center
-        p, ul
-            width: 80%
+        @media screen and (max-width: $layout-breakpoint-small)
+            p, ul
+                margin-right: 5vw
     #Slideshow_container
         aspect-ratio: 16/9
         width: 70%
+        margin-bottom: 30px
         // max-width: 1080px
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: $layout-breakpoint-small)
             width: 100%
 
     .Slideshow

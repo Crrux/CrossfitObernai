@@ -793,14 +793,17 @@ footer #Footer_bottom-container p a {
   justify-content: center;
   align-items: center;
 }
-.Home .text__container p, .Home .text__container ul {
-  width: 80%;
+@media screen and (max-width: 767.98px) {
+  .Home .text__container p, .Home .text__container ul {
+    margin-right: 5vw;
+  }
 }
 .Home #Slideshow_container {
   aspect-ratio: 16/9;
   width: 70%;
+  margin-bottom: 30px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .Home #Slideshow_container {
     width: 100%;
   }
