@@ -200,7 +200,7 @@ function Contact() {
             />
             {errors.messageError && <span>erreur</span>}
           </label>
-          <label htmlFor="checkbox" id="form_contact_checkbox_container">
+          <label htmlFor="checkbox" className="form_contact_checkbox_container">
             <input type="checkbox" id="checkbox" name="checkbox" value='consent' onChange={handleChange}></input>
             <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
