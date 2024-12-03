@@ -17,7 +17,15 @@ function Popup() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (window.scrollY === 0) {
+        setScrollY(window.scrollY);
+      } else {
+        setTimeout(() => {
+          setScrollY(window.scrollY);
+        }, 500);
+      }
+
+
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
