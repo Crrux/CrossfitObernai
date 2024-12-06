@@ -7,6 +7,10 @@ $color-dark: #f5f5f5
 $background-light: #f5f5f5
 $background-dark: #232627
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap")
+
 @import "../components/popup/_popup"
 @import "../components/Collapsible/_Collapsible"
 @import "../components/Slideshow/_Slideshow.sass"
@@ -79,6 +83,9 @@ body
                     width: 100%
                     z-index: -2
                 p
+                    // font-family: 'Dancing Script', sans-serif
+                    font-family: 'Satisfy', sans-serif
+                    font-size: 3rem
                     display: flex
                     width: fit-content
                     position: absolute
@@ -88,6 +95,9 @@ body
                     white-space: nowrap
                     z-index: 1
                 h1
+                    font-size: 4rem
+                    font-family: 'Roboto Condensed', sans-serif
+                    font-weight: 800
                     display: flex
                     position: absolute
                     white-space: nowrap

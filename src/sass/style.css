@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 .PopupPC {
   position: fixed;
   bottom: 0;
@@ -1015,6 +1018,8 @@ body main .main__header .title_container img {
   z-index: -2;
 }
 body main .main__header .title_container p {
+  font-family: "Satisfy", sans-serif;
+  font-size: 3rem;
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
@@ -1026,6 +1031,9 @@ body main .main__header .title_container p {
   z-index: 1;
 }
 body main .main__header .title_container h1 {
+  font-size: 4rem;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 800;
   display: flex;
   position: absolute;
   white-space: nowrap;
