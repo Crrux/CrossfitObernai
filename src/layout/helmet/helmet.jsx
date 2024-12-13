@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-// import Logo from "/assets/Header_logo.png";
+import Logo from "/assets/Header_logo.png";
 
 export default function HelmetRendering() {
 	const LdJson = {
@@ -69,6 +69,7 @@ export default function HelmetRendering() {
 				<meta property="og:image" content="./assets/Header_logo.png" />
 				<meta property="og:type" content="website" />
 				<meta property="og:locale" content="fr_FR" />
+				<link rel="icon" type="image/svg+xml" href={Logo} />
 				<script type="application/ld+json">
 					{JSON.stringify(LdJson)}
 				</script>
