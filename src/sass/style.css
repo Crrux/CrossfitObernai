@@ -820,6 +820,14 @@ footer #Footer_bottom-container p a {
     width: 100%;
   }
 }
+.Home .title_container h1 {
+  letter-spacing: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .Home .title_container h1 {
+    letter-spacing: 13px;
+  }
+}
 .Home .Slideshow_section {
   display: flex;
   justify-content: center;
@@ -1033,7 +1041,7 @@ body main .main__header .title_container p {
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
-  top: 38%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%) translateY(-100%);
   white-space: nowrap;
@@ -1047,11 +1055,17 @@ body main .main__header .title_container h1 {
   position: absolute;
   white-space: nowrap;
   z-index: 2;
-  width: -moz-fit-content;
-  width: fit-content;
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translateX(-50%) translateY(-100%);
+}
+@media screen and (max-width: 1024px) {
+  body main .main__header .title_container p {
+    font-size: 1.8rem;
+  }
+  body main .main__header .title_container h1 {
+    font-size: 3rem;
+  }
 }
 body footer {
   font-size: calc(15px + 0.1vw);

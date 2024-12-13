@@ -89,7 +89,7 @@ body
                     display: flex
                     width: fit-content
                     position: absolute
-                    top: 38%
+                    top: 30%
                     left: 50%
                     transform: translateX(-50%) translateY(-100%)
                     white-space: nowrap
@@ -102,10 +102,15 @@ body
                     position: absolute
                     white-space: nowrap
                     z-index: 2
-                    width: fit-content
-                    top: 60%
+                    // width: fit-content
+                    top: 55%
                     left: 50%
                     transform: translateX(-50%) translateY(-100%)
+                @media screen and (max-width: $layout-breakpoint-tablet-max)
+                    p
+                        font-size: 1.8rem
+                    h1
+                        font-size: 3rem
 
     footer
         font-size: calc(15px + 0.10vw)
