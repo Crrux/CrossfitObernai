@@ -101,11 +101,18 @@
     left: 50%
     transform: translateX(-50%)
     width: 75dvw
+    animation: opacityChange .3s linear forwards
     >div
         background-color: #000
         border-radius: 10px
         border: 1px solid #fff
         overflow: hidden
+
+@keyframes opacityChange
+    0%
+        opacity: 0
+    100%
+        opacity: 1
 
 .fixe
     background: transparent
