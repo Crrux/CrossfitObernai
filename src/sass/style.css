@@ -1015,6 +1015,9 @@ body main .main__header {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body main .main__header .title_container {
   position: relative;
