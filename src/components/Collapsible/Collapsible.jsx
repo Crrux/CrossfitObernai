@@ -1,7 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Collapsible({ titre, text, string }) {
+function Collapsible({ index, titre, text, string }) {
+  titre = titre.toUpperCase();
   const [isActive, setIsActive] = useState(false);
   const [isFirstClick, setIsFirstClick] = useState(true);
   const handleClick = () => {
@@ -12,11 +13,15 @@ function Collapsible({ titre, text, string }) {
   };
   return (
     <div className="collapsible">
-      <bouton
+      <button
         className={`collapsible-divbutton ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
           }`} onClick={handleClick} type="button"
       >
-        <p>{titre}</p>
+        <p className="collapsible-button_title">
+          {index}. {titre.split("").map((letter, index) => (
+            letter !== " " ? <span key={index}>{letter}</span> : " "
+          ))}</p>
+
         <div
           className={`collapsible-button ${isActive ? "active" : ""}`}
         >
@@ -30,7 +35,7 @@ function Collapsible({ titre, text, string }) {
               }`}
           ></i>
         </div>
-      </bouton>
+      </button>
 
       <div
         className={`collapsible-content ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
@@ -61,6 +66,7 @@ function Collapsible({ titre, text, string }) {
 }
 
 Collapsible.propTypes = {
+  index: PropTypes.number,
   titre: PropTypes.string,
   string: PropTypes.string,
   text: PropTypes.array,

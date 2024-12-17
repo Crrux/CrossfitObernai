@@ -7,6 +7,8 @@ $temps-animations: 0.3s
     flex-direction: column
     position: relative
     .collapsible-divbutton
+        border: none
+        padding: 0
         position: absolute
         z-index: 1
         display: flex
@@ -17,8 +19,8 @@ $temps-animations: 0.3s
         height: $button-height
         // background: rgb(50,0,0)
         // background: linear-gradient(90deg, rgba(50,0,0,1) 0%, rgba(149,39,39,1) 50%, rgba(50,0,0,1) 100%)
-        background: rgb(218,79,132)
-        background: linear-gradient(to right, #da4f84, #36d6e7, #f9a726)
+        // background: rgb(218,79,132)
+        // background: linear-gradient(to right, #da4f84, #36d6e7, #f9a726)
         // background: rgb(54,214,231)
         // background: radial-gradient(circle, rgba(54,214,231,1) 0%, rgba(54,214,231,1) 50%, rgba(54,214,231,0.31416316526610644) 100%)
         // background: rgb(218,79,132)
@@ -41,7 +43,6 @@ $temps-animations: 0.3s
             text-align: center
             padding-left: 10px
             white-space: nowrap
-
         .collapsible-button
             cursor: pointer
             border: none
@@ -57,7 +58,18 @@ $temps-animations: 0.3s
                 animation: rotate-up $temps-animations linear forwards
             &:focus
                 border: solid 1px #F6F6F673
-
+            &_title
+                font-size: 1.5rem
+                font-weight: 800
+                span
+                    &:nth-child(4n+1)
+                        color: #36d6e7
+                    &:nth-child(4n+2)
+                        color: #f9a726
+                    &:nth-child(4n+3)
+                        color: #da4f84
+                    &:nth-child(4n+4)
+                        color: #ffF
     .collapsible-content
         z-index: 0
         background-color: #F6F6F673
