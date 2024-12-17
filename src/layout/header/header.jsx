@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "/assets/Header_logo.png";
+import Logo from "/assets/Header_logo.webp";
 
 import { LinksLocal } from "./links.js";
 import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
