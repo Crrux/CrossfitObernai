@@ -46,7 +46,7 @@ function Class() {
           ciblé.`}
         />
         <Collapsible
-          titre={"5. Hybrid Training"}
+          titre={"5. Hyrox"}
           string={`Hybrid Training est un cours mélangeant la course à pieds à des
           exercices fonctionnels; vous y retrouverez la pratique du rameur, des
           wall ball shots, des fentes marchées, de la poussée et du tirage de
