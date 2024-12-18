@@ -83,7 +83,7 @@ function Footer() {
             </tbody>
           </table>
           <div id="Contact_info_Reseaux">
-            <p> couleur sur Suivez-nous !</p>
+            <p>Suivez-nous !</p>
             <div>
               <a
                 href="https://www.facebook.com/cfobernai/"
