@@ -24,3 +24,4 @@ save
 *.njsproj
 *.sln
 *.sw?
+src/layout/legal_notices/test.txt
