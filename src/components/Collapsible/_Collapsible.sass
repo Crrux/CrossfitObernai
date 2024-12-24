@@ -1,6 +1,6 @@
 $button-height: 50px
 $button-height-small: 50px
-$temps-animations: 0.3s
+$temps-animations: 0.5s
 
 .collapsible
     display: flex
@@ -17,7 +17,6 @@ $temps-animations: 0.3s
         align-items: center
         width: 100%
         height: $button-height
-        background: rgb(50,0,0)
         color: white
         border-radius: 5px
         cursor: pointer
@@ -69,15 +68,17 @@ $temps-animations: 0.3s
         padding-top: $button-height
         border-radius: 5px 5px 5px 5px
         &::after
+            opacity: 1
+            padding-bottom: 2rem
             content: ""
             position: absolute
             bottom: 0
             left: 50%
             transform: translateX(-50%)
-            width: 50%
+            width: 100%
             height: 100%
                 // background: rgba(0,0,0,0.5)
-            border-bottom: 2px solid #ffffffa2
+            border-bottom: 2px solid #ffffff6b
             z-index: 9999
         @media screen and ( max-width: $layout-breakpoint-small )
             padding-top: $button-height-small
@@ -86,6 +87,7 @@ $temps-animations: 0.3s
 
         &.active
             max-height: 500px
+            animation: 0.2s openTab ease-out forwards
 
 @keyframes rotate-down
     from

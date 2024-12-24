@@ -161,7 +161,6 @@
   align-items: center;
   width: 100%;
   height: 50px;
-  background: rgb(50, 0, 0);
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -194,10 +193,10 @@
   font-size: 1.5rem;
 }
 .collapsible .collapsible-divbutton .collapsible-button .icon-down-rotated {
-  animation: rotate-down 0.3s linear forwards;
+  animation: rotate-down 0.5s linear forwards;
 }
 .collapsible .collapsible-divbutton .collapsible-button .icon-up-rotated {
-  animation: rotate-up 0.3s linear forwards;
+  animation: rotate-up 0.5s linear forwards;
 }
 .collapsible .collapsible-divbutton .collapsible-button_title {
   font-weight: 800;
@@ -221,19 +220,21 @@
   max-height: 0;
   width: 100%;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.5s ease-out;
   padding-top: 50px;
   border-radius: 5px 5px 5px 5px;
 }
 .collapsible .collapsible-content::after {
+  opacity: 1;
+  padding-bottom: 2rem;
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 100%;
   height: 100%;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.6352941176);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4196078431);
   z-index: 9999;
 }
 @media screen and (max-width: 767.98px) {
@@ -246,6 +247,7 @@
 }
 .collapsible .collapsible-content.active {
   max-height: 500px;
+  animation: 0.2s openTab ease-out forwards;
 }
 
 @keyframes rotate-down {
@@ -870,18 +872,21 @@ footer #Footer_bottom-container p a {
 }
 #class .collapsible_container {
   width: 100%;
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  row-gap: 20px;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 @media screen and (max-width: 767.98px) {
   #class .collapsible_container {
     width: 90%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+}
+#class .collapsible_container div {
+  margin-bottom: 20px;
+}
+#class .collapsible_container__column {
+  width: 30%;
 }
 
 #main_contact {

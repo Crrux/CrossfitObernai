@@ -10,11 +10,13 @@
         margin-right: auto
         &_container
             width: 100%
-            margin-top: 20px
-            display: grid
-            grid-template-columns: repeat(3, minmax(300px, 1fr))
-            row-gap: 20px
-            column-gap: 50px
+            display: flex
+            flex-direction: row
+            gap: 20px
             @media screen and (max-width: $layout-breakpoint-small)
                 width: 90%
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+            div
+                margin-bottom: 20px
+            &__column
+                width: 30%
