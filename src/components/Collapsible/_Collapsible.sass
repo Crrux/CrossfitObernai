@@ -1,11 +1,12 @@
-$button-height: 50px
-$button-height-small: 50px
+$button-height: 40px
+$button-height-small: 40px
 $temps-animations: 0.5s
 
 .collapsible
     display: flex
     flex-direction: column
     position: relative
+    font-size: 15px
     .collapsible-divbutton
         border: none
         padding: 0
@@ -18,32 +19,28 @@ $temps-animations: 0.5s
         width: 100%
         height: $button-height
         color: white
-        border-radius: 5px
+        border-radius: 2px
         cursor: pointer
         user-select: none
         @media screen and ( max-width: $layout-breakpoint-small )
             font-size: 1rem
             font-weight: 600
             height: $button-height-small
-            border-radius: 5px
+            border-radius: 2px
         p
             flex-grow: 1
             text-align: center
             padding-left: 10px
             white-space: nowrap
-        .collapsible-button
-            cursor: pointer
-            border: none
-            background: none
-            text-align: left
-            outline: none
-            color: white
+        i
             margin-right: 10px
             font-size: 1.5rem
-            .icon-down-rotated
-                animation: rotate-down $temps-animations linear forwards
-            .icon-up-rotated
-                animation: rotate-up $temps-animations linear forwards
+
+        .icon-down-rotated
+            animation: rotate-down $temps-animations linear forwards
+        .icon-up-rotated
+            animation: rotate-up $temps-animations linear forwards
+        .collapsible-button
             &_title
                 // font-size: 1.5rem
                 font-weight: 800
@@ -100,6 +97,3 @@ $temps-animations: 0.5s
         transform: rotate(180deg)
     to
         transform: rotate(360deg)
-
-.collapsible
-    font-size: 15px

@@ -22,19 +22,15 @@ function Collapsible({ index, titre, text, string }) {
             letter !== " " ? <span key={index}>{letter}</span> : " "
           ))}</p>
 
-        <div
-          className={`collapsible-button ${isActive ? "active" : ""}`}
-        >
-          <i
-            id="icon"
-            className={`fa-solid fa-chevron-up ${!isFirstClick
-              ? isActive
-                ? "icon-down-rotated"
-                : "icon-up-rotated"
-              : ""
-              }`}
-          ></i>
-        </div>
+        <i
+          id="icon"
+          className={`fa-solid fa-chevron-up ${!isFirstClick
+            ? isActive
+              ? "icon-down-rotated"
+              : "icon-up-rotated"
+            : ""
+            }`}
+        ></i>
       </button>
 
       <div
