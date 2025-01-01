@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Logo64 from "/assets/Miniature_64.webp";
 
@@ -58,7 +58,7 @@ export default function HelmetRendering() {
 	}
 
 	return (
-		<>
+		<HelmetProvider>
 			<Helmet>
 				<title>Crossfit Obernai</title>
 				<meta name="description" content="Crossfit Obernai" />
@@ -74,6 +74,6 @@ export default function HelmetRendering() {
 					{JSON.stringify(LdJson)}
 				</script>
 			</Helmet>
-		</>
+		</HelmetProvider>
 	);
 }
