@@ -69,7 +69,7 @@ export default function HelmetRendering() {
 				<meta property="og:image" content="./assets/Header_logo.png" />
 				<meta property="og:type" content="website" />
 				<meta property="og:locale" content="fr_FR" />
-				<link rel="icon" type="image/svg+xml" href={Logo64} />
+				<link rel="icon" type="image/webp" href={Logo64} />
 				<script type="application/ld+json">
 					{JSON.stringify(LdJson)}
 				</script>
