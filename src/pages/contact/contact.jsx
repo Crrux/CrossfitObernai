@@ -37,38 +37,6 @@ function Contact() {
     }));
   }
 
-  // TODO: Handle form submission
-  function handleSubmit(e) {
-    e.preventDefault();
-    // If there are no validation errors, submit the form data
-    if (!hasErrors) {
-      // Set the loading state
-      setIsFormLoading(true);
-
-      // Send the POST request
-      axios
-        .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
-        .then((res) => {
-          // console.log(res.data);
-          // console.log(res)
-          if (res.status === 200) {
-            console.log("status 200 retourner")
-          } else if (res.status !== 200) {
-            console.log("status pas 200 retourner")
-          }
-          setisFormSent(true);
-        })
-        .catch((error) => {
-          console.error("An error occurred while submitting the form:", error);
-        })
-        .finally(() => {
-          // Reset the loading state
-          setIsFormLoading(false);
-          console.log(isFormSent);
-        });
-    }
-  }
-
   // Validate form fields on every change
   useEffect(() => {
     const validateField = () => {
@@ -119,6 +87,39 @@ function Contact() {
     // Check if there are any validation errors and update the state accordingly
     setHasErrors(Object.values(errors).some((error) => error !== false));
   }, [contact, errors, hasErrors]);
+
+  // TODO: Handle form submission
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    // If there are no validation errors, submit the form data
+    if (!hasErrors) {
+      // Set the loading state
+      setIsFormLoading(true);
+
+      // Send the POST request
+      axios
+        .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
+        .then((res) => {
+          // console.log(res.data);
+          // console.log(res)
+          if (res.status === 200) {
+            console.log("status 200 retourner")
+          } else if (res.status !== 200) {
+            console.log("status pas 200 retourner")
+          }
+          setisFormSent(true);
+        })
+        .catch((error) => {
+          console.error("An error occurred while submitting the form:", error);
+        })
+        .finally(() => {
+          // Reset the loading state
+          setIsFormLoading(false);
+          console.log(isFormSent);
+        });
+    }
+  }
 
   return (
     <>
