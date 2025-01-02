@@ -125,71 +125,86 @@ function Contact() {
           <div className="form_contact_container">
             <label htmlFor="name">
               <p>Nom</p>
-              <input
-                type="text"
-                id="name"
-                className={errors.nameError ? 'FormError' : ''}
-                name="name"
-                value={contact.name}
-                autoComplete="given-name"
-                autoFocus
-                required
-                onChange={handleChange}
-              />
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  className={errors.nameError ? 'FormError' : ''}
+                  name="name"
+                  value={contact.name}
+                  autoComplete="given-name"
+                  autoFocus
+                  required
+                  onChange={handleChange}
+                />
+                {errors.nameError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+              </div>
             </label>
             <label htmlFor="firstname">
               <p>Prenom</p>
-              <input
-                type="text"
-                id="firstname"
-                className={errors.firstnameError ? 'FormError' : ''}
-                name="firstname"
-                value={contact.firstname}
-                autoComplete="family-name"
-                required
-                onChange={handleChange}
-              />
+              <div>
+                <input
+                  type="text"
+                  id="firstname"
+                  className={errors.firstnameError ? 'FormError' : ''}
+                  name="firstname"
+                  value={contact.firstname}
+                  autoComplete="family-name"
+                  required
+                  onChange={handleChange}
+                />
+                {errors.firstnameError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+              </div>
             </label>
           </div>
           <div className="form_contact_container">
             <label htmlFor="email">
               <p>Email</p>
-              <input
-                type="email"
-                id="email"
-                className={errors.emailError ? 'FormError' : ''}
-                name="email"
-                value={contact.email}
-                autoComplete="email"
-                required
-                onChange={handleChange}
-              />
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  className={errors.emailError ? 'FormError' : ''}
+                  name="email"
+                  value={contact.email}
+                  autoComplete="email"
+                  required
+                  onChange={handleChange}
+                />
+                {errors.emailError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+              </div>
             </label>
             <label htmlFor="tel">
               <p>Telephone</p>
-              <input
-                type="tel"
-                id="tel"
-                className={errors.telError ? 'FormError' : ''}
-                name="tel"
-                value={contact.tel}
-                autoComplete="tel"
-                required
-                onChange={handleChange}
-              />
+              <div>
+                <input
+                  type="tel"
+                  id="tel"
+                  className={errors.telError ? 'FormError' : ''}
+                  name="tel"
+                  value={contact.tel}
+                  autoComplete="tel"
+                  required
+                  onChange={handleChange}
+                />
+                {errors.telError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+              </div>
             </label>
           </div>
 
           <label htmlFor="message">
             <p>Message</p>
-            <textarea
-              id="message"
-              className={errors.messageError ? 'FormError' : ''}
-              name="message"
-              placeholder="Votre message..."
-              rows={10}
-              onChange={handleChange}
-            />
+            <div>
+              <textarea
+                id="message"
+                className={errors.messageError ? 'FormError' : ''}
+                name="message"
+                placeholder="Votre message..."
+                rows={10}
+                onChange={handleChange}
+              />
+              {errors.messageError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+            </div>
           </label>
           <label htmlFor="checkbox" className="form_contact_checkbox_container">
             <input type="checkbox" id="checkbox" name="checkbox" value='consent' onChange={handleChange}></input>

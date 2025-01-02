@@ -944,8 +944,18 @@ footer #Footer_bottom-container p a {
 .main_contact .form_contact label:not(.form_contact_checkbox_container) {
   margin-bottom: 15px;
 }
-.main_contact .form_contact label:not(.form_contact_checkbox_container) p {
+.main_contact .form_contact label p {
   margin-bottom: 5px;
+}
+.main_contact .form_contact label div {
+  position: relative;
+}
+.main_contact .form_contact label div i {
+  color: #FFF;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .main_contact .form_contact input:not([type=checkbox]), .main_contact .form_contact .label input:not([type=checkbox]), .main_contact .form_contact textarea {
   font-size: 1.4rem;

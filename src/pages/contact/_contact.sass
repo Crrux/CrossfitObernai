@@ -59,12 +59,21 @@ $layout-breakpoint-small: 600px
             color: red !important
             background-color: rgba(255, 0, 0, 0.1) !important
 
-        label:not(.form_contact_checkbox_container)
-            // display: block
-            margin-bottom: 15px
+        label
+            &:not(.form_contact_checkbox_container)
+                // display: block
+                margin-bottom: 15px
 
             p
                 margin-bottom: 5px
+            div
+                position: relative
+                i
+                    color: #FFF
+                    position: absolute
+                    right: 10px
+                    top: 50%
+                    transform: translateY(-50%)
 
         input:not([type="checkbox"]), .label input:not([type="checkbox"]), textarea
             font-size: $form-font-size
