@@ -40,53 +40,38 @@ function Contact() {
   // Validate form fields on every change
   useEffect(() => {
     const validateField = () => {
-      let fieldValidationErrors = errors;
+      let fieldValidationErrors = {};
 
       // Validate name field
       let nameValid = /^[\p{L}\s'-]{2,}$/u.test(contact.name);
-      fieldValidationErrors.nameError = nameValid
-        ? false
-        : true;
+      fieldValidationErrors.nameError = nameValid ? false : true;
 
       // Validate firstname field
       let firstnameValid = /^[\p{L}\s'-]{2,}$/u.test(contact.firstname);
-      fieldValidationErrors.firstnameError = firstnameValid
-        ? false
-        : true;
+      fieldValidationErrors.firstnameError = firstnameValid ? false : true;
 
       // Validate email field
-      let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
-        contact.email
-      );
-      fieldValidationErrors.emailError = emailValid
-        ? false
-        : true;
+      let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(contact.email);
+      fieldValidationErrors.emailError = emailValid ? false : true;
 
       // Validate telephone field
       let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
-      fieldValidationErrors.telError = telValid
-        ? false
-        : true;
+      fieldValidationErrors.telError = telValid ? false : true;
 
       // Validate message field
       let messageValid = contact.message.length > 2;
-      fieldValidationErrors.messageError = messageValid
-        ? false
-        : true;
+      fieldValidationErrors.messageError = messageValid ? false : true;
 
+      // Validate checkbox field
       let checkboxValid = contact.checkbox
       fieldValidationErrors.checkboxError = !checkboxValid
-      console.log("hasErrors : ", hasErrors)
-      if (hasErrors) {
-        console.log('fieldValidationErrors : ', fieldValidationErrors)
-      }
-      setErrors(fieldValidationErrors);
-    };
-    validateField();
 
-    // Check if there are any validation errors and update the state accordingly
-    setHasErrors(Object.values(errors).some((error) => error !== false));
-  }, [contact, errors, hasErrors]);
+      setErrors(fieldValidationErrors);
+      setHasErrors(Object.values(fieldValidationErrors).some((error) => error !== false));
+    };
+
+    validateField();
+  }, [contact]);
 
   // TODO: Handle form submission
 
