@@ -939,6 +939,7 @@ footer #Footer_bottom-container p a {
 }
 .main_contact .form_contact .FormError {
   color: red !important;
+  background-color: rgba(255, 0, 0, 0.1) !important;
 }
 .main_contact .form_contact label:not(.form_contact_checkbox_container) {
   margin-bottom: 15px;
