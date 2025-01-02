@@ -79,6 +79,7 @@ function Contact() {
     e.preventDefault();
     // If there are no validation errors, submit the form data
     if (!hasErrors) {
+      console.log('first')
       // Set the loading state
       setIsFormLoading(true);
 
@@ -93,22 +94,26 @@ function Contact() {
           } else if (res.status !== 200) {
             console.log("status pas 200 retourner")
           }
+          console.log('1')
           setisFormSent(true);
         })
         .catch((error) => {
           console.error("An error occurred while submitting the form:", error);
+          console.log('error')
         })
         .finally(() => {
           // Reset the loading state
           setIsFormLoading(false);
           console.log(isFormSent);
         });
+    } else {
+      console.log('else')
     }
   }
 
   return (
     <>
-      <main id="main_contact">
+      <main className="main_contact">
         <div className="main__header">
           <div className="title_container">
             <img src={TitleBackgroundImage} alt="Background" />
@@ -116,13 +121,14 @@ function Contact() {
             <h1>Contact</h1>
           </div>
         </div>
-        <form onSubmit={handleSubmit} noValidate id="form_contact">
+        <form onSubmit={handleSubmit} noValidate className="form_contact">
           <div className="form_contact_container">
             <label htmlFor="name">
               <p>Nom</p>
               <input
                 type="text"
                 id="name"
+                className={errors.nameError ? 'FormError' : ''}
                 name="name"
                 value={contact.name}
                 autoComplete="given-name"
@@ -130,20 +136,19 @@ function Contact() {
                 required
                 onChange={handleChange}
               />
-              {errors.nameError && <span>erreur</span>}
             </label>
             <label htmlFor="firstname">
               <p>Prenom</p>
               <input
                 type="text"
                 id="firstname"
+                className={errors.firstnameError ? 'FormError' : ''}
                 name="firstname"
                 value={contact.firstname}
                 autoComplete="family-name"
                 required
                 onChange={handleChange}
               />
-              {errors.firstnameError && <span>erreur</span>}
             </label>
           </div>
           <div className="form_contact_container">
@@ -152,26 +157,26 @@ function Contact() {
               <input
                 type="email"
                 id="email"
+                className={errors.emailError ? 'FormError' : ''}
                 name="email"
                 value={contact.email}
                 autoComplete="email"
                 required
                 onChange={handleChange}
               />
-              {errors.emailError && <span>erreur</span>}
             </label>
             <label htmlFor="tel">
               <p>Telephone</p>
               <input
                 type="tel"
                 id="tel"
+                className={errors.telError ? 'FormError' : ''}
                 name="tel"
                 value={contact.tel}
                 autoComplete="tel"
                 required
                 onChange={handleChange}
               />
-              {errors.telError && <span>erreur</span>}
             </label>
           </div>
 
@@ -179,19 +184,19 @@ function Contact() {
             <p>Message</p>
             <textarea
               id="message"
+              className={errors.messageError ? 'FormError' : ''}
               name="message"
               placeholder="Votre message..."
               rows={10}
               onChange={handleChange}
             />
-            {errors.messageError && <span>erreur</span>}
           </label>
           <label htmlFor="checkbox" className="form_contact_checkbox_container">
             <input type="checkbox" id="checkbox" name="checkbox" value='consent' onChange={handleChange}></input>
             <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
 
-          <input type="submit" value="Submit" disabled={hasErrors} />
+          <input type="submit" value="Submit" />
           {isFormLoading ? <LoadingSpinner /> : ""}
         </form>
       </main>

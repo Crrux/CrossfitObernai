@@ -880,13 +880,13 @@ footer #Footer_bottom-container p a {
   width: 30%;
 }
 
-#main_contact {
+.main_contact {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-#main_contact #form_contact {
+.main_contact .form_contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -899,24 +899,24 @@ footer #Footer_bottom-container p a {
   box-sizing: border-box;
   margin-bottom: 50px;
 }
-#main_contact #form_contact .form_contact_container {
+.main_contact .form_contact_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
-#main_contact #form_contact .form_contact_container label {
+.main_contact .form_contact_container label {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 600px) {
-  #main_contact #form_contact .form_contact_container label input {
+  .main_contact .form_contact_container label {
     width: 100%;
   }
 }
-#main_contact #form_contact .form_contact_checkbox_container {
+.main_contact .form_contact_checkbox_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -928,7 +928,7 @@ footer #Footer_bottom-container p a {
   margin-bottom: 40px;
   padding: 15px;
 }
-#main_contact #form_contact .form_contact_checkbox_container p {
+.main_contact .form_contact_checkbox_container p {
   display: inline-flex;
   gap: 8px;
   padding: 0;
@@ -937,13 +937,16 @@ footer #Footer_bottom-container p a {
      -moz-user-select: none;
           user-select: none;
 }
-#main_contact #form_contact label:not(.form_contact_checkbox_container) {
+.main_contact .form_contact .FormError {
+  color: red !important;
+}
+.main_contact .form_contact label:not(.form_contact_checkbox_container) {
   margin-bottom: 15px;
 }
-#main_contact #form_contact label:not(.form_contact_checkbox_container) p {
+.main_contact .form_contact label:not(.form_contact_checkbox_container) p {
   margin-bottom: 5px;
 }
-#main_contact #form_contact input:not([type=checkbox]), #main_contact #form_contact .label input:not([type=checkbox]), #main_contact #form_contact textarea {
+.main_contact .form_contact input:not([type=checkbox]), .main_contact .form_contact .label input:not([type=checkbox]), .main_contact .form_contact textarea {
   font-size: 1.4rem;
   width: 100%;
   padding: 10px;
@@ -953,18 +956,18 @@ footer #Footer_bottom-container p a {
   color: #ddd;
   box-sizing: border-box;
 }
-#main_contact #form_contact:focus {
+.main_contact .form_contact:focus {
   outline: none;
 }
-#main_contact textarea {
+.main_contact textarea {
   resize: vertical;
   min-height: 150px;
 }
-#main_contact span {
+.main_contact span {
   color: #ff6347;
   font-size: 0.8em;
 }
-#main_contact input[type=submit] {
+.main_contact input[type=submit] {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ddd;
   cursor: pointer;
@@ -973,7 +976,7 @@ footer #Footer_bottom-container p a {
   width: fit-content;
   border-radius: 5px;
 }
-#main_contact input[type=submit]:hover {
+.main_contact input[type=submit]:hover {
   background-color: #ff3814;
 }
 
