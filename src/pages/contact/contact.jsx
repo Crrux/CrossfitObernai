@@ -100,10 +100,10 @@ function Contact() {
               tel: '',
               message: ''
             });
+            setisFormSent(true);
           } else if (res.status !== 200) {
             console.log("status pas 200 retourner")
           }
-          setisFormSent(true);
         })
         .catch((error) => {
           console.error("An error occurred while submitting the form:", error);
