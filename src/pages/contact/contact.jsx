@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
-import { Link } from "react-router-dom";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 
 // Todo: Form submission / validation / validation error display
@@ -145,7 +146,11 @@ function Contact() {
                   required
                   onChange={handleChange}
                 />
-                {errors.nameError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+                {errors.nameError ?
+                  <>
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' />
+                    <ReactTooltip id="Tooltip_Name" content='Doit contenir au moins 2 caractere' place="bottom" />
+                  </> : ""}
               </div>
             </label>
             <label htmlFor="firstname">
@@ -161,7 +166,10 @@ function Contact() {
                   required
                   onChange={handleChange}
                 />
-                {errors.firstnameError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+                {errors.firstnameError ? <>
+                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' />
+                  <ReactTooltip id="Tooltip_Firstname" content='Doit contenir au moins 2 caractere' place="bottom" />
+                </> : ""}
               </div>
             </label>
           </div>
@@ -179,7 +187,11 @@ function Contact() {
                   required
                   onChange={handleChange}
                 />
-                {errors.emailError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+                {errors.emailError ?
+                  <>
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' />
+                    <ReactTooltip id="Tooltip_Email" content='Doit etre une adresse email valide' place="bottom" />
+                  </> : ""}
               </div>
             </label>
             <label htmlFor="tel">
@@ -195,7 +207,10 @@ function Contact() {
                   required
                   onChange={handleChange}
                 />
-                {errors.telError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+                {errors.telError ? <>
+                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' />
+                  <ReactTooltip id="Tooltip_Tel" content='Doit etre un numero de telephone valide' place="bottom" />
+                </> : ""}
               </div>
             </label>
           </div>
@@ -212,7 +227,10 @@ function Contact() {
                 value={contact.message}
                 onChange={handleChange}
               />
-              {errors.messageError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
+              {errors.messageError ? <>
+                <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' />
+                <ReactTooltip id="Tooltip_Message" content='Doit contenir 3 caractere min.' place="bottom" />
+              </> : ""}
             </div>
           </label>
           <label htmlFor="checkbox" className="form_contact_checkbox_container">

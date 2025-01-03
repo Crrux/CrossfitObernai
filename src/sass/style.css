@@ -938,7 +938,6 @@ footer #Footer_bottom-container p a {
           user-select: none;
 }
 .main_contact .form_contact .FormError {
-  color: red !important;
   background-color: rgba(255, 0, 0, 0.1) !important;
 }
 .main_contact .form_contact label {
@@ -947,10 +946,10 @@ footer #Footer_bottom-container p a {
 .main_contact .form_contact label p:not(.checkbox_text) {
   margin-bottom: 5px;
 }
-.main_contact .form_contact label div {
+.main_contact .form_contact label > div {
   position: relative;
 }
-.main_contact .form_contact label div i {
+.main_contact .form_contact label > div i {
   color: #FFF;
   position: absolute;
   right: 10px;
