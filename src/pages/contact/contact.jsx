@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 import { Link } from "react-router-dom";
@@ -21,6 +21,7 @@ function Contact() {
   // Initialize state for form submission status
   const [isFormSent, setisFormSent] = useState(false);
   const [isFormLoading, setIsFormLoading] = useState(false);
+  const formRef = useRef(null);
 
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
@@ -91,15 +92,22 @@ function Contact() {
           // console.log(res)
           if (res.status === 200) {
             console.log("status 200 retourner")
+            setContact({
+              checkbox: false,
+              name: '',
+              firstname: '',
+              email: '',
+              tel: '',
+              message: ''
+            });
           } else if (res.status !== 200) {
             console.log("status pas 200 retourner")
           }
-          console.log('1')
           setisFormSent(true);
         })
         .catch((error) => {
           console.error("An error occurred while submitting the form:", error);
-          console.log('error')
+          setisFormSent(false);
         })
         .finally(() => {
           // Reset the loading state
@@ -121,7 +129,7 @@ function Contact() {
             <h1>Contact</h1>
           </div>
         </div>
-        <form onSubmit={handleSubmit} noValidate className="form_contact">
+        <form ref={formRef} onSubmit={handleSubmit} noValidate className="form_contact">
           <div className="form_contact_container">
             <label htmlFor="name">
               <p>Nom</p>
@@ -201,18 +209,19 @@ function Contact() {
                 name="message"
                 placeholder="Votre message..."
                 rows={10}
+                value={contact.message}
                 onChange={handleChange}
               />
               {errors.messageError ? <i className="fa-solid fa-circle-exclamation" /> : ""}
             </div>
           </label>
           <label htmlFor="checkbox" className="form_contact_checkbox_container">
-            <input type="checkbox" id="checkbox" name="checkbox" value='consent' onChange={handleChange}></input>
-            <p>accepter <Link to='/mentions-legales'>mention legale</Link> </p>
+            <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
+            <p className="checkbox_text">accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
 
-          <input type="submit" value="Submit" />
-          {isFormLoading ? <LoadingSpinner /> : ""}
+
+          {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" />}
         </form>
       </main>
     </>
