@@ -148,7 +148,7 @@ function Contact() {
                 />
                 {errors.nameError ?
                   <>
-                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' />
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
                     <ReactTooltip id="Tooltip_Name" content='Doit contenir au moins 2 caractere' place="bottom" />
                   </> : ""}
               </div>
@@ -167,7 +167,7 @@ function Contact() {
                   onChange={handleChange}
                 />
                 {errors.firstnameError ? <>
-                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' />
+                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' data-tooltip-variant="error" />
                   <ReactTooltip id="Tooltip_Firstname" content='Doit contenir au moins 2 caractere' place="bottom" />
                 </> : ""}
               </div>
@@ -189,7 +189,7 @@ function Contact() {
                 />
                 {errors.emailError ?
                   <>
-                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' />
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' data-tooltip-variant="error" />
                     <ReactTooltip id="Tooltip_Email" content='Doit etre une adresse email valide' place="bottom" />
                   </> : ""}
               </div>
@@ -208,7 +208,7 @@ function Contact() {
                   onChange={handleChange}
                 />
                 {errors.telError ? <>
-                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' />
+                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' data-tooltip-variant="error" />
                   <ReactTooltip id="Tooltip_Tel" content='Doit etre un numero de telephone valide' place="bottom" />
                 </> : ""}
               </div>
@@ -228,7 +228,7 @@ function Contact() {
                 onChange={handleChange}
               />
               {errors.messageError ? <>
-                <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' />
+                <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' data-tooltip-variant="error" />
                 <ReactTooltip id="Tooltip_Message" content='Doit contenir 3 caractere min.' place="bottom" />
               </> : ""}
             </div>
