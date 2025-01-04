@@ -1,4 +1,4 @@
-function Loading() {
+function LoadingDot() {
   return (
     <div className="wrapper">
       <div className="circle"></div>
@@ -11,4 +11,4 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default LoadingDot;
