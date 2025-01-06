@@ -938,7 +938,7 @@ footer #Footer_bottom-container p a {
           user-select: none;
 }
 .main_contact .form_contact .FormError {
-  background-color: rgba(255, 0, 0, 0.1) !important;
+  animation: ErrorBlink 0.5s forwards;
 }
 .main_contact .form_contact label {
   margin-bottom: 15px;
@@ -990,6 +990,20 @@ footer #Footer_bottom-container p a {
   background-color: #ff3814;
 }
 
+@keyframes ErrorBlink {
+  0% {
+    background-color: rgba(255, 0, 0, 0);
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+  75% {
+    background-color: rgba(255, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+}
 #main_coach #Slideshow_container {
   aspect-ratio: 16/9;
   width: 800px;

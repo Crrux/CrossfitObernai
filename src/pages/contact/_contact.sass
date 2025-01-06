@@ -56,8 +56,8 @@ $layout-breakpoint-small: 600px
                 user-select: none
 
         .FormError
-            // color: red !important
-            background-color: rgba(255, 0, 0, 0.1) !important
+            // background-color: rgba(255, 0, 0, 0.1) !important
+            animation: ErrorBlink 0.5s forwards
 
         label
             // display: block
@@ -104,3 +104,13 @@ $layout-breakpoint-small: 600px
         border-radius: $form-border-radius
         &:hover
             background-color: darken($error-text, 10%)
+
+@keyframes ErrorBlink
+    0%
+        background-color: rgba(255, 0, 0, 0.0)
+    50%
+        background-color: rgba(255, 0, 0, 0.1)
+    75%
+        background-color: rgba(255, 0, 0, 0.0)
+    100%
+        background-color: rgba(255, 0, 0, 0.1)

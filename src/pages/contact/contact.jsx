@@ -23,6 +23,7 @@ function Contact() {
   const [isFormSent, setisFormSent] = useState(false);
   const [isFormLoading, setIsFormLoading] = useState(false);
   const formRef = useRef(null);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
@@ -138,7 +139,7 @@ function Contact() {
                 <input
                   type="text"
                   id="name"
-                  className={errors.nameError ? 'FormError' : ''}
+                  className={errors.nameError && isSubmit ? 'FormError' : ''}
                   name="name"
                   value={contact.name}
                   autoComplete="given-name"
@@ -146,7 +147,7 @@ function Contact() {
                   required
                   onChange={handleChange}
                 />
-                {errors.nameError ?
+                {errors.nameError && isSubmit ?
                   <>
                     <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
                     <ReactTooltip id="Tooltip_Name" content='Doit contenir au moins 2 caractere' place="bottom" />
@@ -159,14 +160,14 @@ function Contact() {
                 <input
                   type="text"
                   id="firstname"
-                  className={errors.firstnameError ? 'FormError' : ''}
+                  className={errors.firstnameError && isSubmit ? 'FormError' : ''}
                   name="firstname"
                   value={contact.firstname}
                   autoComplete="family-name"
                   required
                   onChange={handleChange}
                 />
-                {errors.firstnameError ? <>
+                {errors.firstnameError && isSubmit ? <>
                   <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' data-tooltip-variant="error" />
                   <ReactTooltip id="Tooltip_Firstname" content='Doit contenir au moins 2 caractere' place="bottom" />
                 </> : ""}
@@ -180,14 +181,14 @@ function Contact() {
                 <input
                   type="email"
                   id="email"
-                  className={errors.emailError ? 'FormError' : ''}
+                  className={errors.emailError && isSubmit ? 'FormError' : ''}
                   name="email"
                   value={contact.email}
                   autoComplete="email"
                   required
                   onChange={handleChange}
                 />
-                {errors.emailError ?
+                {errors.emailError && isSubmit ?
                   <>
                     <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' data-tooltip-variant="error" />
                     <ReactTooltip id="Tooltip_Email" content='Doit etre une adresse email valide' place="bottom" />
@@ -200,14 +201,14 @@ function Contact() {
                 <input
                   type="tel"
                   id="tel"
-                  className={errors.telError ? 'FormError' : ''}
+                  className={errors.telError && isSubmit ? 'FormError' : ''}
                   name="tel"
                   value={contact.tel}
                   autoComplete="tel"
                   required
                   onChange={handleChange}
                 />
-                {errors.telError ? <>
+                {errors.telError && isSubmit ? <>
                   <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' data-tooltip-variant="error" />
                   <ReactTooltip id="Tooltip_Tel" content='Doit etre un numero de telephone valide' place="bottom" />
                 </> : ""}
@@ -220,26 +221,26 @@ function Contact() {
             <div>
               <textarea
                 id="message"
-                className={errors.messageError ? 'FormError' : ''}
+                className={errors.messageError && isSubmit ? 'FormError' : ''}
                 name="message"
                 placeholder="Votre message..."
                 rows={10}
                 value={contact.message}
                 onChange={handleChange}
               />
-              {errors.messageError ? <>
+              {errors.messageError && isSubmit ? <>
                 <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' data-tooltip-variant="error" />
                 <ReactTooltip id="Tooltip_Message" content='Doit contenir 3 caractere min.' place="bottom" />
               </> : ""}
             </div>
           </label>
-          <label htmlFor="checkbox" className="form_contact_checkbox_container">
+          <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
             <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
             <p className="checkbox_text">accepter <Link to='/mentions-legales'>mention legale</Link> </p>
           </label>
 
 
-          {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" />}
+          {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
         </form>
       </main>
     </>
