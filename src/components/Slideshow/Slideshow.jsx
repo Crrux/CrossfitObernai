@@ -6,8 +6,23 @@ function Slideshow({ data, autoplay, autoplayDelay, buttonEnabled }) {
 
   useEffect(() => {
     showSlides(slideIndex);
-    console.log(slideIndex)
+    console.log(slideIndex);
   }, [slideIndex]);
+
+  useEffect(() => {
+    let autoplayTimeout = null;
+    if (autoplay) {
+      autoplayTimeout = setTimeout(() => {
+        setSlideIndex((prevIndex) => prevIndex + 1);
+        console.log('timeout');
+      }, autoplayDelay);
+    }
+    return () => {
+      if (autoplayTimeout) {
+        clearTimeout(autoplayTimeout);
+      }
+    };
+  }, [slideIndex, autoplay, autoplayDelay]);
 
   const showSlides = (n) => {
     let i;
@@ -27,22 +42,9 @@ function Slideshow({ data, autoplay, autoplayDelay, buttonEnabled }) {
     slides[n - 1].style.display = "block";
   };
 
-  // auto play
-  let autoplayTimeout = null
-
-  if (autoplay === true) {
-    autoplayTimeout = setTimeout(() => {
-      setSlideIndex(slideIndex + 1);
-      console.log('timeout')
-    }, autoplayDelay);
-  }
-
   const plusSlides = (n) => {
-    if (autoplay === true) {
-      clearTimeout(autoplayTimeout);
-    }
-    setSlideIndex(slideIndex + n);
-    console.log('plusSlides')
+    setSlideIndex((prevIndex) => prevIndex + n);
+    console.log('plusSlides');
   };
 
   return (
