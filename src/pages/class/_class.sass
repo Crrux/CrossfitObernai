@@ -28,3 +28,11 @@
                 width: 30%
                 @media screen and (max-width: $layout-breakpoint-small)
                     width: 100%
+        @media screen and (max-width: $layout-breakpoint-tablet-max) and (min-width: $layout-breakpoint-tablet-min)
+            &_container
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                width: 100%
+                &__column
+                    width: 70%
