@@ -15,7 +15,7 @@ function Collapsible({ index, titre, text, string }) {
     <div className="collapsible">
       <button
         className={`collapsible-divbutton ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
-          }`} onClick={handleClick} type="button"
+          }`} onClick={handleClick} type="button" style={{ backgroundColor: `${index % 2 === 0 ? '#247d8b' : '#5a2c63'}` }}
       >
         <p className="collapsible-button_title">
           {index}. {titre.split("").map((letter, index) => (
