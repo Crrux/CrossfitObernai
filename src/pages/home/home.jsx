@@ -18,7 +18,7 @@ function Home() {
       <section className="Slideshow_section">
         <div id="Slideshow_container">
           <Suspense fallback={<LoadingSpinner />}>
-            <Slideshow data={Slideshow_data} autoplay={true} autoplayDelay={3000} buttonEnabled={true} />
+            <Slideshow data={Slideshow_data} autoplay={true} autoplayDelay={3000} />
           </Suspense>
         </div>
       </section>
