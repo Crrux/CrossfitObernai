@@ -1,14 +1,25 @@
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import Modal from "react-modal";
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
+import LegalNotices from "../../layout/legal_notices/legal_notices";
 
-// Todo: Form submission / validation / validation error display
+Modal.setAppElement("#root");
 
 function Contact() {
+  // Initialize state for modal visibility
+  const [modalIsOpen, setIsOpen] = useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   // Initialize state for contact form data
   const [contact, setContact] = useState({
     name: "",
@@ -236,12 +247,25 @@ function Contact() {
           </label>
           <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
             <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
-            <p className="checkbox_text">accepter <Link to='/mentions-legales'>mention legale</Link> </p>
+            <p className="checkbox_text">accepter <button onClick={openModal} type="button">mention legale</button> </p>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              // portalClassName="Modal_portal"
+              contentLabel="Example Modal"
+              className={"Modal_ContentContainer"}
+              overlayClassName="Modal_overlay"
+            >
+              <div className="TextContainer">
+                <LegalNotices />
+              </div>
+            </Modal>
           </label>
 
 
           {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
         </form>
+
       </main>
     </>
   );

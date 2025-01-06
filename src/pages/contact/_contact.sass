@@ -54,6 +54,18 @@ $layout-breakpoint-small: 600px
                 padding: 0
                 margin: 0
                 user-select: none
+                align-items: center
+            button
+                font-size: 1.2rem
+                background-color: $form-bg-color
+                color: $light-text
+                border: none
+                border-radius: $form-border-radius
+                padding: $form-padding
+                cursor: pointer
+                transition: background-color 0.3s ease
+                // &:hover
+                //     background-color: darken($error-text, 10%)
 
         .FormError
             // background-color: rgba(255, 0, 0, 0.1) !important
@@ -114,3 +126,57 @@ $layout-breakpoint-small: 600px
         background-color: rgba(255, 0, 0, 0.0)
     100%
         background-color: rgba(255, 0, 0, 0.1)
+
+.ReactModal__Overlay
+    opacity: 0
+    transition: opacity 500ms ease-in-out
+
+    &--after-open
+        opacity: 1
+
+    &--before-close
+        opacity: 0
+
+.Modal
+    &_portal
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 300
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+    &_overlay
+        position: fixed
+        top: 0
+        left: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 100%
+        inset: 0px
+        background-color: rgba(255, 255, 255, 0.35)
+        z-index: 300
+    &_ContentContainer
+        position: static
+        margin: 20px
+        inset: 40px
+        border: 2px solid #000000
+        background-color: #2e2e2e
+        background-color: light-dark(#fff, #2e2e2e)
+        overflow: hidden
+        border-radius: 10px
+        outline: none
+        // height: fit-content
+        height: 80dvh
+        padding: 20px
+        width: 70%
+        z-index: 301
+        div
+            max-height: 75dvh
+            overflow-y: scroll
+            -webkit-overflow-scrolling: touch
+        @media screen and (max-width: 1024px)
+            width: 95%
