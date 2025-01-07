@@ -43,7 +43,8 @@ $container-height-mobile: 255px
         border: none
         cursor: pointer
         position: absolute
-        top: calc( ($container-height / 2) - 22px )
+        top: 50%
+        transform: translateY(-50%)
         color: white
         font-weight: bold
         font-size: 45px
@@ -51,9 +52,6 @@ $container-height-mobile: 255px
         border-radius: 0 3px 3px 0
         user-select: none
         padding: 0 10px 10px 10px
-
-        @media screen and ( max-width: $layout-breakpoint-small )
-            top: calc( ($container-height-mobile / 2) - 22px )
         &:hover
             background-color: rgba(0, 0, 0, 0.8)
     .next

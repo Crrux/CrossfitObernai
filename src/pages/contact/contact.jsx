@@ -161,7 +161,12 @@ function Contact() {
                 {errors.nameError && isSubmit ?
                   <>
                     <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
-                    <ReactTooltip id="Tooltip_Name" content='Doit contenir au moins 2 caractere' place="bottom" />
+                    <ReactTooltip id="Tooltip_Name" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                      <ul style={{ paddingInline: '20px', margin: 0 }}>
+                        <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                      </ul>
+                    </ReactTooltip>
+
                   </> : ""}
               </div>
             </label>
@@ -262,11 +267,17 @@ function Contact() {
             </Modal>
           </label>
 
-
           {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
+          {isFormSent ? <div className="FormSubmitInfo"><p>Formulaire bien envoyé</p></div> :
+            <div className="FormSubmitInfo">
+              <p><i className="fa-solid fa-exclamation"></i> Une erreur est survenue, essayez d&apos;actualiser la page <i className="fa-solid fa-exclamation"></i></p>
+              <p>Si le probleme persiste, contactez nous a l&apos;adresse suivante :</p>
+              <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com </a>
+            </div>}
+
         </form>
 
-      </main>
+      </main >
     </>
   );
 }

@@ -117,6 +117,20 @@ $layout-breakpoint-small: 600px
         &:hover
             background-color: darken($error-text, 10%)
 
+    .FormSubmitInfo
+        display: flex
+        flex-direction: column
+        align-items: center
+        font-weight: 600
+        margin-top: 20px
+        p
+            display: inline-flex
+            align-items: center
+            gap: 20px
+            i
+                font-size: 2rem
+                color: $error-text
+
 @keyframes ErrorBlink
     0%
         background-color: rgba(255, 0, 0, 0.0)

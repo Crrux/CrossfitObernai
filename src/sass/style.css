@@ -135,9 +135,8 @@
   }
 }
 .fixe {
-  background: transparent;
+  background-color: #000;
   width: 100%;
-  margin-top: 10px;
   margin-bottom: 20px;
   z-index: 0;
 }
@@ -310,7 +309,8 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  top: calc(50% - 22px);
+  top: 50%;
+  transform: translateY(-50%);
   color: white;
   font-weight: bold;
   font-size: 45px;
@@ -320,11 +320,6 @@
      -moz-user-select: none;
           user-select: none;
   padding: 0 10px 10px 10px;
-}
-@media screen and (max-width: 767.98px) {
-  .slideshow-container .prev, .slideshow-container .next {
-    top: 105.5px;
-  }
 }
 .slideshow-container .prev:hover, .slideshow-container .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -1013,6 +1008,22 @@ footer #Footer_bottom-container p a {
 }
 .main_contact input[type=submit]:hover {
   background-color: #ff3814;
+}
+.main_contact .FormSubmitInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.main_contact .FormSubmitInfo p {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+.main_contact .FormSubmitInfo p i {
+  font-size: 2rem;
+  color: #ff6347;
 }
 
 @keyframes ErrorBlink {

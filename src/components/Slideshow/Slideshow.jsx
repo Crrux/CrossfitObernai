@@ -6,7 +6,6 @@ function Slideshow({ data, autoplay, autoplayDelay, buttonEnabled }) {
 
   useEffect(() => {
     showSlides(slideIndex);
-    console.log(slideIndex);
   }, [slideIndex]);
 
   useEffect(() => {
@@ -14,7 +13,6 @@ function Slideshow({ data, autoplay, autoplayDelay, buttonEnabled }) {
     if (autoplay) {
       autoplayTimeout = setTimeout(() => {
         setSlideIndex((prevIndex) => prevIndex + 1);
-        console.log('timeout');
       }, autoplayDelay);
     }
     return () => {
@@ -44,7 +42,6 @@ function Slideshow({ data, autoplay, autoplayDelay, buttonEnabled }) {
 
   const plusSlides = (n) => {
     setSlideIndex((prevIndex) => prevIndex + n);
-    console.log('plusSlides');
   };
 
   return (
