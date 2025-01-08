@@ -1174,14 +1174,12 @@ body main .main__header {
 }
 body main .main__header .title_container {
   position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 10px 0px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   color: black;
   width: 40%;
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 767.98px) {
   body main .main__header .title_container {
     width: 100%;
   }
