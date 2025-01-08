@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Collapsible({ index, titre, text, string }) {
+function Collapsible({ index, titre, children }) {
   titre = titre.toUpperCase();
   const [isActive, setIsActive] = useState(false);
   const [isFirstClick, setIsFirstClick] = useState(true);
@@ -37,25 +37,7 @@ function Collapsible({ index, titre, text, string }) {
         className={`collapsible-content ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
           }`}
       >
-        {string ? (
-          <>
-            <p>{string}</p>
-          </>
-        ) : (
-          ""
-        )}
-
-        {text ? (
-          <>
-            <ul>
-              {text.map((text, index) => (
-                <li key={index}>{text}</li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          ""
-        )}
+        {children}
       </div>
     </div>
   );
@@ -64,8 +46,7 @@ function Collapsible({ index, titre, text, string }) {
 Collapsible.propTypes = {
   index: PropTypes.number,
   titre: PropTypes.string,
-  string: PropTypes.string,
-  text: PropTypes.array,
+  children: PropTypes.node,
 };
 
 export default Collapsible;
