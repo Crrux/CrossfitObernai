@@ -268,12 +268,12 @@ function Contact() {
           </label>
 
           {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
-          {/* {isFormSent ? <div className="FormSubmitInfo"><p>Formulaire bien envoyé</p></div> :
+          {!isFormSent ? <div className="FormSubmitInfo"><p>Formulaire bien envoyé</p></div> :
             <div className="FormSubmitInfo">
               <p><i className="fa-solid fa-exclamation"></i> Une erreur est survenue, essayez d&apos;<button type="button" onClick={() => { window.location.reload(); }} style={{ cursor: 'pointer', padding: 0, margin: 0, gap: 0 }}>actualiser</button> la page <i className="fa-solid fa-exclamation"></i></p>
               <p>Si le probleme persiste, contactez nous a l&apos;adresse suivante :</p>
               <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com </a>
-            </div>} */}
+            </div>}
 
         </form>
 

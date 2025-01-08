@@ -64,7 +64,7 @@ function Class() {
             index={5}
             titre={"HYROX"}
           >
-            <p>Hybrid Training est un cours mélangeant la course à pieds à des
+            <p>HYROX est un cours mélangeant la course à pieds à des
               exercices fonctionnels; vous y retrouverez la pratique du rameur, des
               wall ball shots, des fentes marchées, de la poussée et du tirage de
               sled, du ski-erg, du farmer carry et d&apos;autres petits choses

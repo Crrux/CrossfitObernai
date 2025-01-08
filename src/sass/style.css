@@ -135,7 +135,7 @@
   }
 }
 .fixe {
-  background-color: #000;
+  background: transparent;
   width: 100%;
   margin-bottom: 20px;
   z-index: 0;
@@ -148,9 +148,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  font-size: 15px;
+  font-size: 20px;
 }
 .collapsible .collapsible-divbutton {
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 2px;
   border: none;
   padding: 0;
   position: absolute;
@@ -1104,6 +1106,12 @@ footer #Footer_bottom-container p a {
   width: 100%;
   z-index: -2;
   transition: transform 0.1s;
+}
+
+#offers_dropin {
+  font-weight: bold;
+  margin-top: 30px;
+  text-align: center;
 }
 
 #main_coach #Slideshow_container {

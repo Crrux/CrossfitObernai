@@ -54,6 +54,7 @@ function Offers() {
         <li>Pack 10 séances: validité de 12 mois, renouvelable.</li>
         <li>Pack 20 séances: validité de 12 mois, renouvelable.</li>
       </ul>
+      <p id='offers_dropin'>Reserve ton Drop-in <a href="https://app.peppy.cool/boxes/crossfit-obernai/ckppkcyv5n6mv0883dup9kj17/book/dropin/?skipPlatformFees=true" rel="noreferrer" target="_blank">ici</a></p>
     </main>
   );
 }
