@@ -179,6 +179,7 @@
   }
 }
 .collapsible .collapsible-divbutton p {
+  font-size: 1.5rem;
   flex-grow: 1;
   text-align: center;
   padding-left: 10px;
@@ -1093,6 +1094,7 @@ footer #Footer_bottom-container p a {
 }
 .Modal_ContentContainer div {
   max-height: 75dvh;
+  padding-right: 1rem;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
