@@ -162,9 +162,11 @@ function Contact() {
                   <>
                     <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
                     <ReactTooltip id="Tooltip_Name" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
-                      <ul style={{ paddingInline: '20px', margin: 0 }}>
-                        <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
-                      </ul>
+                      <div>
+                        <ul style={{ paddingBlock: 0, margin: 0 }}>
+                          <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                        </ul>
+                      </div>
                     </ReactTooltip>
 
                   </> : ""}
@@ -185,7 +187,13 @@ function Contact() {
                 />
                 {errors.firstnameError && isSubmit ? <>
                   <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' data-tooltip-variant="error" />
-                  <ReactTooltip id="Tooltip_Firstname" content='Doit contenir au moins 2 caractere' place="bottom" />
+                  <ReactTooltip id="Tooltip_Firstname" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                    <div>
+                      <ul style={{ paddingBlock: 0, margin: 0 }}>
+                        <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                      </ul>
+                    </div>
+                  </ReactTooltip>
                 </> : ""}
               </div>
             </label>
@@ -207,7 +215,13 @@ function Contact() {
                 {errors.emailError && isSubmit ?
                   <>
                     <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' data-tooltip-variant="error" />
-                    <ReactTooltip id="Tooltip_Email" content='Doit etre une adresse email valide' place="bottom" />
+                    <ReactTooltip id="Tooltip_Email" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                      <div>
+                        <ul style={{ paddingBlock: 0, margin: 0 }}>
+                          <li style={{ padding: 0, margin: 0 }}>Doit etre une adresse email valide</li>
+                        </ul>
+                      </div>
+                    </ReactTooltip>
                   </> : ""}
               </div>
             </label>
@@ -226,7 +240,13 @@ function Contact() {
                 />
                 {errors.telError && isSubmit ? <>
                   <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' data-tooltip-variant="error" />
-                  <ReactTooltip id="Tooltip_Tel" content='Doit etre un numero de telephone valide' place="bottom" />
+                  <ReactTooltip id="Tooltip_Tel" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                    <div>
+                      <ul style={{ paddingBlock: 0, margin: 0 }}>
+                        <li style={{ padding: 0, margin: 0 }}>Doit etre un numero de telephone valide</li>
+                      </ul>
+                    </div>
+                  </ReactTooltip>
                 </> : ""}
               </div>
             </label>
@@ -246,7 +266,13 @@ function Contact() {
               />
               {errors.messageError && isSubmit ? <>
                 <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' data-tooltip-variant="error" />
-                <ReactTooltip id="Tooltip_Message" content='Doit contenir 3 caractere min.' place="bottom" />
+                <ReactTooltip id="Tooltip_Message" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                  <div>
+                    <ul style={{ paddingBlock: 0, margin: 0 }}>
+                      <li style={{ padding: 0, margin: 0 }}>Doit contenir 3 caractere min.</li>
+                    </ul>
+                  </div>
+                </ReactTooltip>
               </> : ""}
             </div>
           </label>
