@@ -867,6 +867,9 @@ footer #Footer_bottom-container p a {
   width: 100%;
 }
 
+#class > p {
+  text-align: center;
+}
 #class .collapsible {
   margin-bottom: 10px;
   width: 100%;
