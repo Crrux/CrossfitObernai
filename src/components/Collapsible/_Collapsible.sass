@@ -7,7 +7,8 @@ $temps-animations: 0.5s
     flex-direction: column
     position: relative
     font-size: 20px
-    .collapsible-divbutton
+    &-button
+        z-index: 10
         font-family: 'Roboto Condensed', sans-serif
         letter-spacing: 2px
         border: none
@@ -27,6 +28,15 @@ $temps-animations: 0.5s
         // background-color: #247d8b
         // background-color: #5a2c63
         // TODO 390 pxl > text deborde
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #00000075
+            z-index: 11
         @media screen and ( max-width: $layout-breakpoint-small )
             font-size: 1rem
             font-weight: 600
@@ -38,10 +48,13 @@ $temps-animations: 0.5s
             text-align: center
             padding-left: 10px
             white-space: nowrap
+            z-index: 12
+            text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000
+
         i
             margin-right: 10px
             font-size: 1.5rem
-
+            z-index: 12
         .icon-down-rotated
             animation: rotate-down $temps-animations linear forwards
         .icon-up-rotated
@@ -58,7 +71,8 @@ $temps-animations: 0.5s
                     &:nth-child(4n+3)
                         color: #da4f84
                     &:nth-child(4n+4)
-                        color: #ffF
+                        color: #FFF
+
     .collapsible-content
         z-index: 0
         position: relative
