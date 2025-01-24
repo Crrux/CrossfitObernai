@@ -1021,7 +1021,7 @@ footer #Footer_bottom-container p a {
   border-radius: 5px;
 }
 .main_contact input[type=submit]:hover {
-  background-color: #ff3814;
+  background-color: light-dark(#1a951a, #004100);
 }
 .main_contact .FormSubmitInfo {
   display: flex;

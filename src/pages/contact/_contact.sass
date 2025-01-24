@@ -3,6 +3,8 @@ $light-bg: #e7e6e6
 $light-text: #ddd
 $dark-text: #000
 $error-text: #ff6347
+$valid-text-light: #22c022
+$valid-text-dark: #007400
 $form-font-size: 1.4rem
 $form-padding: 10px
 $form-border-radius: 5px
@@ -115,7 +117,8 @@ $layout-breakpoint-small: 600px
         width: fit-content
         border-radius: $form-border-radius
         &:hover
-            background-color: darken($error-text, 10%)
+
+            background-color: light-dark(darken($valid-text-light, 10%), darken($valid-text-dark, 10%))
 
     .FormSubmitInfo
         display: flex
