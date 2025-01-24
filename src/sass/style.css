@@ -910,8 +910,8 @@ footer #Footer_bottom-container p a {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #222;
-  color: #ddd;
+  background-color: light-dark(#e7e6e6, #222);
+  color: light-dark(#000, #ddd);
   padding: 20px;
   border-radius: 5px;
   width: 100%;
@@ -960,8 +960,8 @@ footer #Footer_bottom-container p a {
 }
 .main_contact .form_contact_checkbox_container button {
   font-size: 1.2rem;
-  background-color: #2f2f2f;
-  color: #ddd;
+  background-color: light-dark(#dbd9d9, #2f2f2f);
+  color: light-dark(#000, #ddd);
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -969,7 +969,7 @@ footer #Footer_bottom-container p a {
   transition: background-color 0.3s ease;
 }
 .main_contact .form_contact_checkbox_container button:hover {
-  background-color: #151515;
+  background-color: light-dark(#c2bfbf, #151515);
 }
 .main_contact .form_contact .FormError {
   animation: ErrorBlink 0.5s forwards;
@@ -996,8 +996,8 @@ footer #Footer_bottom-container p a {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #2f2f2f;
-  color: #ddd;
+  background-color: light-dark(#dbd9d9, #2f2f2f);
+  color: light-dark(#000, #ddd);
   box-sizing: border-box;
 }
 .main_contact .form_contact:focus {
@@ -1039,8 +1039,8 @@ footer #Footer_bottom-container p a {
   color: #ff6347;
 }
 .main_contact .FormSubmitInfo p .refresh_button {
-  background-color: #2f2f2f;
-  color: #ddd;
+  background-color: light-dark(#dbd9d9, #2f2f2f);
+  color: light-dark(#000, #ddd);
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -1052,7 +1052,7 @@ footer #Footer_bottom-container p a {
   font-weight: 600;
 }
 .main_contact .FormSubmitInfo p .refresh_button:hover {
-  background-color: #151515;
+  background-color: light-dark(#c2bfbf, #151515);
 }
 
 @keyframes ErrorBlink {

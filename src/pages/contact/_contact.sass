@@ -1,10 +1,13 @@
 $dark-bg: #222
+$light-bg: #e7e6e6
 $light-text: #ddd
+$dark-text: #000
 $error-text: #ff6347
 $form-font-size: 1.4rem
 $form-padding: 10px
 $form-border-radius: 5px
-$form-bg-color: lighten($dark-bg, 5%)
+$form-bg-color-dark: lighten($dark-bg, 5%)
+$form-bg-color-light: darken($light-bg, 5%)
 $layout-breakpoint-small: 600px
 
 .main_contact
@@ -16,8 +19,8 @@ $layout-breakpoint-small: 600px
         display: flex
         justify-content: center
         flex-direction: column
-        background-color: $dark-bg
-        color: $light-text
+        background-color: light-dark($light-bg, $dark-bg)
+        color: light-dark($dark-text, $light-text)
         padding: 20px
         border-radius: $form-border-radius
         width: 100%
@@ -56,18 +59,17 @@ $layout-breakpoint-small: 600px
                 align-items: center
             button
                 font-size: 1.2rem
-                background-color: $form-bg-color
-                color: $light-text
+                background-color: light-dark($form-bg-color-light, $form-bg-color-dark)
+                color: light-dark($dark-text, $light-text)
                 border: none
                 border-radius: $form-border-radius
                 padding: $form-padding
                 cursor: pointer
                 transition: background-color 0.3s ease
                 &:hover
-                    background-color: darken($form-bg-color, 10%)
+                    background-color: light-dark(darken($form-bg-color-light, 10%), darken($form-bg-color-dark, 10%))
 
         .FormError
-            // background-color: rgba(255, 0, 0, 0.1) !important
             animation: ErrorBlink 0.5s forwards
 
         label
@@ -90,8 +92,8 @@ $layout-breakpoint-small: 600px
             padding: $form-padding
             border: none
             border-radius: $form-border-radius
-            background-color: $form-bg-color
-            color: $light-text
+            background-color: light-dark($form-bg-color-light, $form-bg-color-dark)
+            color: light-dark($dark-text, $light-text)
             box-sizing: border-box
 
         &:focus
@@ -128,8 +130,8 @@ $layout-breakpoint-small: 600px
                 font-size: 2rem
                 color: $error-text
             .refresh_button
-                background-color: $form-bg-color
-                color: $light-text
+                background-color: light-dark($form-bg-color-light, $form-bg-color-dark)
+                color: light-dark($dark-text, $light-text)
                 border: none
                 border-radius: $form-border-radius
                 padding: $form-padding
@@ -140,7 +142,7 @@ $layout-breakpoint-small: 600px
                 font-size: 1.2rem
                 font-weight: 600
                 &:hover
-                    background-color: darken($form-bg-color, 10%)
+                    background-color: light-dark(darken($form-bg-color-light, 10%), darken($form-bg-color-dark, 10%))
 
 @keyframes ErrorBlink
     0%
