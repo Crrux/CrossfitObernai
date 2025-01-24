@@ -304,7 +304,7 @@ function Contact() {
             </label>
 
             {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
-            {!formError && (
+            {formError && (
               <div className="FormSubmitInfo">
                 <p>
                   <i className="fa-solid fa-exclamation" style={{ marginRight: '20px' }}></i> Une erreur est survenue, essayez d&apos;
