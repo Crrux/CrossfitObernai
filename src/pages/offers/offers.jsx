@@ -1,8 +1,9 @@
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Offres.webp";
+import LogoPeppy from "/assets/logos_svg/logo_peppy.svg";
 
 function Offers() {
   return (
-    <main id="offers">
+    <main className="offers">
       <div className="main__header">
         <div className="title_container">
           <img src={TitleBackgroundImage} alt="Background" />
@@ -54,7 +55,13 @@ function Offers() {
         <li>Pack 10 séances: validité de 12 mois, renouvelable.</li>
         <li>Pack 20 séances: validité de 12 mois, renouvelable.</li>
       </ul>
-      <p id='offers_dropin'>Reserve ton Drop-in <a href="https://app.peppy.cool/boxes/crossfit-obernai/ckppkcyv5n6mv0883dup9kj17/book/dropin/?skipPlatformFees=true" rel="noreferrer" target="_blank">ici</a></p>
+      <div className="offers_dropin_container">
+        <h2 className="offers_dropin_title">Reserve ton Drop-in ici: </h2>
+        <a href="https://app.peppy.cool/boxes/crossfit-obernai/ckppkcyv5n6mv0883dup9kj17/book/dropin/?skipPlatformFees=true" rel="noreferrer" target="_blank" className="offers_dropin_link">
+          <img src={LogoPeppy} alt="Peppy" />
+        </a>
+      </div>
+
     </main>
   );
 }
