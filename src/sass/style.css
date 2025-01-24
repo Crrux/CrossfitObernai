@@ -181,14 +181,6 @@
   background-color: rgba(0, 0, 0, 0.4588235294);
   z-index: 11;
 }
-@media screen and (max-width: 767.98px) {
-  .collapsible-button {
-    font-size: 1rem;
-    font-weight: 600;
-    height: 40px;
-    border-radius: 2px;
-  }
-}
 .collapsible-button p {
   font-size: 1.5rem;
   flex-grow: 1;
@@ -197,6 +189,11 @@
   white-space: nowrap;
   z-index: 12;
   text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+@media screen and (max-width: 767.98px) {
+  .collapsible-button p {
+    font-size: calc(15px + 0.6vw);
+  }
 }
 .collapsible-button i {
   margin-right: 10px;
@@ -211,18 +208,7 @@
 }
 .collapsible-button .collapsible-button_title {
   font-weight: 800;
-}
-.collapsible-button .collapsible-button_title span:nth-child(4n+1) {
-  color: #36d6e7;
-}
-.collapsible-button .collapsible-button_title span:nth-child(4n+2) {
-  color: #f9a726;
-}
-.collapsible-button .collapsible-button_title span:nth-child(4n+3) {
-  color: #da4f84;
-}
-.collapsible-button .collapsible-button_title span:nth-child(4n+4) {
-  color: #FFF;
+  color: fff;
 }
 .collapsible .collapsible-content {
   z-index: 0;
@@ -882,6 +868,8 @@ footer #Footer_bottom-container p a {
   flex-direction: row;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 @media screen and (max-width: 767.98px) {
   #class .collapsible_container {
@@ -890,11 +878,14 @@ footer #Footer_bottom-container p a {
   }
 }
 #class .collapsible_container__column {
-  width: 30%;
+  flex-grow: 1;
+  min-width: 400px;
+  max-width: 30%;
 }
 @media screen and (max-width: 767.98px) {
   #class .collapsible_container__column {
-    width: 100%;
+    min-width: 300px;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
@@ -1105,9 +1096,23 @@ footer #Footer_bottom-container p a {
   border-radius: 10px;
   outline: none;
   height: 80dvh;
-  padding: 20px;
+  padding: 10px 20px;
   width: 70%;
   z-index: 301;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Modal_ContentContainer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 100px;
+  align-self: flex-end;
+}
+.Modal_ContentContainer button i {
+  font-size: 1.5rem;
 }
 .Modal_ContentContainer div {
   max-height: 75dvh;
@@ -1154,7 +1159,7 @@ footer #Footer_bottom-container p a {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
+  color-scheme: light;
   color: light-dark(#000, #f5f5f5);
   background-color: light-dark(#f5f5f5, #232627);
   font-synthesis: none;

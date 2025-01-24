@@ -37,11 +37,11 @@ $temps-animations: 0.5s
             height: 100%
             background-color: #00000075
             z-index: 11
-        @media screen and ( max-width: $layout-breakpoint-small )
-            font-size: 1rem
-            font-weight: 600
-            height: $button-height-small
-            border-radius: 2px
+        // @media screen and ( max-width: $layout-breakpoint-small )
+        //     font-size: 1rem
+        //     font-weight: 600
+        //     height: $button-height-small
+        //     border-radius: 2px
         p
             font-size: 1.5rem
             flex-grow: 1
@@ -50,7 +50,9 @@ $temps-animations: 0.5s
             white-space: nowrap
             z-index: 12
             text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000
-
+            @media screen and ( max-width: $layout-breakpoint-small )
+                font-size: calc(15px + 0.6vw)
+                // padding-left: 5px
         i
             margin-right: 10px
             font-size: 1.5rem
@@ -63,15 +65,16 @@ $temps-animations: 0.5s
             &_title
                 // font-size: 1.5rem
                 font-weight: 800
+                color: fff
                 span
-                    &:nth-child(4n+1)
-                        color: #36d6e7
-                    &:nth-child(4n+2)
-                        color: #f9a726
-                    &:nth-child(4n+3)
-                        color: #da4f84
-                    &:nth-child(4n+4)
-                        color: #FFF
+                    // &:nth-child(4n+1)
+                    //     color: #36d6e7
+                    // &:nth-child(4n+2)
+                    //     color: #f9a726
+                    // &:nth-child(4n+3)
+                    //     color: #da4f84
+                    // &:nth-child(4n+4)
+                    //     color: #FFF
 
     .collapsible-content
         z-index: 0

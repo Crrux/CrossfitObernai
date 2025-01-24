@@ -287,14 +287,15 @@ function Contact() {
               className={"Modal_ContentContainer"}
               overlayClassName="Modal_overlay"
             >
-              <div className="TextContainer">
+              <button onClick={closeModal} className="CloseButton" type="button"> <i class="fa-solid fa-xmark"></i></button>
+              <div className="TextContainer" style={{ position: 'relative' }}>
                 <LegalNotices />
               </div>
             </Modal>
           </label>
 
           {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
-          {!isFormSent ? <div className="FormSubmitInfo"><p>Formulaire bien envoyé</p></div> :
+          {!isFormSent ? <div className="FormSubmitInfo"><p>Formulaire bien envoyé <i className="fa-solid fa-check" style={{ color: 'green' }}></i></p></div> :
             <div className="FormSubmitInfo">
               <p><i className="fa-solid fa-exclamation"></i> Une erreur est survenue, essayez d&apos;<button type="button" onClick={() => { window.location.reload(); }} style={{ cursor: 'pointer', padding: 0, margin: 0, gap: 0 }}>actualiser</button> la page <i className="fa-solid fa-exclamation"></i></p>
               <p>Si le probleme persiste, contactez nous a l&apos;adresse suivante :</p>
