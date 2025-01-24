@@ -33,7 +33,6 @@ $layout-breakpoint-small: 600px
                 flex-grow: 1
                 display: flex
                 flex-direction: column
-                        // width: 100%
                 @media screen and (max-width: $layout-breakpoint-small)
                     width: 100%
 
@@ -64,15 +63,14 @@ $layout-breakpoint-small: 600px
                 padding: $form-padding
                 cursor: pointer
                 transition: background-color 0.3s ease
-                // &:hover
-                //     background-color: darken($error-text, 10%)
+                &:hover
+                    background-color: darken($form-bg-color, 10%)
 
         .FormError
             // background-color: rgba(255, 0, 0, 0.1) !important
             animation: ErrorBlink 0.5s forwards
 
         label
-            // display: block
             margin-bottom: 15px
 
             p:not(.checkbox_text)
@@ -126,10 +124,23 @@ $layout-breakpoint-small: 600px
         p
             display: inline-flex
             align-items: center
-            gap: 20px
             i
                 font-size: 2rem
                 color: $error-text
+            .refresh_button
+                background-color: $form-bg-color
+                color: $light-text
+                border: none
+                border-radius: $form-border-radius
+                padding: $form-padding
+                cursor: pointer
+                transition: background-color 0.3s ease
+                margin: 0 5px
+                padding: 5px
+                font-size: 1.2rem
+                font-weight: 600
+                &:hover
+                    background-color: darken($form-bg-color, 10%)
 
 @keyframes ErrorBlink
     0%
@@ -183,15 +194,12 @@ $layout-breakpoint-small: 600px
         overflow: hidden
         border-radius: 10px
         outline: none
-        // height: fit-content
         height: 80dvh
         padding: 10px 20px
-        // padding: 20px
         width: 70%
         z-index: 301
         display: flex
         flex-direction: column
-        // margin-block: 20px
         gap: 10px
         button
             display: flex
@@ -200,8 +208,6 @@ $layout-breakpoint-small: 600px
             width: 40px
             height: 100px
             align-self: flex-end
-            // width: fit-content
-            // font-size: 1.2rem
             i
                 font-size: 1.5rem
         div

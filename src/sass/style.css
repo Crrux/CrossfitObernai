@@ -968,6 +968,9 @@ footer #Footer_bottom-container p a {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.main_contact .form_contact_checkbox_container button:hover {
+  background-color: #151515;
+}
 .main_contact .form_contact .FormError {
   animation: ErrorBlink 0.5s forwards;
 }
@@ -1030,11 +1033,26 @@ footer #Footer_bottom-container p a {
 .main_contact .FormSubmitInfo p {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
 }
 .main_contact .FormSubmitInfo p i {
   font-size: 2rem;
   color: #ff6347;
+}
+.main_contact .FormSubmitInfo p .refresh_button {
+  background-color: #2f2f2f;
+  color: #ddd;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.main_contact .FormSubmitInfo p .refresh_button:hover {
+  background-color: #151515;
 }
 
 @keyframes ErrorBlink {

@@ -35,6 +35,7 @@ function Contact() {
   const [isFormLoading, setIsFormLoading] = useState(false);
   const formRef = useRef(null);
   const [isSubmit, setIsSubmit] = useState(false);
+  const [formError, setFormError] = useState(false);
 
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
@@ -114,13 +115,16 @@ function Contact() {
               message: ''
             });
             setisFormSent(true);
+            setFormError(false);
           } else if (res.status !== 200) {
             console.log("status pas 200 retourner")
+            setFormError(true);
           }
         })
         .catch((error) => {
           console.error("An error occurred while submitting the form:", error);
           setisFormSent(false);
+          setFormError(true);
         })
         .finally(() => {
           // Reset the loading state
@@ -142,168 +146,183 @@ function Contact() {
             <h1>Contact</h1>
           </div>
         </div>
-        <form ref={formRef} onSubmit={handleSubmit} noValidate className="form_contact">
-          <div className="form_contact_container">
-            <label htmlFor="name">
-              <p>Nom</p>
-              <div>
-                <input
-                  type="text"
-                  id="name"
-                  className={errors.nameError && isSubmit ? 'FormError' : ''}
-                  name="name"
-                  value={contact.name}
-                  autoComplete="given-name"
-                  autoFocus
-                  required
-                  onChange={handleChange}
-                />
-                {errors.nameError && isSubmit ?
-                  <>
-                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
-                    <ReactTooltip id="Tooltip_Name" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+        {isFormSent ? (
+          <div className="form_success_message">
+            <div className="FormSubmitInfo"><p>Merci! Votre message a été envoyé avec succès.<i className="fa-solid fa-check" style={{ color: 'green' }}></i></p></div>
+          </div>
+        ) : (
+          <form ref={formRef} onSubmit={handleSubmit} noValidate className="form_contact">
+            <div className="form_contact_container">
+              <label htmlFor="name">
+                <p>Nom</p>
+                <div>
+                  <input
+                    type="text"
+                    id="name"
+                    className={errors.nameError && isSubmit ? 'FormError' : ''}
+                    name="name"
+                    value={contact.name}
+                    autoComplete="given-name"
+                    autoFocus
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.nameError && isSubmit ?
+                    <>
+                      <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
+                      <ReactTooltip id="Tooltip_Name" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                        <div>
+                          <ul style={{ paddingBlock: 0, margin: 0 }}>
+                            <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                          </ul>
+                        </div>
+                      </ReactTooltip>
+
+                    </> : ""}
+                </div>
+              </label>
+              <label htmlFor="firstname">
+                <p>Prenom</p>
+                <div>
+                  <input
+                    type="text"
+                    id="firstname"
+                    className={errors.firstnameError && isSubmit ? 'FormError' : ''}
+                    name="firstname"
+                    value={contact.firstname}
+                    autoComplete="family-name"
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.firstnameError && isSubmit ? <>
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' data-tooltip-variant="error" />
+                    <ReactTooltip id="Tooltip_Firstname" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                       <div>
                         <ul style={{ paddingBlock: 0, margin: 0 }}>
                           <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
                         </ul>
                       </div>
                     </ReactTooltip>
-
                   </> : ""}
-              </div>
-            </label>
-            <label htmlFor="firstname">
-              <p>Prenom</p>
-              <div>
-                <input
-                  type="text"
-                  id="firstname"
-                  className={errors.firstnameError && isSubmit ? 'FormError' : ''}
-                  name="firstname"
-                  value={contact.firstname}
-                  autoComplete="family-name"
-                  required
-                  onChange={handleChange}
-                />
-                {errors.firstnameError && isSubmit ? <>
-                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' data-tooltip-variant="error" />
-                  <ReactTooltip id="Tooltip_Firstname" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
-                    <div>
-                      <ul style={{ paddingBlock: 0, margin: 0 }}>
-                        <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
-                      </ul>
-                    </div>
-                  </ReactTooltip>
-                </> : ""}
-              </div>
-            </label>
-          </div>
-          <div className="form_contact_container">
-            <label htmlFor="email">
-              <p>Email</p>
-              <div>
-                <input
-                  type="email"
-                  id="email"
-                  className={errors.emailError && isSubmit ? 'FormError' : ''}
-                  name="email"
-                  value={contact.email}
-                  autoComplete="email"
-                  required
-                  onChange={handleChange}
-                />
-                {errors.emailError && isSubmit ?
-                  <>
-                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' data-tooltip-variant="error" />
-                    <ReactTooltip id="Tooltip_Email" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                </div>
+              </label>
+            </div>
+            <div className="form_contact_container">
+              <label htmlFor="email">
+                <p>Email</p>
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    className={errors.emailError && isSubmit ? 'FormError' : ''}
+                    name="email"
+                    value={contact.email}
+                    autoComplete="email"
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.emailError && isSubmit ?
+                    <>
+                      <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' data-tooltip-variant="error" />
+                      <ReactTooltip id="Tooltip_Email" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                        <div>
+                          <ul style={{ paddingBlock: 0, margin: 0 }}>
+                            <li style={{ padding: 0, margin: 0 }}>Doit etre une adresse email valide</li>
+                          </ul>
+                        </div>
+                      </ReactTooltip>
+                    </> : ""}
+                </div>
+              </label>
+              <label htmlFor="tel">
+                <p>Telephone</p>
+                <div>
+                  <input
+                    type="tel"
+                    id="tel"
+                    className={errors.telError && isSubmit ? 'FormError' : ''}
+                    name="tel"
+                    value={contact.tel}
+                    autoComplete="tel"
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.telError && isSubmit ? <>
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' data-tooltip-variant="error" />
+                    <ReactTooltip id="Tooltip_Tel" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                       <div>
                         <ul style={{ paddingBlock: 0, margin: 0 }}>
-                          <li style={{ padding: 0, margin: 0 }}>Doit etre une adresse email valide</li>
+                          <li style={{ padding: 0, margin: 0 }}>Doit etre un numero de telephone valide</li>
                         </ul>
                       </div>
                     </ReactTooltip>
                   </> : ""}
-              </div>
-            </label>
-            <label htmlFor="tel">
-              <p>Telephone</p>
+                </div>
+              </label>
+            </div>
+
+            <label htmlFor="message">
+              <p>Message</p>
               <div>
-                <input
-                  type="tel"
-                  id="tel"
-                  className={errors.telError && isSubmit ? 'FormError' : ''}
-                  name="tel"
-                  value={contact.tel}
-                  autoComplete="tel"
-                  required
+                <textarea
+                  id="message"
+                  className={errors.messageError && isSubmit ? 'FormError' : ''}
+                  name="message"
+                  placeholder="Votre message..."
+                  rows={10}
+                  value={contact.message}
                   onChange={handleChange}
                 />
-                {errors.telError && isSubmit ? <>
-                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' data-tooltip-variant="error" />
-                  <ReactTooltip id="Tooltip_Tel" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                {errors.messageError && isSubmit ? <>
+                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' data-tooltip-variant="error" />
+                  <ReactTooltip id="Tooltip_Message" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                     <div>
                       <ul style={{ paddingBlock: 0, margin: 0 }}>
-                        <li style={{ padding: 0, margin: 0 }}>Doit etre un numero de telephone valide</li>
+                        <li style={{ padding: 0, margin: 0 }}>Doit contenir 3 caractere min.</li>
                       </ul>
                     </div>
                   </ReactTooltip>
                 </> : ""}
               </div>
             </label>
-          </div>
+            <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
+              <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
+              <p className="checkbox_text">accepter <button onClick={openModal} type="button">mention legale</button> </p>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                // portalClassName="Modal_portal"
+                contentLabel="Example Modal"
+                className={"Modal_ContentContainer"}
+                overlayClassName="Modal_overlay"
+              >
+                <button onClick={closeModal} className="CloseButton" type="button"> <i class="fa-solid fa-xmark"></i></button>
+                <div className="TextContainer" style={{ position: 'relative' }}>
+                  <LegalNotices />
+                </div>
+              </Modal>
+            </label>
 
-          <label htmlFor="message">
-            <p>Message</p>
-            <div>
-              <textarea
-                id="message"
-                className={errors.messageError && isSubmit ? 'FormError' : ''}
-                name="message"
-                placeholder="Votre message..."
-                rows={10}
-                value={contact.message}
-                onChange={handleChange}
-              />
-              {errors.messageError && isSubmit ? <>
-                <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' data-tooltip-variant="error" />
-                <ReactTooltip id="Tooltip_Message" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
-                  <div>
-                    <ul style={{ paddingBlock: 0, margin: 0 }}>
-                      <li style={{ padding: 0, margin: 0 }}>Doit contenir 3 caractere min.</li>
-                    </ul>
-                  </div>
-                </ReactTooltip>
-              </> : ""}
-            </div>
-          </label>
-          <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
-            <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
-            <p className="checkbox_text">accepter <button onClick={openModal} type="button">mention legale</button> </p>
-            <Modal
-              isOpen={modalIsOpen}
-              onRequestClose={closeModal}
-              // portalClassName="Modal_portal"
-              contentLabel="Example Modal"
-              className={"Modal_ContentContainer"}
-              overlayClassName="Modal_overlay"
-            >
-              <button onClick={closeModal} className="CloseButton" type="button"> <i class="fa-solid fa-xmark"></i></button>
-              <div className="TextContainer" style={{ position: 'relative' }}>
-                <LegalNotices />
+            {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
+            {!formError && (
+              <div className="FormSubmitInfo">
+                <p>
+                  <i className="fa-solid fa-exclamation" style={{ marginRight: '20px' }}></i> Une erreur est survenue, essayez d&apos;
+                  <button
+                    type="button"
+                    onClick={() => { window.location.reload(); }}
+                    className="refresh_button"
+                  >
+                    actualiser
+                  </button>
+                  la page <i className="fa-solid fa-exclamation" style={{ marginLeft: '20px' }}></i>
+                </p>
+                <p>Si le probleme persiste, contactez nous a l&apos;adresse suivante :</p>
+                <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com</a>
               </div>
-            </Modal>
-          </label>
-
-          {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
-          {!isFormSent ? <div className="FormSubmitInfo"><p>Formulaire bien envoyé <i className="fa-solid fa-check" style={{ color: 'green' }}></i></p></div> :
-            <div className="FormSubmitInfo">
-              <p><i className="fa-solid fa-exclamation"></i> Une erreur est survenue, essayez d&apos;<button type="button" onClick={() => { window.location.reload(); }} style={{ cursor: 'pointer', padding: 0, margin: 0, gap: 0 }}>actualiser</button> la page <i className="fa-solid fa-exclamation"></i></p>
-              <p>Si le probleme persiste, contactez nous a l&apos;adresse suivante :</p>
-              <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com </a>
-            </div>}
-
-        </form>
-
+            )}
+          </form>
+        )}
       </main >
     </>
   );
