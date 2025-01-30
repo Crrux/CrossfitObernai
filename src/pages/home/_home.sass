@@ -16,10 +16,22 @@
         @media screen and (max-width: $layout-breakpoint-small)
             width: 100%
     .title_container
+        p
+            font-size: calc(15px + 2.5vw)
+            top: 25%
+            @media screen and (max-width: $test)
+                font-size: calc(15px + 5vw)
         h1
+            font-size: calc(15px + 5vw)
+            top: 58%
             letter-spacing: 20px
-            @media screen and (max-width: $layout-breakpoint-tablet-max)
+            @media screen and (max-width: $layout-breakpoint-tablet-max) and (min-width: $layout-breakpoint-tablet-min)
+                font-size: calc(15px + 3.4vw)
                 letter-spacing: 13px
+            @media screen and (max-width: $test)
+                font-size: calc(15px + 11.7vw)
+                letter-spacing: 13px
+
     .Slideshow
         &_section
             display: flex

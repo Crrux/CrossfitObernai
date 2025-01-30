@@ -17,6 +17,21 @@ $layout-breakpoint-small: 600px
     justify-content: center
     align-items: center
     flex-direction: column
+    .title_container
+        h1
+            top: 58%
+            font-size: calc(15px + 4.3vw)
+            @media screen and (max-width: $layout-breakpoint-tablet-max) and (min-width: $layout-breakpoint-tablet-min)
+                font-size: calc(15px + 3.4vw)
+            @media screen and (max-width: $test)
+                font-size: calc(15px + 11.7vw)
+
+        p
+            top: 15%
+            font-size: calc(15px + 2.5vw)
+            @media screen and (max-width: $test)
+                font-size: calc(15px + 5vw)
+
     .form_contact
         display: flex
         justify-content: center

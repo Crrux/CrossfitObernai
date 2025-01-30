@@ -1,8 +1,18 @@
 #class
-    // display: flex
-    // flex-direction: column
-    // // justify-content: center
-    // align-items: center
+    .title_container
+        p
+            top: 20%
+            font-size: calc(15px + 2.5vw)
+            @media screen and (max-width: $test)
+                font-size: calc(15px + 5vw)
+        h1
+            top: 58%
+            font-size: calc(15px + 5vw)
+            @media screen and (max-width: $layout-breakpoint-tablet-max) and (min-width: $layout-breakpoint-tablet-min)
+                font-size: calc(15px + 3.4vw)
+            @media screen and (max-width: $test)
+                font-size: calc(15px + 11.7vw)
+
     >p
         text-align: center
     .collapsible

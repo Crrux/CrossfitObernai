@@ -2,7 +2,7 @@ import TitleBackgroundImage from "/assets/title_background/TitleBackground_Evene
 
 function Events() {
   return (
-    <main id="event_main">
+    <main className="event_main">
       <div className="main__header">
         <div className="title_container">
           <img src={TitleBackgroundImage} alt="Background" />
