@@ -108,18 +108,16 @@ function Contact() {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
         .then((res) => {
-          // console.log(res.data);
-          // console.log(res)
           if (res.status === 200) {
             console.log("status 200 retourner")
-            setContact({
-              checkbox: false,
-              name: '',
-              firstname: '',
-              email: '',
-              tel: '',
-              message: ''
-            });
+            // setContact({
+            //   checkbox: false,
+            //   name: '',
+            //   firstname: '',
+            //   email: '',
+            //   tel: '',
+            //   message: ''
+            // });
             setisFormSent(true);
             setFormError(false);
           } else if (res.status !== 200) {
@@ -128,6 +126,8 @@ function Contact() {
           }
         })
         .catch((error) => {
+          console.log(error)
+          console.log(error.response.status)
           console.error("An error occurred while submitting the form:", error);
           setisFormSent(false);
           setFormError(true);
@@ -154,7 +154,7 @@ function Contact() {
         </div>
         {isFormSent ? (
           <div className="form_success_message">
-            <div className="FormSubmitInfo"><p>Merci! Votre message a été envoyé avec succès.<i className="fa-solid fa-check" style={{ color: 'green' }}></i></p></div>
+            <div className="FormSubmitInfo"><p>Merci! Votre message a été envoyé avec succès. <i className="fa-solid fa-check" style={{ color: 'green', marginLeft: '8px' }}></i></p></div>
           </div>
         ) : (
           <form ref={formRef} onSubmit={handleSubmit} noValidate className="form_contact">
