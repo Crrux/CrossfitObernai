@@ -1,5 +1,9 @@
-import Slideshow from "../../components/Slideshow/Slideshow";
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.png";
+import { lazy, Suspense } from 'react';
+
+const Slideshow = lazy(() => import("../../components/Slideshow/Slideshow"))
+import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
+
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.webp";
 
 function Home() {
   const Slideshow_data = [
@@ -13,15 +17,17 @@ function Home() {
     <main className="Home">
       <section className="Slideshow_section">
         <div id="Slideshow_container">
-          <Slideshow data={Slideshow_data} />
+          <Suspense fallback={<LoadingSpinner />}>
+            <Slideshow data={Slideshow_data} autoplay={true} autoplayDelay={3000} />
+          </Suspense>
         </div>
       </section>
-      <section>
+      <section className='text__container'>
         <div className="main__header">
           <div className="title_container">
             <img src={TitleBackgroundImage} alt="Background" />
-            <p>Qu&apos;est que</p>
-            <h1>Le Crossfit</h1>
+            <p>Qu&apos;est que le</p>
+            <h1>CrossFit</h1>
           </div>
         </div>
         <p>

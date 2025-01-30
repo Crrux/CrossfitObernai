@@ -1,7 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Collapsible({ titre, text, string }) {
+function Collapsible({ index, titre, children }) {
+  titre = titre.toUpperCase();
   const [isActive, setIsActive] = useState(false);
   const [isFirstClick, setIsFirstClick] = useState(true);
   const handleClick = () => {
@@ -12,63 +13,40 @@ function Collapsible({ titre, text, string }) {
   };
   return (
     <div className="collapsible">
-      <div
-        className={`collapsible-divbutton ${
-          !isFirstClick ? (isActive ? "active" : "inactive") : ""
-        }`}
+      <button
+        className={`collapsible-button ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
+          }`} onClick={handleClick} type="button" style={{ backgroundColor: `${index % 2 === 0 ? '#36d6e7' : '#da4f84'}` }}
       >
-        <p>{titre}</p>
-        <button
-          type="button"
-          className={`collapsible-button ${isActive ? "active" : ""}`}
-          onClick={handleClick}
-        >
-          <i
-            id="icon"
-            className={`fa-solid fa-chevron-up ${
-              !isFirstClick
-                ? isActive
-                  ? "icon-down-rotated"
-                  : "icon-up-rotated"
-                : ""
+        <p className="collapsible-button_title">
+          {titre.split("").map((letter, index) => (
+            letter !== " " ? <span key={index}>{letter}</span> : " "
+          ))}</p>
+
+        <i
+          id="icon"
+          className={`fa-solid fa-chevron-up ${!isFirstClick
+            ? isActive
+              ? "icon-down-rotated"
+              : "icon-up-rotated"
+            : ""
             }`}
-          ></i>
-        </button>
-      </div>
+        ></i>
+      </button>
 
       <div
-        className={`collapsible-content ${
-          !isFirstClick ? (isActive ? "active" : "inactive") : ""
-        }`}
+        className={`collapsible-content ${!isFirstClick ? (isActive ? "active" : "inactive") : ""
+          }`}
       >
-        {string ? (
-          <>
-            <p>{string}</p>
-          </>
-        ) : (
-          ""
-        )}
-
-        {text ? (
-          <>
-            <ul>
-              {text.map((text, index) => (
-                <li key={index}>{text}</li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          ""
-        )}
+        {children}
       </div>
     </div>
   );
 }
 
 Collapsible.propTypes = {
+  index: PropTypes.number,
   titre: PropTypes.string,
-  string: PropTypes.string,
-  text: PropTypes.array,
+  children: PropTypes.node,
 };
 
 export default Collapsible;

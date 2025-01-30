@@ -1,7 +1,9 @@
+import LegalNotices from "../../layout/legal_notices/legal_notices";
+
 function MentionLegale() {
   return (
-    <main>
-      <p>mention legale a faire</p>
+    <main className="legal_notices">
+      <LegalNotices />
     </main>
   );
 }

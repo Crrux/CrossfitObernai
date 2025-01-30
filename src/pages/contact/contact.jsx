@@ -1,13 +1,25 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import ReCAPTCHA from "react-google-recaptcha";
+import { useEffect, useState, useRef } from "react";
+// import { Link } from "react-router-dom";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import Modal from "react-modal";
 
-import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.png";
+import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
+import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
+import LegalNotices from "../../layout/legal_notices/legal_notices";
 
-// Todo: Form submission / validation / validation error display
+Modal.setAppElement("#root");
 
 function Contact() {
+  // Initialize state for modal visibility
+  const [modalIsOpen, setIsOpen] = useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   // Initialize state for contact form data
   const [contact, setContact] = useState({
     name: "",
@@ -15,15 +27,15 @@ function Contact() {
     email: "",
     tel: "",
     message: "",
+    checkbox: false
   });
 
   // Initialize state for form submission status
   const [isFormSent, setisFormSent] = useState(false);
   const [isFormLoading, setIsFormLoading] = useState(false);
-  console.log(isFormLoading);
-
-  // const [captchaValue, setCaptchaValue] = useState(null);
-  // console.log(captchaValue);
+  const formRef = useRef(null);
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [formError, setFormError] = useState(false);
 
   // Initialize state for form validation errors
   const [hasErrors, setHasErrors] = useState(true);
@@ -33,18 +45,56 @@ function Contact() {
 
   // Handle changes in form input fields
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     setContact((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
-  };
+  }
+
+  // Validate form fields on every change
+  useEffect(() => {
+    const validateField = () => {
+      let fieldValidationErrors = {};
+
+      // Validate name field
+      let nameValid = /^[\p{L}\s'-]{2,}$/u.test(contact.name);
+      fieldValidationErrors.nameError = nameValid ? false : true;
+
+      // Validate firstname field
+      let firstnameValid = /^[\p{L}\s'-]{2,}$/u.test(contact.firstname);
+      fieldValidationErrors.firstnameError = firstnameValid ? false : true;
+
+      // Validate email field
+      let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(contact.email);
+      fieldValidationErrors.emailError = emailValid ? false : true;
+
+      // Validate telephone field
+      let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
+      fieldValidationErrors.telError = telValid ? false : true;
+
+      // Validate message field
+      let messageValid = contact.message.length > 2;
+      fieldValidationErrors.messageError = messageValid ? false : true;
+
+      // Validate checkbox field
+      let checkboxValid = contact.checkbox
+      fieldValidationErrors.checkboxError = !checkboxValid
+
+      setErrors(fieldValidationErrors);
+      setHasErrors(Object.values(fieldValidationErrors).some((error) => error !== false));
+    };
+
+    validateField();
+  }, [contact]);
 
   // TODO: Handle form submission
+
   function handleSubmit(e) {
     e.preventDefault();
     // If there are no validation errors, submit the form data
     if (!hasErrors) {
+      console.log('first')
       // Set the loading state
       setIsFormLoading(true);
 
@@ -52,65 +102,43 @@ function Contact() {
       axios
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
         .then((res) => {
-          console.log(res.data);
-          setisFormSent(true);
+          // console.log(res.data);
+          // console.log(res)
+          if (res.status === 200) {
+            console.log("status 200 retourner")
+            setContact({
+              checkbox: false,
+              name: '',
+              firstname: '',
+              email: '',
+              tel: '',
+              message: ''
+            });
+            setisFormSent(true);
+            setFormError(false);
+          } else if (res.status !== 200) {
+            console.log("status pas 200 retourner")
+            setFormError(true);
+          }
         })
         .catch((error) => {
           console.error("An error occurred while submitting the form:", error);
+          setisFormSent(false);
+          setFormError(true);
         })
         .finally(() => {
           // Reset the loading state
           setIsFormLoading(false);
+          console.log(isFormSent);
         });
+    } else {
+      console.log('else')
     }
   }
 
-  // Validate form fields on every change
-  useEffect(() => {
-    const validateField = () => {
-      let fieldValidationErrors = errors;
-
-      // Validate name field
-      let nameValid = /^[A-Za-z\s'-]{2,}$/.test(contact.name);
-      fieldValidationErrors.nameError = nameValid
-        ? ""
-        : " must contain only letters and 2 caractere minimum";
-
-      // Validate firstname field
-      let firstnameValid = /^[A-Za-z\s'-]{2,}$/.test(contact.firstname);
-      fieldValidationErrors.firstnameError = firstnameValid
-        ? ""
-        : " must contain only letters and 2 caractere minimum";
-
-      // Validate email field
-      let emailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(
-        contact.email
-      );
-      fieldValidationErrors.emailError = emailValid ? "" : " is invalid";
-
-      // Validate telephone field
-      let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
-      fieldValidationErrors.telError = telValid ? "" : " is invalid";
-
-      // Validate message field
-      let messageValid = contact.message.length > 2;
-      fieldValidationErrors.messageError = messageValid
-        ? ""
-        : " must be at least 3 characters long";
-
-      setErrors(fieldValidationErrors);
-    };
-    validateField();
-
-    // Check if there are any validation errors and update the state accordingly
-    setHasErrors(Object.values(errors).some((error) => error !== ""));
-    console.log(hasErrors);
-    console.log(errors);
-  }, [contact, errors, hasErrors]);
-
   return (
     <>
-      <main id="main_contact">
+      <main className="main_contact">
         <div className="main__header">
           <div className="title_container">
             <img src={TitleBackgroundImage} alt="Background" />
@@ -118,81 +146,184 @@ function Contact() {
             <h1>Contact</h1>
           </div>
         </div>
-        <form onSubmit={handleSubmit} noValidate id="form_contact">
-          <div id="form_contact_divname">
-            <label htmlFor="name">
-              <p>Nom</p>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={contact.name}
-                autoComplete="given-name"
-                autoFocus
-                required
-                onChange={handleChange}
-              />
-              {errors.nameError && <span>{errors.nameError}</span>}
-            </label>
-            <label htmlFor="firstname">
-              <p>Prenom</p>
-              <input
-                type="text"
-                id="firstname"
-                name="firstname"
-                value={contact.firstname}
-                autoComplete="family-name"
-                required
-                onChange={handleChange}
-              />
-              {errors.firstnameError && <span>{errors.firstnameError}</span>}
-            </label>
+        {isFormSent ? (
+          <div className="form_success_message">
+            <div className="FormSubmitInfo"><p>Merci! Votre message a été envoyé avec succès.<i className="fa-solid fa-check" style={{ color: 'green' }}></i></p></div>
           </div>
+        ) : (
+          <form ref={formRef} onSubmit={handleSubmit} noValidate className="form_contact">
+            <div className="form_contact_container">
+              <label htmlFor="name">
+                <p>Nom</p>
+                <div>
+                  <input
+                    type="text"
+                    id="name"
+                    className={errors.nameError && isSubmit ? 'FormError' : ''}
+                    name="name"
+                    value={contact.name}
+                    autoComplete="given-name"
+                    autoFocus
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.nameError && isSubmit ?
+                    <>
+                      <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Name' data-tooltip-variant="error" />
+                      <ReactTooltip id="Tooltip_Name" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                        <div>
+                          <ul style={{ paddingBlock: 0, margin: 0 }}>
+                            <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                          </ul>
+                        </div>
+                      </ReactTooltip>
 
-          <label htmlFor="email">
-            <p>Email</p>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={contact.email}
-              autoComplete="email"
-              required
-              onChange={handleChange}
-            />
-            {errors.emailError && <span>{errors.emailError}</span>}
-          </label>
-          <label htmlFor="tel">
-            <p>Telephone</p>
-            <input
-              type="tel"
-              id="tel"
-              name="tel"
-              value={contact.tel}
-              autoComplete="tel"
-              required
-              onChange={handleChange}
-            />
-            {errors.telError && <span>{errors.telError}</span>}
-          </label>
-          <label htmlFor="message">
-            <p>Message</p>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Votre message..."
-              rows={10}
-              onChange={handleChange}
-            />
-            {errors.messageError && <span>{errors.messageError}</span>}
-          </label>
-          {/* <ReCAPTCHA
-            sitekey={import.meta.env.VITE_REACT_APP_GOOGLE_RECAPTCHA_KEY}
-            onChange={(val) => setCaptchaValue(val)}
-          /> */}
-          <input type="submit" value="Submit" disabled={hasErrors} />
-        </form>
-      </main>
+                    </> : ""}
+                </div>
+              </label>
+              <label htmlFor="firstname">
+                <p>Prenom</p>
+                <div>
+                  <input
+                    type="text"
+                    id="firstname"
+                    className={errors.firstnameError && isSubmit ? 'FormError' : ''}
+                    name="firstname"
+                    value={contact.firstname}
+                    autoComplete="family-name"
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.firstnameError && isSubmit ? <>
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Firstname' data-tooltip-variant="error" />
+                    <ReactTooltip id="Tooltip_Firstname" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                      <div>
+                        <ul style={{ paddingBlock: 0, margin: 0 }}>
+                          <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                        </ul>
+                      </div>
+                    </ReactTooltip>
+                  </> : ""}
+                </div>
+              </label>
+            </div>
+            <div className="form_contact_container">
+              <label htmlFor="email">
+                <p>Email</p>
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    className={errors.emailError && isSubmit ? 'FormError' : ''}
+                    name="email"
+                    value={contact.email}
+                    autoComplete="email"
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.emailError && isSubmit ?
+                    <>
+                      <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Email' data-tooltip-variant="error" />
+                      <ReactTooltip id="Tooltip_Email" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                        <div>
+                          <ul style={{ paddingBlock: 0, margin: 0 }}>
+                            <li style={{ padding: 0, margin: 0 }}>Doit etre une adresse email valide</li>
+                          </ul>
+                        </div>
+                      </ReactTooltip>
+                    </> : ""}
+                </div>
+              </label>
+              <label htmlFor="tel">
+                <p>Telephone</p>
+                <div>
+                  <input
+                    type="tel"
+                    id="tel"
+                    className={errors.telError && isSubmit ? 'FormError' : ''}
+                    name="tel"
+                    value={contact.tel}
+                    autoComplete="tel"
+                    required
+                    onChange={handleChange}
+                  />
+                  {errors.telError && isSubmit ? <>
+                    <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Tel' data-tooltip-variant="error" />
+                    <ReactTooltip id="Tooltip_Tel" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                      <div>
+                        <ul style={{ paddingBlock: 0, margin: 0 }}>
+                          <li style={{ padding: 0, margin: 0 }}>Doit etre un numero de telephone valide</li>
+                        </ul>
+                      </div>
+                    </ReactTooltip>
+                  </> : ""}
+                </div>
+              </label>
+            </div>
+
+            <label htmlFor="message">
+              <p>Message</p>
+              <div>
+                <textarea
+                  id="message"
+                  className={errors.messageError && isSubmit ? 'FormError' : ''}
+                  name="message"
+                  placeholder="Votre message..."
+                  rows={10}
+                  value={contact.message}
+                  onChange={handleChange}
+                />
+                {errors.messageError && isSubmit ? <>
+                  <i className="fa-solid fa-circle-exclamation" data-tooltip-id='Tooltip_Message' data-tooltip-variant="error" />
+                  <ReactTooltip id="Tooltip_Message" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
+                    <div>
+                      <ul style={{ paddingBlock: 0, margin: 0 }}>
+                        <li style={{ padding: 0, margin: 0 }}>Doit contenir 3 caractere min.</li>
+                      </ul>
+                    </div>
+                  </ReactTooltip>
+                </> : ""}
+              </div>
+            </label>
+            <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
+              <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
+              <p className="checkbox_text">accepter les <button onClick={openModal} type="button">mention legale</button> </p>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                // portalClassName="Modal_portal"
+                contentLabel="Example Modal"
+                className={"Modal_ContentContainer"}
+                overlayClassName="Modal_overlay"
+              >
+                <button onClick={closeModal} className="CloseButton" type="button"> <i class="fa-solid fa-xmark"></i></button>
+                <div className="TextContainer" style={{ position: 'relative' }}>
+                  <LegalNotices />
+                </div>
+              </Modal>
+            </label>
+
+            {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
+            {formError && (
+              <div className="FormSubmitInfo">
+                <p>
+                  <i className="fa-solid fa-exclamation" style={{ marginRight: '20px' }}></i> Une erreur est survenue, essayez d&apos;
+                  <button
+                    type="button"
+                    onClick={() => { window.location.reload(); }}
+                    className="refresh_button"
+                  >
+                    actualiser
+                  </button>
+                  la page <i className="fa-solid fa-exclamation" style={{ marginLeft: '20px' }}></i>
+                </p>
+                <p>Si le problème persiste, contactez nous directement a l&apos;adresse suivante :</p>
+                <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com</a>
+              </div>
+            )}
+          </form>
+        )}
+      </main >
     </>
   );
 }
