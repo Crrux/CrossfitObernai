@@ -46,9 +46,15 @@ function Contact() {
   // Handle changes in form input fields
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
+    let formattedValue = value;
+
+    if (name === 'tel') {
+      formattedValue = value.replace(/[.\s]/g, '');
+    }
+
     setContact((prevState) => ({
       ...prevState,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === 'checkbox' ? checked : formattedValue,
     }));
   }
 
@@ -70,7 +76,7 @@ function Contact() {
       fieldValidationErrors.emailError = emailValid ? false : true;
 
       // Validate telephone field
-      let telValid = /^(\+33\s?|0)[1-9](\d{2}\s?){4}$/.test(contact.tel);
+      let telValid = /^(?:\+?\d{1,3})?[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}[-.\s]?\d{3,4}$/.test(contact.tel);
       fieldValidationErrors.telError = telValid ? false : true;
 
       // Validate message field
