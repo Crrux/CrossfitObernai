@@ -75,7 +75,7 @@ function Planning() {
         </div>
       </div>
       <div className="img_zoom">
-        <img src={PlanningImg}></img>
+        <img src={PlanningImg} alt="Planning de la box CrossFit Obernai"></img>
       </div>
       {/* <Container
         ref={containerRef}
