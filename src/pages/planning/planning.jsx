@@ -15,21 +15,6 @@ function Planning() {
       <div className="img_zoom">
         <img src={PlanningImg} alt="Planning de la box CrossFit Obernai"></img>
       </div>
-      {/* <Container
-        ref={containerRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onMouseMove={handleMouseMove}
-      >
-        <Image ref={sourceRef} alt="source" source={PlanningImg} style={{ width: '100%' }} />
-        <Target
-          ref={targetRef}
-          alt="target"
-          opacity={opacity}
-          offset={offset}
-          source={PlanningImg}
-        />
-      </Container> */}
     </main>
   );
 }
