@@ -1187,6 +1187,10 @@ footer #Footer_bottom-container p a {
   flex-direction: column;
 }
 
+.legal_notices h1 {
+  text-align: center;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
