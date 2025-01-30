@@ -317,7 +317,7 @@ function Contact() {
                   </button>
                   la page <i className="fa-solid fa-exclamation" style={{ marginLeft: '20px' }}></i>
                 </p>
-                <p>Si le probleme persiste, contactez nous a l&apos;adresse suivante :</p>
+                <p>Si le probleme persiste, contactez nous directement a l&apos;adresse suivante :</p>
                 <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com</a>
               </div>
             )}
