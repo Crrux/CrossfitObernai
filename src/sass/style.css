@@ -1184,6 +1184,11 @@ footer #Footer_bottom-container p a {
   flex-direction: column;
   gap: 10px;
 }
+@media screen and (max-width: 1024px) {
+  .Modal_ContentContainer {
+    width: 95%;
+  }
+}
 .Modal_ContentContainer button {
   display: flex;
   justify-content: center;
@@ -1196,15 +1201,11 @@ footer #Footer_bottom-container p a {
   font-size: 1.5rem;
 }
 .Modal_ContentContainer div {
+  margin-top: 1dvh;
   height: 70dvh;
   padding-right: 1rem;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-}
-@media screen and (max-width: 1024px) {
-  .Modal_ContentContainer {
-    width: 95%;
-  }
 }
 
 .event_main .title_container p {
