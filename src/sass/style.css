@@ -1189,14 +1189,14 @@ footer #Footer_bottom-container p a {
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 100px;
+  height: 40px;
   align-self: flex-end;
 }
 .Modal_ContentContainer button i {
   font-size: 1.5rem;
 }
 .Modal_ContentContainer div {
-  max-height: 75dvh;
+  height: 70dvh;
   padding-right: 1rem;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
