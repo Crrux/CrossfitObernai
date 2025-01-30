@@ -287,7 +287,7 @@ function Contact() {
             </label>
             <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
               <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
-              <p className="checkbox_text">accepter <button onClick={openModal} type="button">mention legale</button> </p>
+              <p className="checkbox_text">accepter les <button onClick={openModal} type="button">mention legale</button> </p>
               <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -317,7 +317,7 @@ function Contact() {
                   </button>
                   la page <i className="fa-solid fa-exclamation" style={{ marginLeft: '20px' }}></i>
                 </p>
-                <p>Si le probleme persiste, contactez nous directement a l&apos;adresse suivante :</p>
+                <p>Si le problème persiste, contactez nous directement a l&apos;adresse suivante :</p>
                 <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com</a>
               </div>
             )}

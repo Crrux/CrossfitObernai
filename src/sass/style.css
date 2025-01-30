@@ -1009,6 +1009,7 @@ footer #Footer_bottom-container p a {
   gap: 10px;
   margin-bottom: 40px;
   padding: 15px;
+  border-radius: 5px;
 }
 .main_contact .form_contact_checkbox_container p {
   display: inline-flex;
