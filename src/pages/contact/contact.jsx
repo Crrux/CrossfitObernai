@@ -154,7 +154,7 @@ function Contact() {
         </div>
         {isFormSent ? (
           <div className="form_success_message">
-            <div className="FormSubmitInfo"><p>Merci! Votre message a été envoyé avec succès. <i className="fa-solid fa-check" style={{ color: 'green', marginLeft: '8px' }}></i></p></div>
+            <div className="FormSubmitInfo"><p>Merci ! Votre message a été envoyé avec succès. <i className="fa-solid fa-check" style={{ color: 'green', marginLeft: '8px' }}></i></p></div>
           </div>
         ) : (
           <form ref={formRef} onSubmit={handleSubmit} noValidate className="form_contact">
