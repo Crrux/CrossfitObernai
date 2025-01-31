@@ -67,7 +67,7 @@ function Class() {
             <p>HYROX est un cours mélangeant la course à pied à des
               exercices fonctionnels; vous y retrouverez la pratique du rameur, des
               wall ball shots, des fentes marchées, de la poussée et du tirage de
-              sled, du ski-erg, du farmer carry et d&apos;autres petits choses
+              sled, du ski-erg, du farmer carry et d&apos;autres petites choses
               venant pimenter cet entraînement à visée d&apos;endurance
               cardiovasculaire et musculaire ciblée sur les membres inférieurs.</p>
           </Collapsible>
