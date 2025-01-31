@@ -179,7 +179,7 @@ function Contact() {
                       <ReactTooltip id="Tooltip_Name" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                         <div>
                           <ul style={{ paddingBlock: 0, margin: 0 }}>
-                            <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                            <li style={{ padding: 0, margin: 0 }}>Doit contenir 2 caractères min.</li>
                           </ul>
                         </div>
                       </ReactTooltip>
@@ -205,7 +205,7 @@ function Contact() {
                     <ReactTooltip id="Tooltip_Firstname" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                       <div>
                         <ul style={{ paddingBlock: 0, margin: 0 }}>
-                          <li style={{ padding: 0, margin: 0 }}>Dois contenir 2 caractere min.</li>
+                          <li style={{ padding: 0, margin: 0 }}>Doit contenir 2 caractères min.</li>
                         </ul>
                       </div>
                     </ReactTooltip>
@@ -233,7 +233,7 @@ function Contact() {
                       <ReactTooltip id="Tooltip_Email" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                         <div>
                           <ul style={{ paddingBlock: 0, margin: 0 }}>
-                            <li style={{ padding: 0, margin: 0 }}>Doit etre une adresse email valide</li>
+                            <li style={{ padding: 0, margin: 0 }}>Doit être une adresse email valide</li>
                           </ul>
                         </div>
                       </ReactTooltip>
@@ -258,7 +258,7 @@ function Contact() {
                     <ReactTooltip id="Tooltip_Tel" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                       <div>
                         <ul style={{ paddingBlock: 0, margin: 0 }}>
-                          <li style={{ padding: 0, margin: 0 }}>Doit etre un numero de telephone valide</li>
+                          <li style={{ padding: 0, margin: 0 }}>Doit être un numéro de téléphone valide</li>
                         </ul>
                       </div>
                     </ReactTooltip>
@@ -284,7 +284,7 @@ function Contact() {
                   <ReactTooltip id="Tooltip_Message" place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }} >
                     <div>
                       <ul style={{ paddingBlock: 0, margin: 0 }}>
-                        <li style={{ padding: 0, margin: 0 }}>Doit contenir 3 caractere min.</li>
+                        <li style={{ padding: 0, margin: 0 }}>Doit contenir 3 caractères min.</li>
                       </ul>
                     </div>
                   </ReactTooltip>
@@ -293,7 +293,7 @@ function Contact() {
             </label>
             <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
               <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
-              <p className="checkbox_text">accepter les <button onClick={openModal} type="button">mention legale</button> </p>
+              <p className="checkbox_text">accepter les <button onClick={openModal} type="button">mention légale</button> </p>
               <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
