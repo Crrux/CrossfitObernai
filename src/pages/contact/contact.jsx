@@ -188,7 +188,7 @@ function Contact() {
                 </div>
               </label>
               <label htmlFor="firstname">
-                <p>Prenom</p>
+                <p>Prénom</p>
                 <div>
                   <input
                     type="text"
@@ -241,7 +241,7 @@ function Contact() {
                 </div>
               </label>
               <label htmlFor="tel">
-                <p>Telephone</p>
+                <p>Téléphone</p>
                 <div>
                   <input
                     type="tel"
