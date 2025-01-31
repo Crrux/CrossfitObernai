@@ -108,7 +108,7 @@ function Class() {
               renforcement musculaire pour repousser les effets indésirables de
               l&apos;âge et conserver une santé de fer. En petits groupes, au
               travers de mouvements fonctionnels, dans une ambiance bienveillante et
-              chaleureuse. A partir de 65 ans !
+              chaleureuse. À partir de 65 ans !
             </p>
           </Collapsible>
           <Collapsible
