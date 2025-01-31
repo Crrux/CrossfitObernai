@@ -1023,16 +1023,15 @@ footer #Footer_bottom-container p a {
 }
 .main_contact .form_contact_checkbox_container button {
   font-size: 1.2rem;
-  background-color: light-dark(#dbd9d9, #2f2f2f);
+  background-color: light-dark(#cecccc, #2f2f2f);
   color: light-dark(#000, #ddd);
   border: none;
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 .main_contact .form_contact_checkbox_container button:hover {
-  background-color: light-dark(#c2bfbf, #151515);
+  background-color: light-dark(#b5b2b2, #151515);
 }
 .main_contact .form_contact .FormError {
   animation: ErrorBlink 0.5s forwards;
@@ -1059,7 +1058,7 @@ footer #Footer_bottom-container p a {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: light-dark(#dbd9d9, #2f2f2f);
+  background-color: light-dark(#cecccc, #2f2f2f);
   color: light-dark(#000, #ddd);
   box-sizing: border-box;
 }
@@ -1102,7 +1101,7 @@ footer #Footer_bottom-container p a {
   color: #ff6347;
 }
 .main_contact .FormSubmitInfo p .refresh_button {
-  background-color: light-dark(#dbd9d9, #2f2f2f);
+  background-color: light-dark(#cecccc, #2f2f2f);
   color: light-dark(#000, #ddd);
   border: none;
   border-radius: 5px;
@@ -1115,7 +1114,7 @@ footer #Footer_bottom-container p a {
   font-weight: 600;
 }
 .main_contact .FormSubmitInfo p .refresh_button:hover {
-  background-color: light-dark(#c2bfbf, #151515);
+  background-color: light-dark(#b5b2b2, #151515);
 }
 
 @keyframes ErrorBlink {
@@ -1123,13 +1122,13 @@ footer #Footer_bottom-container p a {
     background-color: rgba(255, 0, 0, 0);
   }
   50% {
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: light-dark(rgba(255, 0, 0, 0.4), rgba(255, 0, 0, 0.1));
   }
   75% {
     background-color: rgba(255, 0, 0, 0);
   }
   100% {
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: light-dark(rgba(255, 0, 0, 0.4), rgba(255, 0, 0, 0.1));
   }
 }
 .ReactModal__Overlay {

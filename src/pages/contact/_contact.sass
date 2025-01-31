@@ -9,7 +9,7 @@ $form-font-size: 1.4rem
 $form-padding: 10px
 $form-border-radius: 5px
 $form-bg-color-dark: lighten($dark-bg, 5%)
-$form-bg-color-light: darken($light-bg, 5%)
+$form-bg-color-light: darken($light-bg, 10%)
 $layout-breakpoint-small: 600px
 
 .main_contact
@@ -82,7 +82,7 @@ $layout-breakpoint-small: 600px
                 border-radius: $form-border-radius
                 padding: $form-padding
                 cursor: pointer
-                transition: background-color 0.3s ease
+                // transition: background-color 0.3s ease
                 &:hover
                     background-color: light-dark(darken($form-bg-color-light, 10%), darken($form-bg-color-dark, 10%))
 
@@ -132,7 +132,6 @@ $layout-breakpoint-small: 600px
         width: fit-content
         border-radius: $form-border-radius
         &:hover
-
             background-color: light-dark(darken($valid-text-light, 10%), darken($valid-text-dark, 10%))
 
     .FormSubmitInfo
@@ -166,11 +165,11 @@ $layout-breakpoint-small: 600px
     0%
         background-color: rgba(255, 0, 0, 0.0)
     50%
-        background-color: rgba(255, 0, 0, 0.1)
+        background-color: light-dark(rgba(255, 0, 0, 0.4), rgba(255, 0, 0, 0.1))
     75%
         background-color: rgba(255, 0, 0, 0.0)
     100%
-        background-color: rgba(255, 0, 0, 0.1)
+        background-color: light-dark(rgba(255, 0, 0, 0.4), rgba(255, 0, 0, 0.1))
 
 .ReactModal__Overlay
     opacity: 0
