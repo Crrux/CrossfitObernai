@@ -109,36 +109,33 @@ function Contact() {
         .post(`${import.meta.env.VITE_REACT_APP_API_URL}/contact`, contact)
         .then((res) => {
           if (res.status === 200) {
-            console.log("status 200 retourner")
-            // setContact({
-            //   checkbox: false,
-            //   name: '',
-            //   firstname: '',
-            //   email: '',
-            //   tel: '',
-            //   message: ''
-            // });
+            // console.log("status 200 retourner")
+            setContact({
+              checkbox: false,
+              name: '',
+              firstname: '',
+              email: '',
+              tel: '',
+              message: ''
+            });
             setisFormSent(true);
             setFormError(false);
           } else if (res.status !== 200) {
-            console.log("status pas 200 retourner")
+            // console.log("status pas 200 retourner")
             setFormError(true);
           }
         })
         .catch((error) => {
-          console.log(error)
-          console.log(error.response.status)
-          console.error("An error occurred while submitting the form:", error);
+          // console.log(error)
+          // console.log(error.response.status)
+          // console.error("An error occurred while submitting the form:", error);
           setisFormSent(false);
           setFormError(true);
         })
         .finally(() => {
           // Reset the loading state
           setIsFormLoading(false);
-          console.log(isFormSent);
         });
-    } else {
-      console.log('else')
     }
   }
 

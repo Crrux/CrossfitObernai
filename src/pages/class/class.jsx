@@ -64,7 +64,7 @@ function Class() {
             index={5}
             titre={"HYROX"}
           >
-            <p>HYROX est un cours mélangeant la course à pieds à des
+            <p>HYROX est un cours mélangeant la course à pied à des
               exercices fonctionnels; vous y retrouverez la pratique du rameur, des
               wall ball shots, des fentes marchées, de la poussée et du tirage de
               sled, du ski-erg, du farmer carry et d&apos;autres petits choses
@@ -95,7 +95,7 @@ function Class() {
               l&apos;opportunité de partager un moment convivial et sportif en duo
               avec votre enfant. Son but est de renforcer vos liens dans un
               environnement positif et de se dépasser en famille. Ensemble, vous
-              prenez soin de votre santé et nourrissez une complicité durable. A
+              prenez soin de votre santé et nourrissez une complicité durable. À
               partir de 11 ans !
             </p>
           </Collapsible>
