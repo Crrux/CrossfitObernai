@@ -17,7 +17,7 @@ function Footer() {
     <footer>
       <section id="Contact_container">
         <div id="Hours_info">
-          <h3>Horaires</h3>
+          <h2>Horaires</h2>
           <table>
             <tbody>
               <tr>

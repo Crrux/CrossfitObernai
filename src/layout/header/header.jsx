@@ -26,8 +26,9 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <Link to={"/"} onClick={handleShowLinksRedirection}>
-          <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" />
+        <Link to={"/"} onClick={handleShowLinksRedirection} aria-label="Retour à l'accueil CrossFit Obernai"
+        >
+          <img src={Logo} alt="Logo CrossFit Obernai" id="Header_Logo" title="Accueil" />
         </Link>
       </div>
       <div className={`navbar__button ${isOpen ? "show-nav" : ""}`}>
