@@ -45,7 +45,7 @@ function Home() {
           notre méthode saura répondre favorablement à tes attentes.
         </p>
         <p>
-          Au travers de coachings personnalisés et adaptés, nous te corrigeons
+          Au travers de coachings personnalisés et adaptés, nous te corrigerons
           sur chaque mouvement, en t&apos;assurant une pratique saine et
           respectueuse de tes capacités ainsi qu&apos;une progression sans
           limite grâce à une programmation variée.
@@ -66,7 +66,7 @@ function Home() {
             quotidiennes et d&apos;accomplissements aux entraînements
           </li>
           <li>
-            Une communauté bienveillante ou tout le monde s&apos;encourage et se
+            Une communauté bienveillante où tout le monde s&apos;encourage et se
             félicite
           </li>
         </ul>

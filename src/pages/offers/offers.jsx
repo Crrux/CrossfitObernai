@@ -37,7 +37,7 @@ function Offers() {
         découverte offerte. Le prix de la séance est à partir de 3,20€
       </p>
       <p>
-        Retrouvez également les abonnements séniors, kids et teens à raison
+        Retrouvez également les abonnements seniors, kids et teens à raison
         d&pos;une à deux séances par semaine !
       </p>
       <h2>Les offres à la carte :</h2>
