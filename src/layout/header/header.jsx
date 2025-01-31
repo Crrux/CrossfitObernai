@@ -123,7 +123,7 @@ function Header() {
                 }`}
               onClick={handleShowLinksRedirection}
             >
-              Evenements
+              Événements
             </Link>
           </li>
           <li className="navbar__item">
