@@ -290,7 +290,7 @@ function Contact() {
             </label>
             <label htmlFor="checkbox" className={`form_contact_checkbox_container ${errors.checkboxError && isSubmit ? 'FormError' : ''}`}>
               <input type="checkbox" id="checkbox" name="checkbox" value={contact.checkbox} checked={contact.checkbox} onChange={handleChange}></input>
-              <p className="checkbox_text">accepter les <button onClick={openModal} type="button">mention légale</button> </p>
+              <p className="checkbox_text">accepter les <button onClick={openModal} type="button">mentions légales</button> </p>
               <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -309,17 +309,21 @@ function Contact() {
             {isFormLoading ? <LoadingSpinner /> : <input type="submit" value="Submit" onClick={() => { setIsSubmit(true) }} />}
             {formError && (
               <div className="FormSubmitInfo">
-                <p>
-                  <i className="fa-solid fa-exclamation" style={{ marginRight: '20px' }}></i> Une erreur est survenue, essayez d&apos;
-                  <button
-                    type="button"
-                    onClick={() => { window.location.reload(); }}
-                    className="refresh_button"
-                  >
-                    actualiser
-                  </button>
-                  la page <i className="fa-solid fa-exclamation" style={{ marginLeft: '20px' }}></i>
-                </p>
+                <div className="FormSubmitInfo_error">
+                  <i className="fa-solid fa-exclamation" style={{ marginRight: '20px' }}></i>
+                  <p>
+                    Une erreur est survenue, essayez
+                    <button
+                      type="button"
+                      onClick={() => { window.location.reload(); }}
+                      className="refresh_button"
+                    >
+                      d&apos;actualiser
+                    </button>
+                    la page
+                  </p>
+                  <i className="fa-solid fa-exclamation" style={{ marginLeft: '20px' }}></i>
+                </div>
                 <p>Si le problème persiste, contactez nous directement a l&apos;adresse suivante :</p>
                 <a href="mailto:crossfitobernai@gmail.com">crossfitobernai@gmail.com</a>
               </div>

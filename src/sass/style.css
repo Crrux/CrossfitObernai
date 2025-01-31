@@ -1092,15 +1092,19 @@ footer #Footer_bottom-container p a {
   font-weight: 600;
   margin-top: 20px;
 }
-.main_contact .FormSubmitInfo p {
-  display: inline-flex;
+.main_contact .FormSubmitInfo_error {
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
-.main_contact .FormSubmitInfo p i {
-  font-size: 2rem;
-  color: #ff6347;
+.main_contact .FormSubmitInfo_error p {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
 }
-.main_contact .FormSubmitInfo p .refresh_button {
+.main_contact .FormSubmitInfo_error p .refresh_button {
   background-color: light-dark(#cecccc, #2f2f2f);
   color: light-dark(#000, #ddd);
   border: none;
@@ -1113,8 +1117,12 @@ footer #Footer_bottom-container p a {
   font-size: 1.2rem;
   font-weight: 600;
 }
-.main_contact .FormSubmitInfo p .refresh_button:hover {
+.main_contact .FormSubmitInfo_error p .refresh_button:hover {
   background-color: light-dark(#b5b2b2, #151515);
+}
+.main_contact .FormSubmitInfo_error i {
+  font-size: 2rem;
+  color: #ff6347;
 }
 
 @keyframes ErrorBlink {

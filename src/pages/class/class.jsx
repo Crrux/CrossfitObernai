@@ -118,7 +118,7 @@ function Class() {
             <p>
               Le WoD Team est un rendez-vous à ne pas manquer ! Vous embarquez pour
               une aventure sportive à plusieurs, au travers d&apos;exercices
-              requérant la mise en place de stratégies de groupe en adéquation avec
+              requérants la mise en place de stratégies de groupe en adéquation avec
               les points forts et les appétences de chacun ! Vous y retrouverez des
               mouvements en synchro&apos;, des relais et plein d&apos;autres choses
               venant stimuler votre esprit d&apos;équipe !
