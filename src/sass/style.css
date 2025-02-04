@@ -1354,6 +1354,15 @@ footer #Footer_bottom-container p a {
 .legal_notices h1 {
   text-align: center;
 }
+.legal_notices p, .legal_notices ul {
+  margin-left: 30px;
+}
+@media screen and (max-width: 768px) {
+  .legal_notices p, .legal_notices ul {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
