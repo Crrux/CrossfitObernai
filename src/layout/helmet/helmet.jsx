@@ -61,7 +61,7 @@ export default function HelmetRendering() {
 		<HelmetProvider>
 			<Helmet>
 				<title>Crossfit Obernai</title>
-				<meta name="description" content="Crossfit Obernai" />
+				<meta name="description" content="Votre salle de CrossFit Hyrox et Fitness à Obernai" />
 				<meta name="theme-color" content="#FFF" />
 				<meta name="language" content="fr-FR" />
 				<meta property="og:title" content="Crossfit Obernai" />
