@@ -13,5 +13,19 @@ export default defineConfig({
         }
       ]
     })
-  ]
+  ],
+  server: {
+    host: true,
+    port: 5174,
+    strictPort: true
+  },
+  preview: {
+    port: 5174,
+    host: true,
+    strictPort: true
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 });
