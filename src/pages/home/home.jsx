@@ -28,7 +28,7 @@ function Home() {
         <div className="main__header">
           <div className="title_container">
             <img src={TitleBackgroundImage} alt="Background" />
-            <p>Qu&apos;est que le</p>
+            <p>Qu&apos;est ce que le</p>
             <h1>CrossFit</h1>
           </div>
         </div>
