@@ -38,7 +38,7 @@ function Offers() {
       </p>
       <p>
         Retrouvez également les abonnements seniors, kids et teens à raison
-        d&pos;une à deux séances par semaine !
+        d&apos;une à deux séances par semaine !
       </p>
       <h2>Les offres à la carte :</h2>
       <p>
