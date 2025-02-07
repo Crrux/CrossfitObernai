@@ -1,10 +1,10 @@
 import { lazy, Suspense } from 'react';
 
-const Slideshow = lazy(() => import("../../components/Slideshow/Slideshow"))
+// const Slideshow = lazy(() => import("../../components/Slideshow/Slideshow"))
+const imgBox = "/assets/Slideshow/Box.webp";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.webp";
-import ImgBox from "/assets/Slideshow/Box.jpg"
 
 function Home() {
   const Slideshow_data = [
@@ -18,10 +18,10 @@ function Home() {
     <main className="Home">
       <section className="Slideshow_section">
         <div id="Slideshow_container">
-          {/* <Suspense fallback={<LoadingSpinner />}>
-            <Slideshow data={Slideshow_data} autoplay={true} autoplayDelay={3000} />
-          </Suspense> */}
-          <img src={ImgBox} alt="" />
+          <Suspense fallback={<LoadingSpinner />}>
+            <img src={imgBox} alt="" />
+            {/* <Slideshow data={Slideshow_data} autoplay={true} autoplayDelay={3000} /> */}
+          </Suspense>
         </div>
       </section>
       <section className='text__container'>
