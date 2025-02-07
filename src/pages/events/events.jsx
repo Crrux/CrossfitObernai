@@ -13,7 +13,7 @@ function Events() {
 
       <p>
         Toute l&apos;année, nos événements viennent dynamiser la vie de la box.
-        A quoi vous attendre ?
+        À quoi vous attendre ?
       </p>
       <ul>
         <li>

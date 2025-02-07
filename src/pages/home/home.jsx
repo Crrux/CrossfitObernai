@@ -19,7 +19,7 @@ function Home() {
       <section className="Slideshow_section">
         <div id="Slideshow_container">
           <Suspense fallback={<LoadingSpinner />}>
-            <img src={imgBox} alt="" />
+            <img src={imgBox} alt="Photo de la salle Crossfit Obernai" />
             {/* <Slideshow data={Slideshow_data} autoplay={true} autoplayDelay={3000} /> */}
           </Suspense>
         </div>
