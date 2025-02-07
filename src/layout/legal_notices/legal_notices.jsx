@@ -14,8 +14,7 @@ function LegalNotices() {
             <h2>Directeur de la publication</h2>
             <p>Le directeur de la publication est Damien Kiefer, en qualité de Président.</p>
             <h2>Hébergement</h2>
-            {/* //TODO */}
-            <p>tbd</p>
+            <p>Le site est hébergé par OVH, dont le siège social est situé au 2 rue Kellermann - 59100 Roubaix - France .</p>
             <h2>Conception et réalisation</h2>
             <p>Le site a été conçu et réalisé par Mursch Arthur. Pour toute question ou demande d'information, vous pouvez nous contacter à l'adresse suivante : arthur.mursch@gmail.com</p>
             <h2>Données personnelles</h2>
