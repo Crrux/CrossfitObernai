@@ -1,6 +1,5 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 
-// const Slideshow = lazy(() => import("../../components/Slideshow/Slideshow"))
 const imgBox = "/assets/Slideshow/Box.webp";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 
@@ -8,12 +7,12 @@ import TitleBackgroundImage from "/assets/title_background/TitleBackground_Cross
 import Popup from '../../components/popup/popup';
 
 function Home() {
-  const Slideshow_data = [
-    { name: "1", src: "1.jpeg", alt: "1" },
-    { name: "2", src: "2.jpeg", alt: "2" },
-    { name: "3", src: "3.jpeg", alt: "3" },
-    { name: "4", src: "4.jpeg", alt: "4" },
-  ];
+  // const Slideshow_data = [
+  //   { name: "1", src: "1.jpeg", alt: "1" },
+  //   { name: "2", src: "2.jpeg", alt: "2" },
+  //   { name: "3", src: "3.jpeg", alt: "3" },
+  //   { name: "4", src: "4.jpeg", alt: "4" },
+  // ];
 
   return (
     <>

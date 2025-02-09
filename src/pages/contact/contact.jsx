@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import Modal from "react-modal";
+import PropTypes from 'prop-types';
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 import LegalNotices from "../../layout/legal_notices/legal_notices";
@@ -42,6 +43,10 @@ const FieldErrorTooltip = ({ id }) => (
     </ReactTooltip>
   </>
 );
+
+FieldErrorTooltip.propTypes = {
+  id: PropTypes.string.isRequired
+};
 
 const SuccessMessage = () => (
   <div className="form_success_message">
@@ -134,6 +139,35 @@ const ContactForm = ({
     )}
   </form>
 );
+
+ContactForm.propTypes = {
+  formRef: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
+  renderField: PropTypes.func.isRequired,
+  isFormLoading: PropTypes.bool.isRequired,
+  modalIsOpen: PropTypes.bool.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+  contact: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    firstname: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    tel: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    checkbox: PropTypes.bool.isRequired
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  setIsSubmit: PropTypes.func.isRequired,
+  formError: PropTypes.bool.isRequired,
+  errors: PropTypes.shape({
+    nameError: PropTypes.bool,
+    firstnameError: PropTypes.bool,
+    emailError: PropTypes.bool,
+    telError: PropTypes.bool,
+    messageError: PropTypes.bool,
+    checkboxError: PropTypes.bool
+  }).isRequired,
+  isSubmit: PropTypes.bool.isRequired
+};
 
 function Contact() {
   // State hooks
