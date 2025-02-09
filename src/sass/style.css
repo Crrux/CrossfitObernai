@@ -1312,6 +1312,9 @@ footer #Footer_bottom-container p a {
   width: 200px;
   border-radius: 150px;
 }
+.offers_dropin_link img {
+  width: 100%;
+}
 
 #main_coach .title_container p {
   top: 20%;
