@@ -1,8 +1,10 @@
 import Collapsible from "../../components/Collapsible/Collapsible";
+import Popup from "../../components/popup/popup";
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Seances.webp";
 
 function Class() {
-  return (
+  return (<>
+    <Popup />
     <main id="class">
       <section className="main__header">
         <div className="title_container">
@@ -133,6 +135,7 @@ function Class() {
         où chaque jour est une surprise et ne se ressemble pas.
       </p>
     </main>
+  </>
   );
 }
 
