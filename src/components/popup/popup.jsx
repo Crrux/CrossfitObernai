@@ -74,11 +74,6 @@ function Popup() {
               }}>
                 <img src={PopupImageTel} alt="Link for a free trial" id="PopupImageTel" aria-label="Link for a free trial" />
               </Link>
-              {/* {scrollY > 100 ?
-                <button className={`close-button`} onClick={handleClosePopup}>
-                  X
-                </button>
-                : ''} */}
             </div>
           </motion.div>
         </aside>

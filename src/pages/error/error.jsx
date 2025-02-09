@@ -22,7 +22,6 @@ function Error() {
     <main id="main_error">
       <p>404 error</p>
       <p>La page demander n&apos;est pas disponible</p>
-      {/* <p>Retour a l&apos;acceuil</p> */}
       <LoadingDot />
     </main>
   );
