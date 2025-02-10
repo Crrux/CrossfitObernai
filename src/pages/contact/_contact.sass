@@ -67,24 +67,31 @@ $layout-breakpoint-small: 600px
             margin-bottom: 40px
             padding: 15px
             border-radius: $form-border-radius
-            p
-                display: inline-flex
-                gap: 8px
-                padding: 0
-                margin: 0
-                user-select: none
+            >div
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
                 align-items: center
-            button
-                font-size: 1.2rem
-                background-color: light-dark($form-bg-color-light, $form-bg-color-dark)
-                color: light-dark($dark-text, $light-text)
-                border: none
-                border-radius: $form-border-radius
-                padding: $form-padding
-                cursor: pointer
-                // transition: background-color 0.3s ease
-                &:hover
-                    background-color: light-dark(darken($form-bg-color-light, 10%), darken($form-bg-color-dark, 10%))
+                row-gap: 5px
+                p
+                    display: inline-flex
+                    gap: 8px
+                    padding: 0
+                    margin: 0
+                    user-select: none
+                    align-items: center
+                    font-weight: 600
+                button
+                    font-size: 1.2rem
+                    background-color: light-dark($form-bg-color-light, $form-bg-color-dark)
+                    color: light-dark($dark-text, $light-text)
+                    border: none
+                    border-radius: $form-border-radius
+                    padding: $form-padding
+                    cursor: pointer
+                    // transition: background-color 0.3s ease
+                    &:hover
+                        background-color: light-dark(darken($form-bg-color-light, 10%), darken($form-bg-color-dark, 10%))
 
         .FormError
             animation: ErrorBlink 0.5s forwards
