@@ -1019,6 +1019,8 @@ footer #Footer_bottom-container p a {
   justify-content: center;
   align-items: center;
   row-gap: 5px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .main_contact .form_contact_checkbox_container > div p {
   display: inline-flex;
