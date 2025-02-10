@@ -5,21 +5,18 @@ import Popup from "../../components/popup/popup";
 function Planning() {
 
   return (
-    <>
-      <Popup />
-      <main className="Planning">
-        <div className="main__header">
-          <div className="title_container">
-            <img src={TitleBackgroundImage} alt="Background" />
-            <p>Consultez</p>
-            <h1>Notre planning</h1>
-          </div>
+    <main className="Planning">
+      <div className="main__header">
+        <div className="title_container">
+          <img src={TitleBackgroundImage} alt="Background" />
+          <p>Consultez</p>
+          <h1>Notre planning</h1>
         </div>
-        <div className="img_zoom">
-          <img src={PlanningImg} alt="Planning de la box CrossFit Obernai"></img>
-        </div>
-      </main>
-    </>
+      </div>
+      <div className="img_zoom">
+        <img src={PlanningImg} alt="Planning de la box CrossFit Obernai"></img>
+      </div>
+    </main>
   );
 }
 

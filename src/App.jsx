@@ -12,6 +12,7 @@ import Events from "./pages/events/events";
 import Error from "./pages/error/error";
 import MentionLegale from "./pages/legal_notices/legal_notices";
 import HelmetRendering from "./layout/helmet/helmet";
+import Popup from "./components/popup/popup";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         }}
       >
         <HelmetRendering />
+        <Popup />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

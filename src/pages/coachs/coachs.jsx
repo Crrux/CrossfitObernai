@@ -3,18 +3,15 @@ import TitleBackgroundImage from "/assets/title_background/TitleBackground_Coach
 
 function Coach() {
   return (
-    <>
-      <Popup />
-      <main id="main_coach">
-        <div className="main__header">
-          <div className="title_container">
-            <img src={TitleBackgroundImage} alt="Background" />
-            <p>Notre équipe</p>
-            <h1>Les coachs</h1>
-          </div>
+    <main id="main_coach">
+      <div className="main__header">
+        <div className="title_container">
+          <img src={TitleBackgroundImage} alt="Background" />
+          <p>Notre équipe</p>
+          <h1>Les coachs</h1>
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
 
