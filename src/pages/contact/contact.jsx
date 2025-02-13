@@ -31,7 +31,7 @@ const FieldErrorTooltip = ({ id }) => (
     <i className="fa-solid fa-circle-exclamation" data-tooltip-id={`Tooltip_${id}`} data-tooltip-variant="error" />
     <ReactTooltip id={`Tooltip_${id}`} place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }}>
       <div>
-        <ul style={{ paddingBlock: 0, margin: 0 }}>
+        <ul style={{ padding: '0 3px', margin: 0, display: 'flex', justifyContent: 'center', width: '100%', listStylePosition: 'inside' }}>
           <li style={{ padding: 0, margin: 0 }}>
             {id === 'email' ? 'Doit être une adresse email valide' :
               id === 'tel' ? 'Doit être un numéro de téléphone valide' :
@@ -94,9 +94,12 @@ const ContactForm = ({
         checked={contact.checkbox}
         onChange={handleChange}
       />
-      <p className="checkbox_text">
-        accepter les <button onClick={() => toggleModal(true)} type="button">mentions légales</button>
-      </p>
+      <div>
+        <p className="checkbox_text">
+          accepter les
+        </p>
+        <button onClick={() => toggleModal(true)} type="button">mentions légales</button>
+      </div>
     </label>
 
     <Modal

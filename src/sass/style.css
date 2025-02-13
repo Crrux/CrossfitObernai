@@ -1013,7 +1013,16 @@ footer #Footer_bottom-container p a {
   padding: 15px;
   border-radius: 5px;
 }
-.main_contact .form_contact_checkbox_container p {
+.main_contact .form_contact_checkbox_container > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.main_contact .form_contact_checkbox_container > div p {
   display: inline-flex;
   gap: 8px;
   padding: 0;
@@ -1022,8 +1031,9 @@ footer #Footer_bottom-container p a {
      -moz-user-select: none;
           user-select: none;
   align-items: center;
+  font-weight: 600;
 }
-.main_contact .form_contact_checkbox_container button {
+.main_contact .form_contact_checkbox_container > div button {
   font-size: 1.2rem;
   background-color: light-dark(#cecccc, #2f2f2f);
   color: light-dark(#000, #ddd);
@@ -1032,7 +1042,7 @@ footer #Footer_bottom-container p a {
   padding: 10px;
   cursor: pointer;
 }
-.main_contact .form_contact_checkbox_container button:hover {
+.main_contact .form_contact_checkbox_container > div button:hover {
   background-color: light-dark(#b5b2b2, #151515);
 }
 .main_contact .form_contact .FormError {

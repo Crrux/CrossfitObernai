@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PopupImagePc from "/assets/popup/Popup_pc.webp";
 import PopupImageTel from "/assets/popup/Popup_tel2.png";
 import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions.js";
@@ -12,6 +12,15 @@ function Popup() {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [isTabletorAbove, setIsTabletorAbove] = useState();
 
+  const location = useLocation();
+
+  // Ajouter cet useEffect pour reset le popup
+  useEffect(() => {
+    if (location.pathname != "/contact") {
+      setIsOpen(true);
+      setIsButtonClicked(false);
+    }
+  }, [location.pathname]);
 
   const [scrollY, setScrollY] = useState(0);
 
