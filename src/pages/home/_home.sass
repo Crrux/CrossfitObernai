@@ -1,10 +1,14 @@
 .Home
     // min-height: 2000px
+    padding: 0
     .text__container
+        padding: 0 30px
         display: flex
         flex-direction: column
         justify-content: center
-        align-items: center
+        align-items: flex-start
+        h2, ul
+            align-self: center
         @media screen and (max-width: $layout-breakpoint-small)
             p, ul
                 margin-right: 5vw
@@ -13,11 +17,13 @@
         width: 70%
         margin-bottom: 30px
         // max-width: 1080px
+        padding: 0 30px
         img
             width: 100%
 
         @media screen and (max-width: $layout-breakpoint-small)
             width: 100%
+            padding: 0 5px
     .title_container
         p
             font-size: calc(15px + 2.5vw)
