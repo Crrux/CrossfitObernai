@@ -15,15 +15,14 @@ export default defineConfig({
     })
   ],
   server: {
-    host: '0.0.0.0',
+    host: true,
     port: 5174,
     strictPort: true
   },
   preview: {
-    host: '0.0.0.0',
     port: 5174,
-    strictPort: true,
-    allowedHosts: ['crossfitobernai.com', 'www.crossfitobernai.com']
+    host: true,
+    strictPort: true
   },
   build: {
     outDir: 'dist',
