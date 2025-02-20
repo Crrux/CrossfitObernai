@@ -1,8 +1,19 @@
-# React + Vite
+# CrossfitObernai - Site Vitrine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## À propos du projet
 
-Currently, two official plugins are available:
+Site vitrine pour la box de CrossFit d'Obernai, conçu pour présenter la box aux futurs adhérents.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fonctionnalités
+
+- 🏋️‍♂️ Présentation des différentes disciplines proposées
+- 📅 Planning des cours
+- 📝 Formulaire de contact pour plus d'informations
+- 📱 Design responsive pour tous les appareils
+
+## Technologies utilisées
+
+- React (JavaScript)
+- Vite
+- SASS pour le styling
+- React Router pour la navigation
