@@ -65,7 +65,7 @@ export default function HelmetRendering() {
 				<meta name="theme-color" content="#FFF" />
 				<meta name="language" content="fr-FR" />
 				<meta property="og:title" content="Crossfit Obernai" />
-				<meta property="og:description" content="Crossfit Obernai" />
+				<meta property="og:description" content="Votre salle de CrossFit Hyrox et Fitness à Obernai" />
 				<meta property="og:image" content="./assets/Header_logo.png" />
 				<meta property="og:type" content="website" />
 				<meta property="og:locale" content="fr_FR" />

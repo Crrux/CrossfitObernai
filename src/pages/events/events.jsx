@@ -1,3 +1,4 @@
+import Popup from "../../components/popup/popup";
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Evenements.webp";
 
 function Events() {

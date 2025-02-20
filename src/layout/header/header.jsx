@@ -102,7 +102,7 @@ function Header() {
               Les offres
             </Link>
           </li>
-          <li className="navbar__item">
+          {/* <li className="navbar__item">
             <Link
               to={LinksLocal.coachs}
               className={`navbar__link ${location.pathname === LinksLocal.coachs && isTabletorAbove
@@ -113,7 +113,7 @@ function Header() {
             >
               Nos Coachs
             </Link>
-          </li>
+          </li> */}
           <li className="navbar__item">
             <Link
               to={LinksLocal.events}

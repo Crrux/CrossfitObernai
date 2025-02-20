@@ -15,7 +15,7 @@
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "motion": "^11.11.17",
-    "react": "^18.0.0",
+    "react": "^18.3.1",
     "react-dom": "^18.0.0",
     "react-helmet-async": "^2.0.5",
     "react-modal": "^3.16.3",
@@ -23,7 +23,7 @@
     "react-swipeable": "^7.0.2",
     "react-tooltip": "^5.28.0",
     "styled-components": "^6.1.14",
-    "vite": "^6.0.6"
+    "vite": "^6.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

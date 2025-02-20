@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import Modal from "react-modal";
+import PropTypes from 'prop-types';
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Contact.webp";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 import LegalNotices from "../../layout/legal_notices/legal_notices";
@@ -30,7 +31,7 @@ const FieldErrorTooltip = ({ id }) => (
     <i className="fa-solid fa-circle-exclamation" data-tooltip-id={`Tooltip_${id}`} data-tooltip-variant="error" />
     <ReactTooltip id={`Tooltip_${id}`} place="bottom" style={{ display: 'flex', flexDirection: 'column', padding: '5px', margin: 0 }}>
       <div>
-        <ul style={{ paddingBlock: 0, margin: 0 }}>
+        <ul style={{ padding: '0 3px', margin: 0, display: 'flex', justifyContent: 'center', width: '100%', listStylePosition: 'inside' }}>
           <li style={{ padding: 0, margin: 0 }}>
             {id === 'email' ? 'Doit être une adresse email valide' :
               id === 'tel' ? 'Doit être un numéro de téléphone valide' :
@@ -42,6 +43,10 @@ const FieldErrorTooltip = ({ id }) => (
     </ReactTooltip>
   </>
 );
+
+FieldErrorTooltip.propTypes = {
+  id: PropTypes.string.isRequired
+};
 
 const SuccessMessage = () => (
   <div className="form_success_message">
@@ -89,9 +94,12 @@ const ContactForm = ({
         checked={contact.checkbox}
         onChange={handleChange}
       />
-      <p className="checkbox_text">
-        accepter les <button onClick={() => toggleModal(true)} type="button">mentions légales</button>
-      </p>
+      <div>
+        <p className="checkbox_text">
+          accepter les
+        </p>
+        <button onClick={() => toggleModal(true)} type="button">mentions légales</button>
+      </div>
     </label>
 
     <Modal
@@ -134,6 +142,35 @@ const ContactForm = ({
     )}
   </form>
 );
+
+ContactForm.propTypes = {
+  formRef: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
+  renderField: PropTypes.func.isRequired,
+  isFormLoading: PropTypes.bool.isRequired,
+  modalIsOpen: PropTypes.bool.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+  contact: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    firstname: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    tel: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    checkbox: PropTypes.bool.isRequired
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  setIsSubmit: PropTypes.func.isRequired,
+  formError: PropTypes.bool.isRequired,
+  errors: PropTypes.shape({
+    nameError: PropTypes.bool,
+    firstnameError: PropTypes.bool,
+    emailError: PropTypes.bool,
+    telError: PropTypes.bool,
+    messageError: PropTypes.bool,
+    checkboxError: PropTypes.bool
+  }).isRequired,
+  isSubmit: PropTypes.bool.isRequired
+};
 
 function Contact() {
   // State hooks

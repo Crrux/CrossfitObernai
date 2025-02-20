@@ -1,18 +1,18 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 
-// const Slideshow = lazy(() => import("../../components/Slideshow/Slideshow"))
 const imgBox = "/assets/Slideshow/Box.webp";
 import LoadingSpinner from '../../components/Loading/Spinner/Spinner';
 
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Crossfit.webp";
+import Popup from '../../components/popup/popup';
 
 function Home() {
-  const Slideshow_data = [
-    { name: "1", src: "1.jpeg", alt: "1" },
-    { name: "2", src: "2.jpeg", alt: "2" },
-    { name: "3", src: "3.jpeg", alt: "3" },
-    { name: "4", src: "4.jpeg", alt: "4" },
-  ];
+  // const Slideshow_data = [
+  //   { name: "1", src: "1.jpeg", alt: "1" },
+  //   { name: "2", src: "2.jpeg", alt: "2" },
+  //   { name: "3", src: "3.jpeg", alt: "3" },
+  //   { name: "4", src: "4.jpeg", alt: "4" },
+  // ];
 
   return (
     <main className="Home">
@@ -28,7 +28,7 @@ function Home() {
         <div className="main__header">
           <div className="title_container">
             <img src={TitleBackgroundImage} alt="Background" />
-            <p>Qu&apos;est que le</p>
+            <p>Qu&apos;est ce que le</p>
             <h1>CrossFit</h1>
           </div>
         </div>

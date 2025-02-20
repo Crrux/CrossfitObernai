@@ -1,5 +1,6 @@
 import TitleBackgroundImage from "/assets/title_background/TitleBackground_Offres.webp";
 import LogoPeppy from "/assets/logos_svg/logo_peppy.svg";
+import Popup from "../../components/popup/popup";
 
 function Offers() {
   return (
@@ -61,7 +62,6 @@ function Offers() {
           <img src={LogoPeppy} alt="Peppy" />
         </a>
       </div>
-
     </main>
   );
 }
